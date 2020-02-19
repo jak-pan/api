@@ -12,16 +12,16 @@
 
 ###  sign
 
-▸ **sign**(`signerPair`: [IKeyringPair](../interfaces/_types_.ikeyringpair.md), `u8a`: Uint8Array, `options?`: SignOptions): *Uint8Array*
+▸ **sign**(`signerPair`: [IKeyringPair](../interfaces/_types_interfaces_.ikeyringpair.md), `u8a`: [Uint8Array](../classes/_codec_raw_.raw.md#static-uint8array), `options?`: SignOptions): *[Uint8Array](../classes/_codec_raw_.raw.md#static-uint8array)*
 
-*Defined in [primitive/Extrinsic/util.ts:11](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/util.ts#L11)*
+*Defined in [packages/types/src/primitive/Extrinsic/util.ts:11](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/util.ts#L11)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`signerPair` | [IKeyringPair](../interfaces/_types_.ikeyringpair.md) |
-`u8a` | Uint8Array |
+`signerPair` | [IKeyringPair](../interfaces/_types_interfaces_.ikeyringpair.md) |
+`u8a` | [Uint8Array](../classes/_codec_raw_.raw.md#static-uint8array) |
 `options?` | SignOptions |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](../classes/_codec_raw_.raw.md#static-uint8array)*

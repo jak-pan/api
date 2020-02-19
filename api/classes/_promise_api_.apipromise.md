@@ -68,7 +68,7 @@ Submitting a transaction -
 import ApiPromise from '@polkadot/api/promise';
 
 ApiPromise.create().then((api) => {
-  const nonce = await api.query.system.accountNonce(keyring.alice.address);
+  const [nonce] = await api.query.system.account(keyring.alice.address);
 
   api.tx.balances
     // create transfer
@@ -98,6 +98,10 @@ ApiPromise.create().then((api) => {
 
 * [constructor](_promise_api_.apipromise.md#constructor)
 
+### Properties
+
+* [registry](_promise_api_.apipromise.md#registry)
+
 ### Accessors
 
 * [consts](_promise_api_.apipromise.md#consts)
@@ -112,6 +116,7 @@ ApiPromise.create().then((api) => {
 * [rpc](_promise_api_.apipromise.md#rpc)
 * [runtimeMetadata](_promise_api_.apipromise.md#runtimemetadata)
 * [runtimeVersion](_promise_api_.apipromise.md#runtimeversion)
+* [rx](_promise_api_.apipromise.md#rx)
 * [tx](_promise_api_.apipromise.md#tx)
 * [type](_promise_api_.apipromise.md#type)
 
@@ -122,6 +127,8 @@ ApiPromise.create().then((api) => {
 * [createType](_promise_api_.apipromise.md#createtype)
 * [disconnect](_promise_api_.apipromise.md#disconnect)
 * [findCall](_promise_api_.apipromise.md#findcall)
+* [findError](_promise_api_.apipromise.md#finderror)
+* [injectMetadata](_promise_api_.apipromise.md#injectmetadata)
 * [off](_promise_api_.apipromise.md#off)
 * [on](_promise_api_.apipromise.md#on)
 * [once](_promise_api_.apipromise.md#once)
@@ -134,11 +141,11 @@ ApiPromise.create().then((api) => {
 
 ###  constructor
 
-\+ **new ApiPromise**(`options?`: [ApiOptions](../interfaces/_types_.apioptions.md)): *[ApiPromise](_promise_api_.apipromise.md)*
+\+ **new ApiPromise**(`options?`: ApiOptions): *[ApiPromise](_promise_api_.apipromise.md)*
 
 *Overrides void*
 
-*Defined in [promise/Api.ts:197](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/promise/Api.ts#L197)*
+*Defined in [api/src/promise/Api.ts:197](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/promise/Api.ts#L197)*
 
 **`description`** Creates an instance of the ApiPromise class
 
@@ -159,9 +166,19 @@ new Api().isReady.then((api) => {
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`options?` | [ApiOptions](../interfaces/_types_.apioptions.md) | Options to create an instance. This can be either [ApiOptions](../interfaces/_types_.apioptions.md) or an [[WsProvider]]. |
+`options?` | ApiOptions | Options to create an instance. This can be either [[ApiOptions]] or an [[WsProvider]]. |
 
 **Returns:** *[ApiPromise](_promise_api_.apipromise.md)*
+
+## Properties
+
+###  registry
+
+• **registry**: *Registry*
+
+*Inherited from [Init](_base_init_.init.md).[registry](_base_init_.init.md#registry)*
+
+*Defined in [api/src/base/Decorate.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L43)*
 
 ## Accessors
 
@@ -169,9 +186,9 @@ Name | Type | Description |
 
 • **get consts**(): *Constants*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[consts](_promise_api_.apipromise.md#consts)*
 
-*Defined in [base/index.ts:71](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L71)*
+*Defined in [api/src/base/index.ts:75](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L75)*
 
 **`description`** Contains the parameter types (constants) of all modules.
 
@@ -190,11 +207,11 @@ ___
 
 ###  derive
 
-• **get derive**(): *ReturnType‹decorateDerive›*
+• **get derive**(): *ReturnType‹ApiBase<"promise">["decorateDerive"]›*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[derive](_promise_api_.apipromise.md#derive)*
 
-*Defined in [base/index.ts:87](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L87)*
+*Defined in [api/src/base/index.ts:91](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L91)*
 
 **`description`** Derived results that are injected into the API, allowing for combinations of various query results.
 
@@ -207,7 +224,7 @@ api.derive.chain.bestNumber((number) => {
 });
 ```
 
-**Returns:** *ReturnType‹decorateDerive›*
+**Returns:** *ReturnType‹ApiBase<"promise">["decorateDerive"]›*
 
 ___
 
@@ -215,9 +232,9 @@ ___
 
 • **get extrinsicVersion**(): *number*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[extrinsicVersion](_promise_api_.apipromise.md#extrinsicversion)*
 
-*Defined in [base/index.ts:94](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L94)*
+*Defined in [api/src/base/index.ts:98](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L98)*
 
 **`description`** Returns the version of extrinsics in-use on this chain
 
@@ -229,9 +246,9 @@ ___
 
 • **get genesisHash**(): *Hash*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[genesisHash](_promise_api_.apipromise.md#genesishash)*
 
-*Defined in [base/index.ts:101](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L101)*
+*Defined in [api/src/base/index.ts:105](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L105)*
 
 **`description`** Contains the genesis Hash of the attached chain. Apart from being useful to determine the actual chain, it can also be used to sign immortal transactions.
 
@@ -243,11 +260,11 @@ ___
 
 • **get hasSubscriptions**(): *boolean*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[hasSubscriptions](_promise_api_.apipromise.md#hassubscriptions)*
 
-*Overrides [Decorate](_base_decorate_.decorate.md).[hasSubscriptions](_base_decorate_.decorate.md#hassubscriptions)*
+*Overrides [Init](_base_init_.init.md).[hasSubscriptions](_base_init_.init.md#hassubscriptions)*
 
-*Defined in [base/index.ts:108](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L108)*
+*Defined in [api/src/base/index.ts:112](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L112)*
 
 **`description`** `true` when subscriptions are supported
 
@@ -259,7 +276,7 @@ ___
 
 • **get isReady**(): *Promise‹[ApiPromise](_promise_api_.apipromise.md)›*
 
-*Defined in [promise/Api.ts:229](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/promise/Api.ts#L229)*
+*Defined in [api/src/promise/Api.ts:232](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/promise/Api.ts#L232)*
 
 **`description`** Promise that returns the first time we are connected and loaded
 
@@ -271,9 +288,9 @@ ___
 
 • **get libraryInfo**(): *string*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[libraryInfo](_promise_api_.apipromise.md#libraryinfo)*
 
-*Defined in [base/index.ts:115](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L115)*
+*Defined in [api/src/base/index.ts:119](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L119)*
 
 **`description`** The library information name & version (from package.json)
 
@@ -283,36 +300,36 @@ ___
 
 ###  query
 
-• **get query**(): *[QueryableStorage](../interfaces/_types_.queryablestorage.md)‹"promise"›*
+• **get query**(): *[QueryableStorage](../interfaces/_types_storage_.queryablestorage.md)‹"promise"›*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[query](_promise_api_.apipromise.md#query)*
 
-*Defined in [base/index.ts:133](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L133)*
+*Defined in [api/src/base/index.ts:137](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L137)*
 
 **`description`** Contains all the chain state modules and their subsequent methods in the API. These are attached dynamically from the runtime metadata.
 
-All calls inside the namespace, is denoted by `section`.`method` and may take an optional query parameter. As an example, `api.query.timestamp.now()` (current block timestamp) does not take parameters, while `api.query.system.accountNonce(<accountId>)` (retrieving the associated nonce for an account), takes the `AccountId` as a parameter.
+All calls inside the namespace, is denoted by `section`.`method` and may take an optional query parameter. As an example, `api.query.timestamp.now()` (current block timestamp) does not take parameters, while `api.query.system.account(<accountId>)` (retrieving the associated nonce & balances for an account), takes the `AccountId` as a parameter.
 
 **`example`** 
 <BR>
 
 ```javascript
-api.query.balances.freeBalance(<accountId>, (balance) => {
-  console.log('new balance', balance);
+api.query.system.account(<accountId>, ([nonce, balance]) => {
+  console.log('new free balance', balance.free, 'new nonce', nonce);
 });
 ```
 
-**Returns:** *[QueryableStorage](../interfaces/_types_.queryablestorage.md)‹"promise"›*
+**Returns:** *[QueryableStorage](../interfaces/_types_storage_.queryablestorage.md)‹"promise"›*
 
 ___
 
 ###  queryMulti
 
-• **get queryMulti**(): *[QueryableStorageMulti](../modules/_types_.md#queryablestoragemulti)‹"promise"›*
+• **get queryMulti**(): *[QueryableStorageMulti](../modules/_types_storage_.md#queryablestoragemulti)‹"promise"›*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[queryMulti](_promise_api_.apipromise.md#querymulti)*
 
-*Defined in [base/index.ts:159](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L159)*
+*Defined in [api/src/base/index.ts:163](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L163)*
 
 **`description`** Allows for the querying of multiple storage entries and the combination thereof into a single result. This is a very optimal way to make multiple queries since it only makes a single connection to the node and retrieves the data over one subscription.
 
@@ -325,27 +342,27 @@ const unsub = await api.queryMulti(
     // you can include the storage without any parameters
     api.query.balances.totalIssuance,
     // or you can pass parameters to the storage query
-    [api.query.balances.freeBalance, '5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY']
+    [api.query.system.account, '5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY']
   ],
-  ([existential, balance]) => {
-    console.log(`You have ${balance.sub(existential)} more than the existential deposit`);
+  ([existential, [, { free }]]) => {
+    console.log(`You have ${free.sub(existential)} more than the existential deposit`);
 
     unsub();
   }
 );
 ```
 
-**Returns:** *[QueryableStorageMulti](../modules/_types_.md#queryablestoragemulti)‹"promise"›*
+**Returns:** *[QueryableStorageMulti](../modules/_types_storage_.md#queryablestoragemulti)‹"promise"›*
 
 ___
 
 ###  rpc
 
-• **get rpc**(): *[DecoratedRpc](../modules/_types_.md#decoratedrpc)‹"promise", RpcInterface›*
+• **get rpc**(): *[DecoratedRpc](../modules/_types_rpc_.md#decoratedrpc)‹"promise", RpcInterface›*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[rpc](_promise_api_.apipromise.md#rpc)*
 
-*Defined in [base/index.ts:177](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L177)*
+*Defined in [api/src/base/index.ts:181](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L181)*
 
 **`description`** Contains all the raw rpc sections and their subsequent methods in the API as defined by the jsonrpc interface definitions. Unlike the dynamic `api.query` and `api.tx` sections, these methods are fixed (although extensible with node upgrades) and not determined by the runtime.
 
@@ -360,7 +377,7 @@ api.rpc.chain.subscribeNewHeads((header) => {
 });
 ```
 
-**Returns:** *[DecoratedRpc](../modules/_types_.md#decoratedrpc)‹"promise", RpcInterface›*
+**Returns:** *[DecoratedRpc](../modules/_types_rpc_.md#decoratedrpc)‹"promise", RpcInterface›*
 
 ___
 
@@ -368,9 +385,9 @@ ___
 
 • **get runtimeMetadata**(): *Metadata*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[runtimeMetadata](_promise_api_.apipromise.md#runtimemetadata)*
 
-*Defined in [base/index.ts:184](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L184)*
+*Defined in [api/src/base/index.ts:188](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L188)*
 
 **`description`** Yields the current attached runtime metadata. Generally this is only used to construct extrinsics & storage, but is useful for current runtime inspection.
 
@@ -382,9 +399,9 @@ ___
 
 • **get runtimeVersion**(): *RuntimeVersion*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[runtimeVersion](_promise_api_.apipromise.md#runtimeversion)*
 
-*Defined in [base/index.ts:191](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L191)*
+*Defined in [api/src/base/index.ts:195](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L195)*
 
 **`description`** Contains the version information for the current runtime.
 
@@ -392,13 +409,27 @@ ___
 
 ___
 
+###  rx
+
+• **get rx**(): *Pick‹ApiInterfaceRx, "tx" | "rpc"›*
+
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[rx](_promise_api_.apipromise.md#rx)*
+
+*Defined in [api/src/base/index.ts:202](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L202)*
+
+**`description`** The underlying Rx API interface
+
+**Returns:** *Pick‹ApiInterfaceRx, "tx" | "rpc"›*
+
+___
+
 ###  tx
 
-• **get tx**(): *[SubmittableExtrinsics](../interfaces/_types_.submittableextrinsics.md)‹"promise"›*
+• **get tx**(): *[SubmittableExtrinsics](../interfaces/_types_submittable_.submittableextrinsics.md)‹"promise"›*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[tx](_promise_api_.apipromise.md#tx)*
 
-*Defined in [base/index.ts:216](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L216)*
+*Defined in [api/src/base/index.ts:227](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L227)*
 
 **`description`** Contains all the extrinsic modules and their subsequent methods in the API. It allows for the construction of transactions and the submission thereof. These are attached dynamically from the runtime metadata.
 
@@ -413,21 +444,21 @@ api.tx.balances
   });
 ```
 
-**Returns:** *[SubmittableExtrinsics](../interfaces/_types_.submittableextrinsics.md)‹"promise"›*
+**Returns:** *[SubmittableExtrinsics](../interfaces/_types_submittable_.submittableextrinsics.md)‹"promise"›*
 
 ___
 
 ###  type
 
-• **get type**(): *[ApiTypes](../modules/_types_.md#apitypes)*
+• **get type**(): *[ApiTypes](../modules/_types_base_.md#apitypes)*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[type](_promise_api_.apipromise.md#type)*
 
-*Defined in [base/index.ts:198](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L198)*
+*Defined in [api/src/base/index.ts:209](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L209)*
 
 **`description`** The type of this API instance, either 'rxjs' or 'promise'
 
-**Returns:** *[ApiTypes](../modules/_types_.md#apitypes)*
+**Returns:** *[ApiTypes](../modules/_types_base_.md#apitypes)*
 
 ## Methods
 
@@ -435,7 +466,7 @@ ___
 
 ▸ **clone**(): *[ApiPromise](_promise_api_.apipromise.md)*
 
-*Defined in [promise/Api.ts:236](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/promise/Api.ts#L236)*
+*Defined in [api/src/promise/Api.ts:239](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/promise/Api.ts#L239)*
 
 **`description`** Returns a clone of this ApiPromise instance (new underlying provider connection)
 
@@ -445,9 +476,9 @@ ___
 
 ###  combineLatest
 
-▸ **combineLatest**(`fns`: [CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md) | [[CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md), any][], `callback`: [CombinatorCallback](../modules/_promise_combinator_.md#combinatorcallback)): *[UnsubscribePromise](../modules/_types_.md#unsubscribepromise)*
+▸ **combineLatest**(`fns`: [CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md) | [[CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md), any][], `callback`: [CombinatorCallback](../modules/_promise_combinator_.md#combinatorcallback)): *[UnsubscribePromise](../modules/_types_base_.md#unsubscribepromise)*
 
-*Defined in [promise/Api.ts:264](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/promise/Api.ts#L264)*
+*Defined in [api/src/promise/Api.ts:266](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/promise/Api.ts#L266)*
 
 **`description`** Creates a combinator that can be used to combine the latest results from multiple subscriptions
 
@@ -460,10 +491,9 @@ const address = '5DTestUPts3kjeXSTMyerHihn1uwMfLj8vU8sqF7qYrFacT7';
 // combines values from balance & nonce as it updates
 api.combineLatest([
   api.rpc.chain.subscribeNewHeads,
-  [api.query.balances.freeBalance, address],
-  (cb) => api.query.system.accountNonce(address, cb)
-], ([head, balance, nonce]) => {
-  console.log(`#${head.number}: You have ${balance} units, with ${nonce} transactions sent`);
+  (cb) => api.query.system.account(address, cb)
+], ([head, [balance, nonce]]) => {
+  console.log(`#${head.number}: You have ${balance.free} units, with ${nonce} transactions sent`);
 });
 ```
 
@@ -474,7 +504,7 @@ Name | Type | Description |
 `fns` | [CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md) &#124; [[CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md), any][] | An array of function to combine, each in the form of `(cb: (value: void)) => void` |
 `callback` | [CombinatorCallback](../modules/_promise_combinator_.md#combinatorcallback) | A callback that will return an Array of all the values this combinator has been applied to |
 
-**Returns:** *[UnsubscribePromise](../modules/_types_.md#unsubscribepromise)*
+**Returns:** *[UnsubscribePromise](../modules/_types_base_.md#unsubscribepromise)*
 
 ___
 
@@ -482,11 +512,11 @@ ___
 
 ▸ **createType**<**K**>(`type`: K, ...`params`: any[]): *InterfaceRegistry[K]*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[createType](_promise_api_.apipromise.md#createtype)*
 
-*Defined in [base/index.ts:223](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L223)*
+*Overrides [Init](_base_init_.init.md).[createType](_base_init_.init.md#abstract-createtype)*
 
-**`description`** Creates an instance of a type as registered
+*Defined in [api/src/base/index.ts:234](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L234)*
 
 **Type parameters:**
 
@@ -507,9 +537,9 @@ ___
 
 ▸ **disconnect**(): *void*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[disconnect](_promise_api_.apipromise.md#disconnect)*
 
-*Defined in [base/index.ts:230](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L230)*
+*Defined in [api/src/base/index.ts:241](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L241)*
 
 **`description`** Disconnect from the underlying provider, halting all network traffic
 
@@ -521,11 +551,11 @@ ___
 
 ▸ **findCall**(`callIndex`: Uint8Array | string): *CallFunction*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[findCall](_promise_api_.apipromise.md#findcall)*
 
-*Defined in [base/index.ts:237](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L237)*
+*Defined in [api/src/base/index.ts:248](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L248)*
 
-**`description`** Finds the definition for a specific [[Call]] based on the index supplied
+**`description`** Finds the definition for a specific [[CallFunction]] based on the index supplied
 
 **Parameters:**
 
@@ -537,13 +567,51 @@ Name | Type |
 
 ___
 
+###  findError
+
+▸ **findError**(`errorIndex`: Uint8Array | string): *RegistryError*
+
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[findError](_promise_api_.apipromise.md#finderror)*
+
+*Defined in [api/src/base/index.ts:255](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L255)*
+
+**`description`** Finds the definition for a specific [[RegistryError]] based on the index supplied
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`errorIndex` | Uint8Array &#124; string |
+
+**Returns:** *RegistryError*
+
+___
+
+###  injectMetadata
+
+▸ **injectMetadata**(`metadata`: Metadata): *void*
+
+*Inherited from [Init](_base_init_.init.md).[injectMetadata](_base_init_.init.md#injectmetadata)*
+
+*Defined in [api/src/base/Decorate.ts:149](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L149)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`metadata` | Metadata |
+
+**Returns:** *void*
+
+___
+
 ###  off
 
-▸ **off**(`type`: [ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents), `handler`: function): *this*
+▸ **off**(`type`: ApiInterfaceEvents, `handler`: function): *this*
 
-*Inherited from [Events](_base_events_.events.md).[off](_base_events_.events.md#off)*
+*Inherited from [Init](_base_init_.init.md).[off](_base_init_.init.md#off)*
 
-*Defined in [base/Events.ts:62](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Events.ts#L62)*
+*Defined in [api/src/base/Events.ts:62](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Events.ts#L62)*
 
 **`description`** Remove the given eventemitter handler
 
@@ -564,7 +632,7 @@ api.off('connected', handler);
 
 **Parameters:**
 
-▪ **type**: *[ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents)*
+▪ **type**: *ApiInterfaceEvents*
 
 The type of event the callback was attached to. Available events are `connected`, `disconnected`, `ready` and `error`
 
@@ -586,11 +654,11 @@ ___
 
 ###  on
 
-▸ **on**(`type`: [ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents), `handler`: function): *this*
+▸ **on**(`type`: ApiInterfaceEvents, `handler`: function): *this*
 
-*Inherited from [Events](_base_events_.events.md).[on](_base_events_.events.md#on)*
+*Inherited from [Init](_base_init_.init.md).[on](_base_init_.init.md#on)*
 
-*Defined in [base/Events.ts:35](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Events.ts#L35)*
+*Defined in [api/src/base/Events.ts:35](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Events.ts#L35)*
 
 **`description`** Attach an eventemitter handler to listen to a specific event
 
@@ -609,7 +677,7 @@ api.on('disconnected', (): void => {
 
 **Parameters:**
 
-▪ **type**: *[ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents)*
+▪ **type**: *ApiInterfaceEvents*
 
 The type of event to listen to. Available events are `connected`, `disconnected`, `ready` and `error`
 
@@ -631,11 +699,11 @@ ___
 
 ###  once
 
-▸ **once**(`type`: [ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents), `handler`: function): *this*
+▸ **once**(`type`: ApiInterfaceEvents, `handler`: function): *this*
 
-*Inherited from [Events](_base_events_.events.md).[once](_base_events_.events.md#once)*
+*Inherited from [Init](_base_init_.init.md).[once](_base_init_.init.md#once)*
 
-*Defined in [base/Events.ts:87](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Events.ts#L87)*
+*Defined in [api/src/base/Events.ts:87](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Events.ts#L87)*
 
 **`description`** Attach an one-time eventemitter handler to listen to a specific event
 
@@ -654,7 +722,7 @@ api.once('disconnected', (): void => {
 
 **Parameters:**
 
-▪ **type**: *[ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents)*
+▪ **type**: *ApiInterfaceEvents*
 
 The type of event to listen to. Available events are `connected`, `disconnected`, `ready` and `error`
 
@@ -678,11 +746,11 @@ ___
 
 ▸ **registerTypes**(`types?`: RegistryTypes): *void*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[registerTypes](_promise_api_.apipromise.md#registertypes)*
 
 *Overrides [Init](_base_init_.init.md).[registerTypes](_base_init_.init.md#abstract-registertypes)*
 
-*Defined in [base/index.ts:244](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L244)*
+*Defined in [api/src/base/index.ts:262](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L262)*
 
 **`description`** Register additional user-defined of chain-specific types in the type registry
 
@@ -698,11 +766,11 @@ ___
 
 ###  setSigner
 
-▸ **setSigner**(`signer`: [Signer](../interfaces/_types_.signer.md)): *void*
+▸ **setSigner**(`signer`: Signer): *void*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[setSigner](_promise_api_.apipromise.md#setsigner)*
 
-*Defined in [base/index.ts:251](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L251)*
+*Defined in [api/src/base/index.ts:269](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L269)*
 
 **`description`** Set an external signer which will be used to sign extrinsic when account passed in is not KeyringPair
 
@@ -710,7 +778,7 @@ ___
 
 Name | Type |
 ------ | ------ |
-`signer` | [Signer](../interfaces/_types_.signer.md) |
+`signer` | Signer |
 
 **Returns:** *void*
 
@@ -718,20 +786,25 @@ ___
 
 ###  sign
 
-▸ **sign**(`signer`: KeyringSigner | string, `data`: SignerPayloadRawBase): *Promise‹string›*
+▸ **sign**(`address`: KeyringSigner | string, `data`: SignerPayloadRawBase, `__namedParameters`: object): *Promise‹string›*
 
-*Inherited from void*
+*Inherited from [ApiPromise](_promise_api_.apipromise.md).[sign](_promise_api_.apipromise.md#sign)*
 
-*Defined in [base/index.ts:258](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/index.ts#L258)*
+*Defined in [api/src/base/index.ts:276](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/index.ts#L276)*
 
 **`description`** Signs a raw signer payload, string or Uint8Array
 
 **Parameters:**
 
+▪ **address**: *KeyringSigner | string*
+
+▪ **data**: *SignerPayloadRawBase*
+
+▪`Default value`  **__namedParameters**: *object*= {}
+
 Name | Type |
 ------ | ------ |
-`signer` | KeyringSigner &#124; string |
-`data` | SignerPayloadRawBase |
+`signer` | undefined &#124; Signer |
 
 **Returns:** *Promise‹string›*
 
@@ -739,9 +812,9 @@ ___
 
 ### `Static` create
 
-▸ **create**(`options?`: [ApiOptions](../interfaces/_types_.apioptions.md)): *Promise‹[ApiPromise](_promise_api_.apipromise.md)›*
+▸ **create**(`options?`: ApiOptions): *Promise‹[ApiPromise](_promise_api_.apipromise.md)›*
 
-*Defined in [promise/Api.ts:195](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/promise/Api.ts#L195)*
+*Defined in [api/src/promise/Api.ts:195](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/promise/Api.ts#L195)*
 
 **`description`** Creates an ApiPromise instance using the supplied provider. Returns an Promise containing the actual Api instance.
 
@@ -762,6 +835,6 @@ Api.create().then(async (api) => {
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`options?` | [ApiOptions](../interfaces/_types_.apioptions.md) | options that is passed to the class contructor. Can be either [ApiOptions](../interfaces/_types_.apioptions.md) or a provider (see the constructor arguments) |
+`options?` | ApiOptions | options that is passed to the class contructor. Can be either [[ApiOptions]] or a provider (see the constructor arguments) |
 
 **Returns:** *Promise‹[ApiPromise](_promise_api_.apipromise.md)›*

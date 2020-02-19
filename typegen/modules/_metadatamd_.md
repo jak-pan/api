@@ -1,0 +1,19 @@
+[Polkadot JS API](../README.md) › [Globals](../globals.md) › ["metadataMd"](_metadatamd_.md)
+
+# External module: "metadataMd"
+
+## Index
+
+### Functions
+
+* [main](_metadatamd_.md#main)
+
+## Functions
+
+###  main
+
+▸ **main**(): *void*
+
+*Defined in [metadataMd.ts:292](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/typegen/src/metadataMd.ts#L292)*
+
+**Returns:** *void*

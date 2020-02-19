@@ -24,18 +24,20 @@ Extrinsic function descriptor, as defined in
 
   ↳ **Call**
 
-  ↳ [Call](../interfaces/_interfaces_runtime_types_.call.md)
-
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
-* [IMethod](../interfaces/_types_.imethod.md)
+* [Codec](../interfaces/_types_codec_.codec.md)
+* [IMethod](../interfaces/_types_interfaces_.imethod.md)
 
 ## Index
 
 ### Constructors
 
 * [constructor](_primitive_generic_call_.call.md#constructor)
+
+### Properties
+
+* [registry](_primitive_generic_call_.call.md#registry)
 
 ### Accessors
 
@@ -44,6 +46,7 @@ Extrinsic function descriptor, as defined in
 * [argsDef](_primitive_generic_call_.call.md#argsdef)
 * [callIndex](_primitive_generic_call_.call.md#callindex)
 * [data](_primitive_generic_call_.call.md#data)
+* [defKeys](_primitive_generic_call_.call.md#defkeys)
 * [encodedLength](_primitive_generic_call_.call.md#encodedlength)
 * [hasOrigin](_primitive_generic_call_.call.md#hasorigin)
 * [hash](_primitive_generic_call_.call.md#hash)
@@ -59,13 +62,12 @@ Extrinsic function descriptor, as defined in
 * [getAtIndex](_primitive_generic_call_.call.md#getatindex)
 * [toArray](_primitive_generic_call_.call.md#toarray)
 * [toHex](_primitive_generic_call_.call.md#tohex)
+* [toHuman](_primitive_generic_call_.call.md#tohuman)
 * [toJSON](_primitive_generic_call_.call.md#tojson)
 * [toRawType](_primitive_generic_call_.call.md#torawtype)
 * [toString](_primitive_generic_call_.call.md#tostring)
 * [toU8a](_primitive_generic_call_.call.md#tou8a)
 * [filterOrigin](_primitive_generic_call_.call.md#static-filterorigin)
-* [findFunction](_primitive_generic_call_.call.md#static-findfunction)
-* [injectMetadata](_primitive_generic_call_.call.md#static-injectmetadata)
 * [typesToMap](_primitive_generic_call_.call.md#static-typestomap)
 * [with](_primitive_generic_call_.call.md#static-with)
 
@@ -73,20 +75,33 @@ Extrinsic function descriptor, as defined in
 
 ###  constructor
 
-\+ **new Call**(`value`: any, `meta?`: [FunctionMetadataLatest](../interfaces/_interfaceregistry_.interfaceregistry.md#functionmetadatalatest)): *[Call](_primitive_generic_call_.call.md)*
+\+ **new Call**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `value`: any, `meta?`: [FunctionMetadataLatest](../interfaces/_interfaceregistry_.interfaceregistry.md#functionmetadatalatest)): *[Call](_primitive_generic_call_.call.md)*
 
 *Overrides [Struct](_codec_struct_.struct.md).[constructor](_codec_struct_.struct.md#constructor)*
 
-*Defined in [primitive/Generic/Call.ts:51](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L51)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:120](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L120)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) |
 `value` | any |
 `meta?` | [FunctionMetadataLatest](../interfaces/_interfaceregistry_.interfaceregistry.md#functionmetadatalatest) |
 
 **Returns:** *[Call](_primitive_generic_call_.call.md)*
+
+## Properties
+
+###  registry
+
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+*Implementation of [IMethod](../interfaces/_types_interfaces_.imethod.md).[registry](../interfaces/_types_interfaces_.imethod.md#registry)*
+
+*Inherited from [Struct](_codec_struct_.struct.md).[registry](_codec_struct_.struct.md#registry)*
+
+*Defined in [packages/types/src/codec/Struct.ts:106](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L106)*
 
 ## Accessors
 
@@ -96,7 +111,7 @@ Name | Type |
 
 *Inherited from [Struct](_codec_struct_.struct.md).[Type](_codec_struct_.struct.md#type)*
 
-*Defined in [codec/Struct.ts:155](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L155)*
+*Defined in [packages/types/src/codec/Struct.ts:168](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L168)*
 
 **`description`** Returns the Type description to sthe structure
 
@@ -106,49 +121,63 @@ ___
 
 ###  args
 
-• **get args**(): *[Codec](../interfaces/_types_.codec.md)[]*
+• **get args**(): *[Codec](../interfaces/_types_codec_.codec.md)[]*
 
-*Defined in [primitive/Generic/Call.ts:172](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L172)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:146](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L146)*
 
 **`description`** The arguments for the function call
 
-**Returns:** *[Codec](../interfaces/_types_.codec.md)[]*
+**Returns:** *[Codec](../interfaces/_types_codec_.codec.md)[]*
 
 ___
 
 ###  argsDef
 
-• **get argsDef**(): *[ArgsDef](../modules/_types_.md#argsdef)*
+• **get argsDef**(): *[ArgsDef](../modules/_types_codec_.md#argsdef)*
 
-*Defined in [primitive/Generic/Call.ts:180](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L180)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:154](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L154)*
 
 **`description`** The argument definitions
 
-**Returns:** *[ArgsDef](../modules/_types_.md#argsdef)*
+**Returns:** *[ArgsDef](../modules/_types_codec_.md#argsdef)*
 
 ___
 
 ###  callIndex
 
-• **get callIndex**(): *Uint8Array*
+• **get callIndex**(): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Defined in [primitive/Generic/Call.ts:187](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L187)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:161](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L161)*
 
 **`description`** The encoded `[sectionIndex, methodIndex]` identifier
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 ___
 
 ###  data
 
-• **get data**(): *Uint8Array*
+• **get data**(): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Defined in [primitive/Generic/Call.ts:194](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L194)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:168](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L168)*
 
 **`description`** The encoded data
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
+
+___
+
+###  defKeys
+
+• **get defKeys**(): *string[]*
+
+*Inherited from [Struct](_codec_struct_.struct.md).[defKeys](_codec_struct_.struct.md#defkeys)*
+
+*Defined in [packages/types/src/codec/Struct.ts:146](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L146)*
+
+**`description`** The available keys for this enum
+
+**Returns:** *string[]*
 
 ___
 
@@ -158,7 +187,7 @@ ___
 
 *Inherited from [Struct](_codec_struct_.struct.md).[encodedLength](_codec_struct_.struct.md#encodedlength)*
 
-*Defined in [codec/Struct.ts:168](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L168)*
+*Defined in [packages/types/src/codec/Struct.ts:181](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L181)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -170,7 +199,7 @@ ___
 
 • **get hasOrigin**(): *boolean*
 
-*Defined in [primitive/Generic/Call.ts:201](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L201)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:175](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L175)*
 
 **`description`** `true` if the `Origin` type is on the method (extrinsic method)
 
@@ -180,15 +209,15 @@ ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
 *Inherited from [Struct](_codec_struct_.struct.md).[hash](_codec_struct_.struct.md#hash)*
 
-*Defined in [codec/Struct.ts:179](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L179)*
+*Defined in [packages/types/src/codec/Struct.ts:192](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L192)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
 
 ___
 
@@ -198,7 +227,7 @@ ___
 
 *Inherited from [Struct](_codec_struct_.struct.md).[isEmpty](_codec_struct_.struct.md#isempty)*
 
-*Defined in [codec/Struct.ts:140](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L140)*
+*Defined in [packages/types/src/codec/Struct.ts:153](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L153)*
 
 **`description`** Checks if the value is an empty value
 
@@ -208,13 +237,13 @@ ___
 
 ###  meta
 
-• **get meta**(): *[FunctionMetadataLatest](../interfaces/_interfaces_metadata_types_.functionmetadatalatest.md)*
+• **get meta**(): *FunctionMetadataLatest*
 
-*Defined in [primitive/Generic/Call.ts:210](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L210)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:184](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L184)*
 
 **`description`** The [[FunctionMetadata]]
 
-**Returns:** *[FunctionMetadataLatest](../interfaces/_interfaces_metadata_types_.functionmetadatalatest.md)*
+**Returns:** *FunctionMetadataLatest*
 
 ___
 
@@ -222,7 +251,7 @@ ___
 
 • **get methodName**(): *string*
 
-*Defined in [primitive/Generic/Call.ts:217](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L217)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:191](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L191)*
 
 **`description`** Returns the name of the method
 
@@ -234,7 +263,7 @@ ___
 
 • **get sectionName**(): *string*
 
-*Defined in [primitive/Generic/Call.ts:224](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L224)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:198](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L198)*
 
 **`description`** Returns the module containing the method
 
@@ -246,11 +275,11 @@ ___
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [IMethod](../interfaces/_types_.imethod.md)*
+*Implementation of [IMethod](../interfaces/_types_interfaces_.imethod.md)*
 
 *Inherited from [Struct](_codec_struct_.struct.md).[eq](_codec_struct_.struct.md#eq)*
 
-*Defined in [codec/Struct.ts:186](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L186)*
+*Defined in [packages/types/src/codec/Struct.ts:199](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L199)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -266,13 +295,13 @@ ___
 
 ###  get
 
-▸ **get**(`name`: keyof S): *[Codec](../interfaces/_types_.codec.md) | undefined*
+▸ **get**(`name`: keyof S): *[Codec](../interfaces/_types_codec_.codec.md) | undefined*
 
 *Inherited from [Struct](_codec_struct_.struct.md).[get](_codec_struct_.struct.md#get)*
 
-*Overrides void*
+*Overrides [BTreeMap](_codec_btreemap_.btreemap.md).[get](_codec_btreemap_.btreemap.md#get)*
 
-*Defined in [codec/Struct.ts:194](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L194)*
+*Defined in [packages/types/src/codec/Struct.ts:207](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L207)*
 
 **`description`** Returns a specific names entry in the structure
 
@@ -282,17 +311,17 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `name` | keyof S | The name of the entry to retrieve  |
 
-**Returns:** *[Codec](../interfaces/_types_.codec.md) | undefined*
+**Returns:** *[Codec](../interfaces/_types_codec_.codec.md) | undefined*
 
 ___
 
 ###  getAtIndex
 
-▸ **getAtIndex**(`index`: number): *[Codec](../interfaces/_types_.codec.md)*
+▸ **getAtIndex**(`index`: number): *[Codec](../interfaces/_types_codec_.codec.md)*
 
 *Inherited from [Struct](_codec_struct_.struct.md).[getAtIndex](_codec_struct_.struct.md#getatindex)*
 
-*Defined in [codec/Struct.ts:201](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L201)*
+*Defined in [packages/types/src/codec/Struct.ts:214](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L214)*
 
 **`description`** Returns the values of a member at a specific index (Rather use get(name) for performance)
 
@@ -302,21 +331,21 @@ Name | Type |
 ------ | ------ |
 `index` | number |
 
-**Returns:** *[Codec](../interfaces/_types_.codec.md)*
+**Returns:** *[Codec](../interfaces/_types_codec_.codec.md)*
 
 ___
 
 ###  toArray
 
-▸ **toArray**(): *[Codec](../interfaces/_types_.codec.md)[]*
+▸ **toArray**(): *[Codec](../interfaces/_types_codec_.codec.md)[]*
 
 *Inherited from [Struct](_codec_struct_.struct.md).[toArray](_codec_struct_.struct.md#toarray)*
 
-*Defined in [codec/Struct.ts:208](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L208)*
+*Defined in [packages/types/src/codec/Struct.ts:221](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L221)*
 
 **`description`** Converts the Object to an standard JavaScript Array
 
-**Returns:** *[Codec](../interfaces/_types_.codec.md)[]*
+**Returns:** *[Codec](../interfaces/_types_codec_.codec.md)[]*
 
 ___
 
@@ -326,7 +355,7 @@ ___
 
 *Inherited from [Struct](_codec_struct_.struct.md).[toHex](_codec_struct_.struct.md#tohex)*
 
-*Defined in [codec/Struct.ts:215](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L215)*
+*Defined in [packages/types/src/codec/Struct.ts:228](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L228)*
 
 **`description`** Returns a hex string representation of the value
 
@@ -334,19 +363,41 @@ ___
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(`isExpanded?`: undefined | false | true): *[AnyJsonObject](../interfaces/_types_helpers_.anyjsonobject.md)*
+
+*Implementation of [IMethod](../interfaces/_types_interfaces_.imethod.md)*
+
+*Overrides [Struct](_codec_struct_.struct.md).[toHuman](_codec_struct_.struct.md#tohuman)*
+
+*Defined in [packages/types/src/primitive/Generic/Call.ts:205](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L205)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`isExpanded?` | undefined &#124; false &#124; true |
+
+**Returns:** *[AnyJsonObject](../interfaces/_types_helpers_.anyjsonobject.md)*
+
+___
+
 ###  toJSON
 
-▸ **toJSON**(): *[AnyJsonObject](../interfaces/_types_.anyjsonobject.md) | string*
+▸ **toJSON**(): *[AnyJsonObject](../interfaces/_types_helpers_.anyjsonobject.md)*
 
-*Implementation of [IMethod](../interfaces/_types_.imethod.md)*
+*Implementation of [IMethod](../interfaces/_types_interfaces_.imethod.md)*
 
 *Inherited from [Struct](_codec_struct_.struct.md).[toJSON](_codec_struct_.struct.md#tojson)*
 
-*Defined in [codec/Struct.ts:222](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L222)*
+*Defined in [packages/types/src/codec/Struct.ts:249](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L249)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
-**Returns:** *[AnyJsonObject](../interfaces/_types_.anyjsonobject.md) | string*
+**Returns:** *[AnyJsonObject](../interfaces/_types_helpers_.anyjsonobject.md)*
 
 ___
 
@@ -354,11 +405,11 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [IMethod](../interfaces/_types_.imethod.md)*
+*Implementation of [IMethod](../interfaces/_types_interfaces_.imethod.md)*
 
 *Overrides [Struct](_codec_struct_.struct.md).[toRawType](_codec_struct_.struct.md#torawtype)*
 
-*Defined in [primitive/Generic/Call.ts:231](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L231)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:229](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L229)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -370,11 +421,11 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [IMethod](../interfaces/_types_.imethod.md)*
+*Implementation of [IMethod](../interfaces/_types_interfaces_.imethod.md)*
 
 *Inherited from [Struct](_codec_struct_.struct.md).[toString](_codec_struct_.struct.md#tostring)*
 
-*Defined in [codec/Struct.ts:255](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L255)*
+*Defined in [packages/types/src/codec/Struct.ts:282](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L282)*
 
 **`description`** Returns the string representation of the value
 
@@ -384,13 +435,13 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
+▸ **toU8a**(`isBare?`: [BareOpts](../modules/_types_helpers_.md#bareopts)): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Implementation of [IMethod](../interfaces/_types_.imethod.md)*
+*Implementation of [IMethod](../interfaces/_types_interfaces_.imethod.md)*
 
 *Inherited from [Struct](_codec_struct_.struct.md).[toU8a](_codec_struct_.struct.md#tou8a)*
 
-*Defined in [codec/Struct.ts:263](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L263)*
+*Defined in [packages/types/src/codec/Struct.ts:290](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L290)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -398,17 +449,17 @@ ___
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
+`isBare?` | [BareOpts](../modules/_types_helpers_.md#bareopts) | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 ___
 
 ### `Static` filterOrigin
 
-▸ **filterOrigin**(`meta?`: [FunctionMetadataLatest](../interfaces/_interfaceregistry_.interfaceregistry.md#functionmetadatalatest)): *[FunctionArgumentMetadataLatest](../interfaces/_interfaces_metadata_types_.functionargumentmetadatalatest.md)[]*
+▸ **filterOrigin**(`meta?`: [FunctionMetadataLatest](../interfaces/_interfaceregistry_.interfaceregistry.md#functionmetadatalatest)): *FunctionArgumentMetadataLatest[]*
 
-*Defined in [primitive/Generic/Call.ts:120](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L120)*
+*Defined in [packages/types/src/primitive/Generic/Call.ts:134](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Call.ts#L134)*
 
 **Parameters:**
 
@@ -416,55 +467,24 @@ Name | Type |
 ------ | ------ |
 `meta?` | [FunctionMetadataLatest](../interfaces/_interfaceregistry_.interfaceregistry.md#functionmetadatalatest) |
 
-**Returns:** *[FunctionArgumentMetadataLatest](../interfaces/_interfaces_metadata_types_.functionargumentmetadatalatest.md)[]*
-
-___
-
-### `Static` findFunction
-
-▸ **findFunction**(`callIndex`: Uint8Array): *[CallFunction](../interfaces/_types_.callfunction.md)*
-
-*Defined in [primitive/Generic/Call.ts:136](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L136)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`callIndex` | Uint8Array |
-
-**Returns:** *[CallFunction](../interfaces/_types_.callfunction.md)*
-
-___
-
-### `Static` injectMetadata
-
-▸ **injectMetadata**(`metadata`: [Metadata](_metadata_metadata_.metadata.md)): *void*
-
-*Defined in [primitive/Generic/Call.ts:159](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Call.ts#L159)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`metadata` | [Metadata](_metadata_metadata_.metadata.md) |
-
-**Returns:** *void*
+**Returns:** *FunctionArgumentMetadataLatest[]*
 
 ___
 
 ### `Static` typesToMap
 
-▸ **typesToMap**(`Types`: Record‹string, [Constructor](../interfaces/_types_.constructor.md)›): *Record‹string, string›*
+▸ **typesToMap**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `Types`: Record‹string, [Constructor](../interfaces/_types_codec_.constructor.md)›): *Record‹string, string›*
 
 *Inherited from [Struct](_codec_struct_.struct.md).[typesToMap](_codec_struct_.struct.md#static-typestomap)*
 
-*Defined in [codec/Struct.ts:235](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L235)*
+*Defined in [packages/types/src/codec/Struct.ts:262](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L262)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`Types` | Record‹string, [Constructor](../interfaces/_types_.constructor.md)› |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) |
+`Types` | Record‹string, [Constructor](../interfaces/_types_codec_.constructor.md)› |
 
 **Returns:** *Record‹string, string›*
 
@@ -472,11 +492,11 @@ ___
 
 ### `Static` with
 
-▸ **with**<**S**>(`Types`: S): *[Constructor](../interfaces/_types_.constructor.md)‹[Struct](_codec_struct_.struct.md)‹S››*
+▸ **with**<**S**>(`Types`: S): *[Constructor](../interfaces/_types_codec_.constructor.md)‹[Struct](_codec_struct_.struct.md)‹S››*
 
 *Inherited from [Struct](_codec_struct_.struct.md).[with](_codec_struct_.struct.md#static-with)*
 
-*Defined in [codec/Struct.ts:117](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L117)*
+*Defined in [packages/types/src/codec/Struct.ts:123](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L123)*
 
 **Type parameters:**
 
@@ -488,4 +508,4 @@ Name | Type |
 ------ | ------ |
 `Types` | S |
 
-**Returns:** *[Constructor](../interfaces/_types_.constructor.md)‹[Struct](_codec_struct_.struct.md)‹S››*
+**Returns:** *[Constructor](../interfaces/_types_codec_.constructor.md)‹[Struct](_codec_struct_.struct.md)‹S››*

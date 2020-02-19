@@ -11,3 +11,15 @@
 ### Interfaces
 
 * [ExtrinsicValueV4](../interfaces/_primitive_extrinsic_v4_extrinsic_.extrinsicvaluev4.md)
+
+### Variables
+
+* [TRANSACTION_VERSION](_primitive_extrinsic_v4_extrinsic_.md#const-transaction_version)
+
+## Variables
+
+### `Const` TRANSACTION_VERSION
+
+• **TRANSACTION_VERSION**: *4* = 4
+
+*Defined in [packages/types/src/primitive/Extrinsic/v4/Extrinsic.ts:14](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/v4/Extrinsic.ts#L14)*

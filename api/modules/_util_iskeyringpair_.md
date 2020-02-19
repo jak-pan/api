@@ -12,9 +12,9 @@
 
 ###  isKeyringPair
 
-▸ **isKeyringPair**(`account`: string | IKeyringPair | AccountId | Address): *boolean*
+▸ **isKeyringPair**(`account`: string | IKeyringPair | AccountId | Address): *account is IKeyringPair*
 
-*Defined in [util/isKeyringPair.ts:10](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/util/isKeyringPair.ts#L10)*
+*Defined in [api/src/util/isKeyringPair.ts:10](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/util/isKeyringPair.ts#L10)*
 
 **Parameters:**
 
@@ -22,4 +22,4 @@ Name | Type |
 ------ | ------ |
 `account` | string &#124; IKeyringPair &#124; AccountId &#124; Address |
 
-**Returns:** *boolean*
+**Returns:** *account is IKeyringPair*

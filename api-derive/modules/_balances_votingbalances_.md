@@ -14,7 +14,7 @@
 
 ▸ **votingBalances**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [balances/votingBalances.ts:14](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/balances/votingBalances.ts#L14)*
+*Defined in [packages/api-derive/src/balances/votingBalances.ts:13](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/balances/votingBalances.ts#L13)*
 
 **Parameters:**
 
@@ -24,10 +24,10 @@ Name | Type |
 
 **Returns:** *function*
 
-▸ (`addresses?`: string | AccountIndex | AccountId | Address[]): *Observable‹[DerivedBalances](../interfaces/_types_.derivedbalances.md)[]›*
+▸ (`addresses?`: string | AccountId‹› | AccountIndex‹› | Address‹›[]): *Observable‹DerivedBalancesAccount[]›*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`addresses?` | string &#124; AccountIndex &#124; AccountId &#124; Address[] |
+`addresses?` | string &#124; AccountId‹› &#124; AccountIndex‹› &#124; Address‹›[] |

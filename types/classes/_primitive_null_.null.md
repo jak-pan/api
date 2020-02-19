@@ -11,21 +11,23 @@ Implements a type that does not contain anything (apart from `null`)
 
 * **Null**
 
-  ↳ [Phantom](../interfaces/_interfaces_runtime_types_.phantom.md)
-
-  ↳ [PhantomData](../interfaces/_interfaces_runtime_types_.phantomdata.md)
-
-  ↳ [InherentOfflineReport](../interfaces/_interfaces_deprecated_types_.inherentofflinereport.md)
+  ↳ [Unconstructable](_primitive_unconstructable_.unconstructable.md)
 
   ↳ [Origin](_primitive_generic_origin_.origin.md)
 
-  ↳ [Unconstructable](_primitive_unconstructable_.unconstructable.md)
-
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [Codec](../interfaces/_types_codec_.codec.md)
 
 ## Index
+
+### Constructors
+
+* [constructor](_primitive_null_.null.md#constructor)
+
+### Properties
+
+* [registry](_primitive_null_.null.md#registry)
 
 ### Accessors
 
@@ -37,10 +39,37 @@ Implements a type that does not contain anything (apart from `null`)
 
 * [eq](_primitive_null_.null.md#eq)
 * [toHex](_primitive_null_.null.md#tohex)
+* [toHuman](_primitive_null_.null.md#tohuman)
 * [toJSON](_primitive_null_.null.md#tojson)
 * [toRawType](_primitive_null_.null.md#torawtype)
 * [toString](_primitive_null_.null.md#tostring)
 * [toU8a](_primitive_null_.null.md#tou8a)
+
+## Constructors
+
+###  constructor
+
+\+ **new Null**(`registry`: [Registry](../interfaces/_types_registry_.registry.md)): *[Null](_primitive_null_.null.md)*
+
+*Defined in [packages/types/src/primitive/Null.ts:16](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L16)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) |
+
+**Returns:** *[Null](_primitive_null_.null.md)*
+
+## Properties
+
+###  registry
+
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md).[registry](../interfaces/_types_codec_.codec.md#registry)*
+
+*Defined in [packages/types/src/primitive/Null.ts:16](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L16)*
 
 ## Accessors
 
@@ -48,7 +77,7 @@ Implements a type that does not contain anything (apart from `null`)
 
 • **get encodedLength**(): *number*
 
-*Defined in [primitive/Null.ts:18](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Null.ts#L18)*
+*Defined in [packages/types/src/primitive/Null.ts:25](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L25)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -58,13 +87,13 @@ ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
-*Defined in [primitive/Null.ts:25](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Null.ts#L25)*
+*Defined in [packages/types/src/primitive/Null.ts:32](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L32)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
 
 ___
 
@@ -72,7 +101,7 @@ ___
 
 • **get isEmpty**(): *boolean*
 
-*Defined in [primitive/Null.ts:32](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Null.ts#L32)*
+*Defined in [packages/types/src/primitive/Null.ts:39](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L39)*
 
 **`description`** Checks if the value is an empty value (always true)
 
@@ -84,9 +113,9 @@ ___
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [primitive/Null.ts:39](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Null.ts#L39)*
+*Defined in [packages/types/src/primitive/Null.ts:46](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L46)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -104,7 +133,7 @@ ___
 
 ▸ **toHex**(): *string*
 
-*Defined in [primitive/Null.ts:46](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Null.ts#L46)*
+*Defined in [packages/types/src/primitive/Null.ts:53](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L53)*
 
 **`description`** Returns a hex string representation of the value
 
@@ -112,13 +141,25 @@ ___
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(): *null*
+
+*Defined in [packages/types/src/primitive/Null.ts:60](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L60)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Returns:** *null*
+
+___
+
 ###  toJSON
 
 ▸ **toJSON**(): *null*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [primitive/Null.ts:53](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Null.ts#L53)*
+*Defined in [packages/types/src/primitive/Null.ts:67](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L67)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
@@ -130,9 +171,9 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [primitive/Null.ts:60](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Null.ts#L60)*
+*Defined in [packages/types/src/primitive/Null.ts:74](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L74)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -144,9 +185,9 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [primitive/Null.ts:67](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Null.ts#L67)*
+*Defined in [packages/types/src/primitive/Null.ts:81](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L81)*
 
 **`description`** Returns the string representation of the value
 
@@ -156,11 +197,9 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
+▸ **toU8a**(`isBare?`: undefined | false | true): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
-
-*Defined in [primitive/Null.ts:76](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Null.ts#L76)*
+*Defined in [packages/types/src/primitive/Null.ts:90](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Null.ts#L90)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -170,4 +209,4 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*

@@ -14,7 +14,7 @@
 
 ▸ **receivedHeartbeats**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [imOnline/receivedHeartbeats.ts:17](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/imOnline/receivedHeartbeats.ts#L17)*
+*Defined in [packages/api-derive/src/imOnline/receivedHeartbeats.ts:18](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/imOnline/receivedHeartbeats.ts#L18)*
 
 **`description`** Return a boolean array indicating whether the passed accounts had received heartbeats in the current session
 
@@ -26,10 +26,4 @@ Name | Type |
 
 **Returns:** *function*
 
-▸ (`addresses`: string | AccountId[]): *Observable‹boolean[]›*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`addresses` | string &#124; AccountId[] |
+▸ (): *Observable‹DerivedHeartbeats›*

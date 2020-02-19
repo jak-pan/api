@@ -12,7 +12,7 @@ with a value if/as required/found.
 
 ## Type parameters
 
-▪ **T**: *[Codec](../interfaces/_types_.codec.md)*
+▪ **T**: *[Codec](../interfaces/_types_codec_.codec.md)*
 
 ## Hierarchy
 
@@ -20,19 +20,19 @@ with a value if/as required/found.
 
   ↳ **Option**
 
-  ↳ [MaybeVrf](../interfaces/_interfaces_babe_types_.maybevrf.md)
-
-  ↳ [PrefabWasmModuleReserved](../interfaces/_interfaces_contracts_types_.prefabwasmmodulereserved.md)
-
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [Codec](../interfaces/_types_codec_.codec.md)
 
 ## Index
 
 ### Constructors
 
 * [constructor](_codec_option_.option.md#constructor)
+
+### Properties
+
+* [registry](_codec_option_.option.md#registry)
 
 ### Accessors
 
@@ -47,33 +47,44 @@ with a value if/as required/found.
 
 * [eq](_codec_option_.option.md#eq)
 * [toHex](_codec_option_.option.md#tohex)
+* [toHuman](_codec_option_.option.md#tohuman)
 * [toJSON](_codec_option_.option.md#tojson)
 * [toRawType](_codec_option_.option.md#torawtype)
 * [toString](_codec_option_.option.md#tostring)
 * [toU8a](_codec_option_.option.md#tou8a)
 * [unwrap](_codec_option_.option.md#unwrap)
 * [unwrapOr](_codec_option_.option.md#unwrapor)
-* [decodeOption](_codec_option_.option.md#static-decodeoption)
 * [with](_codec_option_.option.md#static-with)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new Option**(`Type`: [Constructor](../interfaces/_types_.constructor.md) | [InterfaceTypes](../modules/_types_.md#interfacetypes), `value?`: any): *[Option](_codec_option_.option.md)*
+\+ **new Option**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `Type`: [Constructor](../interfaces/_types_codec_.constructor.md) | [InterfaceTypes](../modules/_types_helpers_.md#interfacetypes), `value?`: any): *[Option](_codec_option_.option.md)*
 
-*Overrides [Base](_codec_base_.base.md).[constructor](_codec_base_.base.md#constructor)*
-
-*Defined in [codec/Option.ts:22](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L22)*
+*Defined in [packages/types/src/codec/Option.ts:22](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L22)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`Type` | [Constructor](../interfaces/_types_.constructor.md) &#124; [InterfaceTypes](../modules/_types_.md#interfacetypes) |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) |
+`Type` | [Constructor](../interfaces/_types_codec_.constructor.md) &#124; [InterfaceTypes](../modules/_types_helpers_.md#interfacetypes) |
 `value?` | any |
 
 **Returns:** *[Option](_codec_option_.option.md)*
+
+## Properties
+
+###  registry
+
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md).[registry](../interfaces/_types_codec_.codec.md#registry)*
+
+*Inherited from [Base](_codec_base_.base.md).[registry](_codec_base_.base.md#registry)*
+
+*Defined in [packages/types/src/codec/Base.ts:17](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L17)*
 
 ## Accessors
 
@@ -83,7 +94,7 @@ Name | Type |
 
 *Overrides [Base](_codec_base_.base.md).[encodedLength](_codec_base_.base.md#encodedlength)*
 
-*Defined in [codec/Option.ts:66](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L66)*
+*Defined in [packages/types/src/codec/Option.ts:68](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L68)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -93,15 +104,15 @@ ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
 *Inherited from [Base](_codec_base_.base.md).[hash](_codec_base_.base.md#hash)*
 
-*Defined in [codec/Base.ts:32](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L32)*
+*Defined in [packages/types/src/codec/Base.ts:36](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L36)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
 
 ___
 
@@ -111,7 +122,7 @@ ___
 
 *Overrides [Base](_codec_base_.base.md).[isEmpty](_codec_base_.base.md#isempty)*
 
-*Defined in [codec/Option.ts:74](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L74)*
+*Defined in [packages/types/src/codec/Option.ts:76](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L76)*
 
 **`description`** Checks if the Option has no value
 
@@ -123,7 +134,7 @@ ___
 
 • **get isNone**(): *boolean*
 
-*Defined in [codec/Option.ts:81](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L81)*
+*Defined in [packages/types/src/codec/Option.ts:83](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L83)*
 
 **`description`** Checks if the Option has no value
 
@@ -135,7 +146,7 @@ ___
 
 • **get isSome**(): *boolean*
 
-*Defined in [codec/Option.ts:88](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L88)*
+*Defined in [packages/types/src/codec/Option.ts:90](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L90)*
 
 **`description`** Checks if the Option has a value
 
@@ -145,13 +156,13 @@ ___
 
 ###  value
 
-• **get value**(): *[Codec](../interfaces/_types_.codec.md)*
+• **get value**(): *[Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Option.ts:95](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L95)*
+*Defined in [packages/types/src/codec/Option.ts:97](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L97)*
 
 **`description`** The actual value for the Option
 
-**Returns:** *[Codec](../interfaces/_types_.codec.md)*
+**Returns:** *[Codec](../interfaces/_types_codec_.codec.md)*
 
 ## Methods
 
@@ -159,11 +170,11 @@ ___
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Overrides [Base](_codec_base_.base.md).[eq](_codec_base_.base.md#eq)*
 
-*Defined in [codec/Option.ts:102](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L102)*
+*Defined in [packages/types/src/codec/Option.ts:104](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L104)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -183,7 +194,7 @@ ___
 
 *Overrides [Base](_codec_base_.base.md).[toHex](_codec_base_.base.md#tohex)*
 
-*Defined in [codec/Option.ts:113](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L113)*
+*Defined in [packages/types/src/codec/Option.ts:115](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L115)*
 
 **`description`** Returns a hex string representation of the value
 
@@ -191,19 +202,41 @@ ___
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(`isExtended?`: undefined | false | true): *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
+
+*Inherited from [Base](_codec_base_.base.md).[toHuman](_codec_base_.base.md#tohuman)*
+
+*Defined in [packages/types/src/codec/Base.ts:64](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L64)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`isExtended?` | undefined &#124; false &#124; true |
+
+**Returns:** *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+___
+
 ###  toJSON
 
-▸ **toJSON**(): *[AnyJson](../modules/_types_.md#anyjson)*
+▸ **toJSON**(): *[AnyJson](../modules/_types_helpers_.md#anyjson)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Inherited from [Base](_codec_base_.base.md).[toJSON](_codec_base_.base.md#tojson)*
 
-*Defined in [codec/Base.ts:60](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L60)*
+*Defined in [packages/types/src/codec/Base.ts:71](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L71)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
-**Returns:** *[AnyJson](../modules/_types_.md#anyjson)*
+**Returns:** *[AnyJson](../modules/_types_helpers_.md#anyjson)*
 
 ___
 
@@ -213,7 +246,7 @@ ___
 
 *Overrides [Base](_codec_base_.base.md).[toRawType](_codec_base_.base.md#torawtype)*
 
-*Defined in [codec/Option.ts:124](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L124)*
+*Defined in [packages/types/src/codec/Option.ts:126](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L126)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -231,11 +264,11 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Inherited from [Base](_codec_base_.base.md).[toString](_codec_base_.base.md#tostring)*
 
-*Defined in [codec/Base.ts:67](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L67)*
+*Defined in [packages/types/src/codec/Base.ts:78](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L78)*
 
 **`description`** Returns the string representation of the value
 
@@ -245,13 +278,11 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
-
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+▸ **toU8a**(`isBare?`: undefined | false | true): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 *Overrides [Base](_codec_base_.base.md).[toU8a](_codec_base_.base.md#tou8a)*
 
-*Defined in [codec/Option.ts:136](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L136)*
+*Defined in [packages/types/src/codec/Option.ts:138](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L138)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -261,7 +292,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 ___
 
@@ -269,7 +300,7 @@ ___
 
 ▸ **unwrap**(): *T*
 
-*Defined in [codec/Option.ts:154](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L154)*
+*Defined in [packages/types/src/codec/Option.ts:156](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L156)*
 
 **`description`** Returns the value that the Option represents (if available), throws if null
 
@@ -281,7 +312,7 @@ ___
 
 ▸ **unwrapOr**<**O**>(`defaultValue`: O): *T | O*
 
-*Defined in [codec/Option.ts:166](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L166)*
+*Defined in [packages/types/src/codec/Option.ts:168](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L168)*
 
 **`description`** Returns the value that the Option represents (if available) or defaultValue if none
 
@@ -299,37 +330,20 @@ Name | Type | Description |
 
 ___
 
-### `Static` decodeOption
-
-▸ **decodeOption**(`Type`: [Constructor](../interfaces/_types_.constructor.md), `value?`: any): *[Codec](../interfaces/_types_.codec.md)*
-
-*Defined in [codec/Option.ts:32](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L32)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`Type` | [Constructor](../interfaces/_types_.constructor.md) |
-`value?` | any |
-
-**Returns:** *[Codec](../interfaces/_types_.codec.md)*
-
-___
-
 ### `Static` with
 
-▸ **with**<**O**>(`Type`: [Constructor](../interfaces/_types_.constructor.md) | [InterfaceTypes](../modules/_types_.md#interfacetypes)): *[Constructor](../interfaces/_types_.constructor.md)‹[Option](_codec_option_.option.md)‹O››*
+▸ **with**<**O**>(`Type`: [Constructor](../interfaces/_types_codec_.constructor.md) | [InterfaceTypes](../modules/_types_helpers_.md#interfacetypes)): *[Constructor](../interfaces/_types_codec_.constructor.md)‹[Option](_codec_option_.option.md)‹O››*
 
-*Defined in [codec/Option.ts:55](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Option.ts#L55)*
+*Defined in [packages/types/src/codec/Option.ts:57](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Option.ts#L57)*
 
 **Type parameters:**
 
-▪ **O**: *[Codec](../interfaces/_types_.codec.md)*
+▪ **O**: *[Codec](../interfaces/_types_codec_.codec.md)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`Type` | [Constructor](../interfaces/_types_.constructor.md) &#124; [InterfaceTypes](../modules/_types_.md#interfacetypes) |
+`Type` | [Constructor](../interfaces/_types_codec_.constructor.md) &#124; [InterfaceTypes](../modules/_types_helpers_.md#interfacetypes) |
 
-**Returns:** *[Constructor](../interfaces/_types_.constructor.md)‹[Option](_codec_option_.option.md)‹O››*
+**Returns:** *[Constructor](../interfaces/_types_codec_.constructor.md)‹[Option](_codec_option_.option.md)‹O››*

@@ -4,7 +4,7 @@
 
 ## Type parameters
 
-▪ **ApiType**
+▪ **ApiType**: *[ApiTypes](../modules/_types_base_.md#apitypes)*
 
 ## Hierarchy
 
@@ -18,12 +18,18 @@
 
 * [constructor](_base_init_.init.md#constructor)
 
+### Properties
+
+* [registry](_base_init_.init.md#registry)
+
 ### Accessors
 
 * [hasSubscriptions](_base_init_.init.md#hassubscriptions)
 
 ### Methods
 
+* [createType](_base_init_.init.md#abstract-createtype)
+* [injectMetadata](_base_init_.init.md#injectmetadata)
 * [off](_base_init_.init.md#off)
 * [on](_base_init_.init.md#on)
 * [once](_base_init_.init.md#once)
@@ -33,21 +39,31 @@
 
 ###  constructor
 
-\+ **new Init**(`options`: [ApiOptions](../interfaces/_types_.apioptions.md), `type`: [ApiTypes](../modules/_types_.md#apitypes), `decorateMethod`: [DecorateMethod](../modules/_types_.md#decoratemethod)‹ApiType›): *[Init](_base_init_.init.md)*
+\+ **new Init**(`options`: ApiOptions, `type`: [ApiTypes](../modules/_types_base_.md#apitypes), `decorateMethod`: [DecorateMethod](../modules/_types_base_.md#decoratemethod)‹ApiType›): *[Init](_base_init_.init.md)*
 
 *Overrides [Decorate](_base_decorate_.decorate.md).[constructor](_base_decorate_.decorate.md#constructor)*
 
-*Defined in [base/Init.ts:57](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Init.ts#L57)*
+*Defined in [api/src/base/Init.ts:21](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Init.ts#L21)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`options` | [ApiOptions](../interfaces/_types_.apioptions.md) |
-`type` | [ApiTypes](../modules/_types_.md#apitypes) |
-`decorateMethod` | [DecorateMethod](../modules/_types_.md#decoratemethod)‹ApiType› |
+`options` | ApiOptions |
+`type` | [ApiTypes](../modules/_types_base_.md#apitypes) |
+`decorateMethod` | [DecorateMethod](../modules/_types_base_.md#decoratemethod)‹ApiType› |
 
 **Returns:** *[Init](_base_init_.init.md)*
+
+## Properties
+
+###  registry
+
+• **registry**: *Registry*
+
+*Inherited from [Init](_base_init_.init.md).[registry](_base_init_.init.md#registry)*
+
+*Defined in [api/src/base/Decorate.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L43)*
 
 ## Accessors
 
@@ -55,9 +71,9 @@ Name | Type |
 
 • **get hasSubscriptions**(): *boolean*
 
-*Inherited from [Decorate](_base_decorate_.decorate.md).[hasSubscriptions](_base_decorate_.decorate.md#hassubscriptions)*
+*Inherited from [Init](_base_init_.init.md).[hasSubscriptions](_base_init_.init.md#hassubscriptions)*
 
-*Defined in [base/Decorate.ts:132](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Decorate.ts#L132)*
+*Defined in [api/src/base/Decorate.ts:145](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L145)*
 
 **Returns:** *boolean*
 
@@ -65,13 +81,54 @@ Name | Type |
 
 ## Methods
 
+### `Abstract` createType
+
+▸ **createType**<**K**>(`type`: K, ...`params`: any[]): *InterfaceRegistry[K]*
+
+*Inherited from [Init](_base_init_.init.md).[createType](_base_init_.init.md#abstract-createtype)*
+
+*Defined in [api/src/base/Decorate.ts:138](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L138)*
+
+**Type parameters:**
+
+▪ **K**: *InterfaceTypes*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`type` | K |
+`...params` | any[] |
+
+**Returns:** *InterfaceRegistry[K]*
+
+___
+
+###  injectMetadata
+
+▸ **injectMetadata**(`metadata`: Metadata): *void*
+
+*Inherited from [Init](_base_init_.init.md).[injectMetadata](_base_init_.init.md#injectmetadata)*
+
+*Defined in [api/src/base/Decorate.ts:149](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L149)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`metadata` | Metadata |
+
+**Returns:** *void*
+
+___
+
 ###  off
 
-▸ **off**(`type`: [ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents), `handler`: function): *this*
+▸ **off**(`type`: ApiInterfaceEvents, `handler`: function): *this*
 
-*Inherited from [Events](_base_events_.events.md).[off](_base_events_.events.md#off)*
+*Inherited from [Init](_base_init_.init.md).[off](_base_init_.init.md#off)*
 
-*Defined in [base/Events.ts:62](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Events.ts#L62)*
+*Defined in [api/src/base/Events.ts:62](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Events.ts#L62)*
 
 **`description`** Remove the given eventemitter handler
 
@@ -92,7 +149,7 @@ api.off('connected', handler);
 
 **Parameters:**
 
-▪ **type**: *[ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents)*
+▪ **type**: *ApiInterfaceEvents*
 
 The type of event the callback was attached to. Available events are `connected`, `disconnected`, `ready` and `error`
 
@@ -114,11 +171,11 @@ ___
 
 ###  on
 
-▸ **on**(`type`: [ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents), `handler`: function): *this*
+▸ **on**(`type`: ApiInterfaceEvents, `handler`: function): *this*
 
-*Inherited from [Events](_base_events_.events.md).[on](_base_events_.events.md#on)*
+*Inherited from [Init](_base_init_.init.md).[on](_base_init_.init.md#on)*
 
-*Defined in [base/Events.ts:35](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Events.ts#L35)*
+*Defined in [api/src/base/Events.ts:35](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Events.ts#L35)*
 
 **`description`** Attach an eventemitter handler to listen to a specific event
 
@@ -137,7 +194,7 @@ api.on('disconnected', (): void => {
 
 **Parameters:**
 
-▪ **type**: *[ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents)*
+▪ **type**: *ApiInterfaceEvents*
 
 The type of event to listen to. Available events are `connected`, `disconnected`, `ready` and `error`
 
@@ -159,11 +216,11 @@ ___
 
 ###  once
 
-▸ **once**(`type`: [ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents), `handler`: function): *this*
+▸ **once**(`type`: ApiInterfaceEvents, `handler`: function): *this*
 
-*Inherited from [Events](_base_events_.events.md).[once](_base_events_.events.md#once)*
+*Inherited from [Init](_base_init_.init.md).[once](_base_init_.init.md#once)*
 
-*Defined in [base/Events.ts:87](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Events.ts#L87)*
+*Defined in [api/src/base/Events.ts:87](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Events.ts#L87)*
 
 **`description`** Attach an one-time eventemitter handler to listen to a specific event
 
@@ -182,7 +239,7 @@ api.once('disconnected', (): void => {
 
 **Parameters:**
 
-▪ **type**: *[ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents)*
+▪ **type**: *ApiInterfaceEvents*
 
 The type of event to listen to. Available events are `connected`, `disconnected`, `ready` and `error`
 
@@ -206,7 +263,9 @@ ___
 
 ▸ **registerTypes**(`types?`: RegistryTypes): *void*
 
-*Defined in [base/Init.ts:84](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Init.ts#L84)*
+*Inherited from [Init](_base_init_.init.md).[registerTypes](_base_init_.init.md#abstract-registertypes)*
+
+*Defined in [api/src/base/Decorate.ts:140](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L140)*
 
 **Parameters:**
 

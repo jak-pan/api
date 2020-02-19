@@ -4,21 +4,9 @@
 
 ## Index
 
-### Type aliases
-
-* [AccountIndexes](_accounts_indexes_.md#accountindexes)
-
 ### Functions
 
 * [indexes](_accounts_indexes_.md#indexes)
-
-## Type aliases
-
-###  AccountIndexes
-
-Ƭ **AccountIndexes**: *Record‹string, AccountIndex›*
-
-*Defined in [accounts/indexes.ts:15](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/accounts/indexes.ts#L15)*
 
 ## Functions
 
@@ -26,7 +14,7 @@
 
 ▸ **indexes**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [accounts/indexes.ts:34](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/accounts/indexes.ts#L34)*
+*Defined in [packages/api-derive/src/accounts/indexes.ts:63](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/accounts/indexes.ts#L63)*
 
 **`name`** indexes
 
@@ -53,4 +41,4 @@ Name | Type |
 
 Returns all the indexes on the system.
 
-▸ (): *Observable‹[AccountIndexes](_accounts_indexes_.md#accountindexes)›*
+▸ (): *Observable‹AccountIndexes›*

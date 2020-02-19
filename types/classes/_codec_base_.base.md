@@ -8,7 +8,7 @@
 
 ## Type parameters
 
-▪ **T**: *[Codec](../interfaces/_types_.codec.md)*
+▪ **T**: *[Codec](../interfaces/_types_codec_.codec.md)*
 
 ## Hierarchy
 
@@ -28,13 +28,13 @@
 
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [Codec](../interfaces/_types_codec_.codec.md)
 
 ## Index
 
-### Constructors
+### Properties
 
-* [constructor](_codec_base_.base.md#constructor)
+* [registry](_codec_base_.base.md#registry)
 
 ### Accessors
 
@@ -46,26 +46,21 @@
 
 * [eq](_codec_base_.base.md#eq)
 * [toHex](_codec_base_.base.md#tohex)
+* [toHuman](_codec_base_.base.md#tohuman)
 * [toJSON](_codec_base_.base.md#tojson)
 * [toRawType](_codec_base_.base.md#torawtype)
 * [toString](_codec_base_.base.md#tostring)
 * [toU8a](_codec_base_.base.md#tou8a)
 
-## Constructors
+## Properties
 
-###  constructor
+###  registry
 
-\+ **new Base**(`value?`: any): *[Base](_codec_base_.base.md)*
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
 
-*Defined in [codec/Base.ts:16](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L16)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md).[registry](../interfaces/_types_codec_.codec.md#registry)*
 
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`value?` | any |
-
-**Returns:** *[Base](_codec_base_.base.md)*
+*Defined in [packages/types/src/codec/Base.ts:17](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L17)*
 
 ## Accessors
 
@@ -73,7 +68,7 @@ Name | Type |
 
 • **get encodedLength**(): *number*
 
-*Defined in [codec/Base.ts:25](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L25)*
+*Defined in [packages/types/src/codec/Base.ts:29](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L29)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -83,13 +78,13 @@ ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
-*Defined in [codec/Base.ts:32](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L32)*
+*Defined in [packages/types/src/codec/Base.ts:36](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L36)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
 
 ___
 
@@ -97,7 +92,7 @@ ___
 
 • **get isEmpty**(): *boolean*
 
-*Defined in [codec/Base.ts:39](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L39)*
+*Defined in [packages/types/src/codec/Base.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L43)*
 
 **`description`** Checks if the value is an empty value
 
@@ -109,9 +104,9 @@ ___
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Base.ts:46](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L46)*
+*Defined in [packages/types/src/codec/Base.ts:50](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L50)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -129,9 +124,9 @@ ___
 
 ▸ **toHex**(`isLe?`: undefined | false | true): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Base.ts:53](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L53)*
+*Defined in [packages/types/src/codec/Base.ts:57](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L57)*
 
 **`description`** Returns a hex string representation of the value. isLe returns a LE (number-only) representation
 
@@ -145,17 +140,37 @@ Name | Type |
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(`isExtended?`: undefined | false | true): *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
+
+*Defined in [packages/types/src/codec/Base.ts:64](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L64)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`isExtended?` | undefined &#124; false &#124; true |
+
+**Returns:** *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+___
+
 ###  toJSON
 
-▸ **toJSON**(): *[AnyJson](../modules/_types_.md#anyjson)*
+▸ **toJSON**(): *[AnyJson](../modules/_types_helpers_.md#anyjson)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Base.ts:60](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L60)*
+*Defined in [packages/types/src/codec/Base.ts:71](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L71)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
-**Returns:** *[AnyJson](../modules/_types_.md#anyjson)*
+**Returns:** *[AnyJson](../modules/_types_helpers_.md#anyjson)*
 
 ___
 
@@ -163,9 +178,9 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Base.ts:82](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L82)*
+*Defined in [packages/types/src/codec/Base.ts:93](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L93)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -177,9 +192,9 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Base.ts:67](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L67)*
+*Defined in [packages/types/src/codec/Base.ts:78](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L78)*
 
 **`description`** Returns the string representation of the value
 
@@ -189,11 +204,11 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
+▸ **toU8a**(`isBare?`: [BareOpts](../modules/_types_helpers_.md#bareopts)): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Base.ts:75](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L75)*
+*Defined in [packages/types/src/codec/Base.ts:86](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L86)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -201,6 +216,6 @@ ___
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
+`isBare?` | [BareOpts](../modules/_types_helpers_.md#bareopts) | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*

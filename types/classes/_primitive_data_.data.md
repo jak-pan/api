@@ -5,21 +5,17 @@
 **`name`** Data
 
 **`description`** 
-A raw data structure. It is just an encoding of a U8a, without any length encoding
+A [Data](_primitive_data_.data.md) container with node, raw or hashed data
 
 ## Hierarchy
 
-  ↳ [U8a](_codec_u8a_.u8a.md)
+  ↳ [Enum](_codec_enum_.enum.md)
 
   ↳ **Data**
 
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
-
-## Indexable
-
-* \[ **index**: *number*\]: number
+* [Codec](../interfaces/_types_codec_.codec.md)
 
 ## Index
 
@@ -27,53 +23,130 @@ A raw data structure. It is just an encoding of a U8a, without any length encodi
 
 * [constructor](_primitive_data_.data.md#constructor)
 
+### Properties
+
+* [registry](_primitive_data_.data.md#registry)
+
 ### Accessors
 
+* [asRaw](_primitive_data_.data.md#asraw)
+* [asSha256](_primitive_data_.data.md#assha256)
+* [defEntries](_primitive_data_.data.md#defentries)
+* [defKeys](_primitive_data_.data.md#defkeys)
 * [encodedLength](_primitive_data_.data.md#encodedlength)
 * [hash](_primitive_data_.data.md#hash)
+* [index](_primitive_data_.data.md#index)
+* [isBasic](_primitive_data_.data.md#isbasic)
 * [isEmpty](_primitive_data_.data.md#isempty)
-* [length](_primitive_data_.data.md#length)
+* [isNone](_primitive_data_.data.md#isnone)
+* [isNull](_primitive_data_.data.md#isnull)
+* [isRaw](_primitive_data_.data.md#israw)
+* [isSha256](_primitive_data_.data.md#issha256)
+* [type](_primitive_data_.data.md#type)
+* [value](_primitive_data_.data.md#value)
 
 ### Methods
 
-* [bitLength](_primitive_data_.data.md#bitlength)
 * [eq](_primitive_data_.data.md#eq)
-* [subarray](_primitive_data_.data.md#subarray)
 * [toHex](_primitive_data_.data.md#tohex)
+* [toHuman](_primitive_data_.data.md#tohuman)
 * [toJSON](_primitive_data_.data.md#tojson)
+* [toNumber](_primitive_data_.data.md#tonumber)
 * [toRawType](_primitive_data_.data.md#torawtype)
 * [toString](_primitive_data_.data.md#tostring)
 * [toU8a](_primitive_data_.data.md#tou8a)
+* [with](_primitive_data_.data.md#static-with)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new Data**(`value?`: [AnyU8a](../modules/_types_.md#anyu8a)): *[Data](_primitive_data_.data.md)*
+\+ **new Data**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `value?`: Record‹string, any› | [Uint8Array](_codec_raw_.raw.md#static-uint8array) | [Enum](_codec_enum_.enum.md) | string): *[Data](_primitive_data_.data.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[constructor](_codec_u8a_.u8a.md#constructor)*
+*Overrides [Enum](_codec_enum_.enum.md).[constructor](_codec_enum_.enum.md#constructor)*
 
-*Defined in [codec/U8a.ts:19](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L19)*
+*Defined in [packages/types/src/primitive/Data.ts:56](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Data.ts#L56)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`value?` | [AnyU8a](../modules/_types_.md#anyu8a) |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) |
+`value?` | Record‹string, any› &#124; [Uint8Array](_codec_raw_.raw.md#static-uint8array) &#124; [Enum](_codec_enum_.enum.md) &#124; string |
 
 **Returns:** *[Data](_primitive_data_.data.md)*
 
+## Properties
+
+###  registry
+
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md).[registry](../interfaces/_types_codec_.codec.md#registry)*
+
+*Inherited from [Base](_codec_base_.base.md).[registry](_codec_base_.base.md#registry)*
+
+*Defined in [packages/types/src/codec/Base.ts:17](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L17)*
+
 ## Accessors
+
+###  asRaw
+
+• **get asRaw**(): *[Bytes](_primitive_bytes_.bytes.md)*
+
+*Defined in [packages/types/src/primitive/Data.ts:68](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Data.ts#L68)*
+
+**Returns:** *[Bytes](_primitive_bytes_.bytes.md)*
+
+___
+
+###  asSha256
+
+• **get asSha256**(): *H256*
+
+*Defined in [packages/types/src/primitive/Data.ts:72](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Data.ts#L72)*
+
+**Returns:** *H256*
+
+___
+
+###  defEntries
+
+• **get defEntries**(): *string[]*
+
+*Inherited from [Enum](_codec_enum_.enum.md).[defEntries](_codec_enum_.enum.md#defentries)*
+
+*Defined in [packages/types/src/codec/Enum.ts:209](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L209)*
+
+**`description`** The available keys for this enum
+
+**Returns:** *string[]*
+
+___
+
+###  defKeys
+
+• **get defKeys**(): *string[]*
+
+*Inherited from [Enum](_codec_enum_.enum.md).[defKeys](_codec_enum_.enum.md#defkeys)*
+
+*Defined in [packages/types/src/codec/Enum.ts:216](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L216)*
+
+**`description`** The available keys for this enum
+
+**Returns:** *string[]*
+
+___
 
 ###  encodedLength
 
 • **get encodedLength**(): *number*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[encodedLength](_codec_u8a_.u8a.md#encodedlength)*
+*Overrides [Enum](_codec_enum_.enum.md).[encodedLength](_codec_enum_.enum.md#encodedlength)*
 
-*Defined in [codec/U8a.ts:37](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L37)*
+*Defined in [packages/types/src/primitive/Data.ts:87](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Data.ts#L87)*
 
-**`description`** The length of the value when encoded as a Uint8Array
+**`description`** The encoded length
 
 **Returns:** *number*
 
@@ -81,15 +154,43 @@ ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[hash](_codec_u8a_.u8a.md#hash)*
+*Inherited from [Base](_codec_base_.base.md).[hash](_codec_base_.base.md#hash)*
 
-*Defined in [codec/U8a.ts:44](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L44)*
+*Defined in [packages/types/src/codec/Base.ts:36](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L36)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
+
+___
+
+###  index
+
+• **get index**(): *number*
+
+*Inherited from [Enum](_codec_enum_.enum.md).[index](_codec_enum_.enum.md#index)*
+
+*Defined in [packages/types/src/codec/Enum.ts:181](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L181)*
+
+**`description`** The index of the metadata value
+
+**Returns:** *number*
+
+___
+
+###  isBasic
+
+• **get isBasic**(): *boolean*
+
+*Inherited from [Enum](_codec_enum_.enum.md).[isBasic](_codec_enum_.enum.md#isbasic)*
+
+*Defined in [packages/types/src/codec/Enum.ts:188](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L188)*
+
+**`description`** true if this is a basic enum (no values)
+
+**Returns:** *boolean*
 
 ___
 
@@ -97,55 +198,103 @@ ___
 
 • **get isEmpty**(): *boolean*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[isEmpty](_codec_u8a_.u8a.md#isempty)*
+*Inherited from [Base](_codec_base_.base.md).[isEmpty](_codec_base_.base.md#isempty)*
 
-*Defined in [codec/U8a.ts:51](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L51)*
+*Defined in [packages/types/src/codec/Base.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L43)*
 
-**`description`** Returns true if the type wraps an empty/default all-0 value
+**`description`** Checks if the value is an empty value
 
 **Returns:** *boolean*
 
 ___
 
-###  length
+###  isNone
 
-• **get length**(): *number*
+• **get isNone**(): *boolean*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[length](_codec_u8a_.u8a.md#length)*
+*Inherited from [Enum](_codec_enum_.enum.md).[isNone](_codec_enum_.enum.md#isnone)*
 
-*Overrides void*
+*Defined in [packages/types/src/codec/Enum.ts:195](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L195)*
 
-*Defined in [codec/U8a.ts:58](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L58)*
+**`description`** Checks if the Enum points to a [Null](_primitive_null_.null.md) type
 
-**`description`** The length of the value
-
-**Returns:** *number*
-
-## Methods
-
-###  bitLength
-
-▸ **bitLength**(): *number*
-
-*Inherited from [U8a](_codec_u8a_.u8a.md).[bitLength](_codec_u8a_.u8a.md#bitlength)*
-
-*Defined in [codec/U8a.ts:66](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L66)*
-
-**`description`** Returns the number of bits in the value
-
-**Returns:** *number*
+**Returns:** *boolean*
 
 ___
+
+###  isNull
+
+• **get isNull**(): *boolean*
+
+*Inherited from [Enum](_codec_enum_.enum.md).[isNull](_codec_enum_.enum.md#isnull)*
+
+*Defined in [packages/types/src/codec/Enum.ts:202](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L202)*
+
+**`description`** Checks if the Enum points to a [Null](_primitive_null_.null.md) type (deprecated, use isNone)
+
+**Returns:** *boolean*
+
+___
+
+###  isRaw
+
+• **get isRaw**(): *boolean*
+
+*Defined in [packages/types/src/primitive/Data.ts:76](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Data.ts#L76)*
+
+**Returns:** *boolean*
+
+___
+
+###  isSha256
+
+• **get isSha256**(): *boolean*
+
+*Defined in [packages/types/src/primitive/Data.ts:80](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Data.ts#L80)*
+
+**Returns:** *boolean*
+
+___
+
+###  type
+
+• **get type**(): *string*
+
+*Inherited from [Enum](_codec_enum_.enum.md).[type](_codec_enum_.enum.md#type)*
+
+*Defined in [packages/types/src/codec/Enum.ts:223](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L223)*
+
+**`description`** The name of the type this enum value represents
+
+**Returns:** *string*
+
+___
+
+###  value
+
+• **get value**(): *[Codec](../interfaces/_types_codec_.codec.md)*
+
+*Inherited from [Enum](_codec_enum_.enum.md).[value](_codec_enum_.enum.md#value)*
+
+*Defined in [packages/types/src/codec/Enum.ts:230](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L230)*
+
+**`description`** The value of the enum
+
+**Returns:** *[Codec](../interfaces/_types_codec_.codec.md)*
+
+## Methods
 
 ###  eq
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[eq](_codec_u8a_.u8a.md#eq)*
+*Inherited from [Enum](_codec_enum_.enum.md).[eq](_codec_enum_.enum.md#eq)*
 
-*Defined in [codec/U8a.ts:73](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L73)*
+*Overrides [Base](_codec_base_.base.md).[eq](_codec_base_.base.md#eq)*
+
+*Defined in [packages/types/src/codec/Enum.ts:237](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L237)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -159,36 +308,15 @@ Name | Type |
 
 ___
 
-###  subarray
-
-▸ **subarray**(`begin`: number, `end?`: undefined | number): *Uint8Array*
-
-*Inherited from [U8a](_codec_u8a_.u8a.md).[subarray](_codec_u8a_.u8a.md#subarray)*
-
-*Overrides void*
-
-*Defined in [codec/U8a.ts:87](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L87)*
-
-**`description`** Create a new subarray from the actual buffer. This is needed for compat reasons since a new Uint8Array gets returned here
-
-**Parameters:**
-
-Name | Type | Description |
------- | ------ | ------ |
-`begin` | number | The position to start at |
-`end?` | undefined &#124; number | The position to end at  |
-
-**Returns:** *Uint8Array*
-
-___
-
 ###  toHex
 
 ▸ **toHex**(): *string*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toHex](_codec_u8a_.u8a.md#tohex)*
+*Inherited from [Enum](_codec_enum_.enum.md).[toHex](_codec_enum_.enum.md#tohex)*
 
-*Defined in [codec/U8a.ts:94](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L94)*
+*Overrides [Base](_codec_base_.base.md).[toHex](_codec_base_.base.md#tohex)*
+
+*Defined in [packages/types/src/codec/Enum.ts:260](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L260)*
 
 **`description`** Returns a hex string representation of the value
 
@@ -196,19 +324,59 @@ ___
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(`isExtended?`: undefined | false | true): *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
+
+*Inherited from [Enum](_codec_enum_.enum.md).[toHuman](_codec_enum_.enum.md#tohuman)*
+
+*Overrides [Base](_codec_base_.base.md).[toHuman](_codec_base_.base.md#tohuman)*
+
+*Defined in [packages/types/src/codec/Enum.ts:267](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L267)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`isExtended?` | undefined &#124; false &#124; true |
+
+**Returns:** *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+___
+
 ###  toJSON
 
-▸ **toJSON**(): *string*
+▸ **toJSON**(): *[AnyJson](../modules/_types_helpers_.md#anyjson)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toJSON](_codec_u8a_.u8a.md#tojson)*
+*Inherited from [Enum](_codec_enum_.enum.md).[toJSON](_codec_enum_.enum.md#tojson)*
 
-*Defined in [codec/U8a.ts:101](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L101)*
+*Overrides [Base](_codec_base_.base.md).[toJSON](_codec_base_.base.md#tojson)*
+
+*Defined in [packages/types/src/codec/Enum.ts:276](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L276)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
-**Returns:** *string*
+**Returns:** *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+___
+
+###  toNumber
+
+▸ **toNumber**(): *number*
+
+*Inherited from [Enum](_codec_enum_.enum.md).[toNumber](_codec_enum_.enum.md#tonumber)*
+
+*Defined in [packages/types/src/codec/Enum.ts:285](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L285)*
+
+**`description`** Returns the number representation for the value
+
+**Returns:** *number*
 
 ___
 
@@ -216,11 +384,13 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toRawType](_codec_u8a_.u8a.md#torawtype)*
+*Inherited from [Enum](_codec_enum_.enum.md).[toRawType](_codec_enum_.enum.md#torawtype)*
 
-*Defined in [codec/U8a.ts:108](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L108)*
+*Overrides [Base](_codec_base_.base.md).[toRawType](_codec_base_.base.md#torawtype)*
+
+*Defined in [packages/types/src/codec/Enum.ts:301](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L301)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -232,13 +402,13 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toString](_codec_u8a_.u8a.md#tostring)*
+*Inherited from [Enum](_codec_enum_.enum.md).[toString](_codec_enum_.enum.md#tostring)*
 
-*Overrides void*
+*Overrides [Base](_codec_base_.base.md).[toString](_codec_base_.base.md#tostring)*
 
-*Defined in [codec/U8a.ts:115](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L115)*
+*Defined in [packages/types/src/codec/Enum.ts:308](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L308)*
 
 **`description`** Returns the string representation of the value
 
@@ -248,20 +418,30 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
+▸ **toU8a**(): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Overrides [Enum](_codec_enum_.enum.md).[toU8a](_codec_enum_.enum.md#tou8a)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toU8a](_codec_u8a_.u8a.md#tou8a)*
-
-*Defined in [codec/U8a.ts:124](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L124)*
+*Defined in [packages/types/src/primitive/Data.ts:94](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Data.ts#L94)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
+
+___
+
+### `Static` with
+
+▸ **with**(`Types`: Record‹string, [InterfaceTypes](../modules/_types_helpers_.md#interfacetypes) | [Constructor](../interfaces/_types_codec_.constructor.md)› | string[]): *[EnumConstructor](../interfaces/_codec_enum_.enumconstructor.md)‹[Enum](_codec_enum_.enum.md)›*
+
+*Inherited from [Enum](_codec_enum_.enum.md).[with](_codec_enum_.enum.md#static-with)*
+
+*Defined in [packages/types/src/codec/Enum.ts:138](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Enum.ts#L138)*
+
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
+Name | Type |
+------ | ------ |
+`Types` | Record‹string, [InterfaceTypes](../modules/_types_helpers_.md#interfacetypes) &#124; [Constructor](../interfaces/_types_codec_.constructor.md)› &#124; string[] |
 
-**Returns:** *Uint8Array*
+**Returns:** *[EnumConstructor](../interfaces/_codec_enum_.enumconstructor.md)‹[Enum](_codec_enum_.enum.md)›*

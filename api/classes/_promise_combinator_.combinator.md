@@ -22,7 +22,7 @@
 
 \+ **new Combinator**(`fns`: [CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md) | [[CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md), any][], `callback`: [CombinatorCallback](../modules/_promise_combinator_.md#combinatorcallback)): *[Combinator](_promise_combinator_.combinator.md)*
 
-*Defined in [promise/Combinator.ts:28](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/promise/Combinator.ts#L28)*
+*Defined in [api/src/promise/Combinator.ts:28](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/promise/Combinator.ts#L28)*
 
 **Parameters:**
 
@@ -39,6 +39,6 @@ Name | Type |
 
 ▸ **unsubscribe**(): *void*
 
-*Defined in [promise/Combinator.ts:76](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/promise/Combinator.ts#L76)*
+*Defined in [api/src/promise/Combinator.ts:76](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/promise/Combinator.ts#L76)*
 
 **Returns:** *void*

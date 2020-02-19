@@ -35,16 +35,17 @@ A [[ReferendumInfo]] with an additional `index` field
 
 ### Properties
 
-* [__@toStringTag](_type_referenduminfoextended_.referenduminfoextended.md#__@tostringtag)
 * [delay](_type_referenduminfoextended_.referenduminfoextended.md#delay)
 * [end](_type_referenduminfoextended_.referenduminfoextended.md#end)
-* [proposal](_type_referenduminfoextended_.referenduminfoextended.md#proposal)
+* [proposalHash](_type_referenduminfoextended_.referenduminfoextended.md#proposalhash)
+* [registry](_type_referenduminfoextended_.referenduminfoextended.md#registry)
 * [size](_type_referenduminfoextended_.referenduminfoextended.md#size)
 * [threshold](_type_referenduminfoextended_.referenduminfoextended.md#threshold)
 
 ### Accessors
 
 * [Type](_type_referenduminfoextended_.referenduminfoextended.md#type)
+* [defKeys](_type_referenduminfoextended_.referenduminfoextended.md#defkeys)
 * [encodedLength](_type_referenduminfoextended_.referenduminfoextended.md#encodedlength)
 * [hash](_type_referenduminfoextended_.referenduminfoextended.md#hash)
 * [index](_type_referenduminfoextended_.referenduminfoextended.md#index)
@@ -52,24 +53,21 @@ A [[ReferendumInfo]] with an additional `index` field
 
 ### Methods
 
-* [__@iterator](_type_referenduminfoextended_.referenduminfoextended.md#__@iterator)
 * [clear](_type_referenduminfoextended_.referenduminfoextended.md#clear)
 * [delete](_type_referenduminfoextended_.referenduminfoextended.md#delete)
-* [entries](_type_referenduminfoextended_.referenduminfoextended.md#entries)
 * [eq](_type_referenduminfoextended_.referenduminfoextended.md#eq)
 * [forEach](_type_referenduminfoextended_.referenduminfoextended.md#foreach)
 * [get](_type_referenduminfoextended_.referenduminfoextended.md#get)
 * [getAtIndex](_type_referenduminfoextended_.referenduminfoextended.md#getatindex)
 * [has](_type_referenduminfoextended_.referenduminfoextended.md#has)
-* [keys](_type_referenduminfoextended_.referenduminfoextended.md#keys)
 * [set](_type_referenduminfoextended_.referenduminfoextended.md#set)
 * [toArray](_type_referenduminfoextended_.referenduminfoextended.md#toarray)
 * [toHex](_type_referenduminfoextended_.referenduminfoextended.md#tohex)
+* [toHuman](_type_referenduminfoextended_.referenduminfoextended.md#tohuman)
 * [toJSON](_type_referenduminfoextended_.referenduminfoextended.md#tojson)
 * [toRawType](_type_referenduminfoextended_.referenduminfoextended.md#torawtype)
 * [toString](_type_referenduminfoextended_.referenduminfoextended.md#tostring)
 * [toU8a](_type_referenduminfoextended_.referenduminfoextended.md#tou8a)
-* [values](_type_referenduminfoextended_.referenduminfoextended.md#values)
 * [typesToMap](_type_referenduminfoextended_.referenduminfoextended.md#static-typestomap)
 * [with](_type_referenduminfoextended_.referenduminfoextended.md#static-with)
 
@@ -77,16 +75,17 @@ A [[ReferendumInfo]] with an additional `index` field
 
 ###  constructor
 
-\+ **new ReferendumInfoExtended**(`value`: ReferendumInfo | [ReferendumInfoExtended](_type_referenduminfoextended_.referenduminfoextended.md), `index?`: BN | number): *[ReferendumInfoExtended](_type_referenduminfoextended_.referenduminfoextended.md)*
+\+ **new ReferendumInfoExtended**(`registry`: Registry, `value`: ReferendumInfo | [ReferendumInfoExtended](_type_referenduminfoextended_.referenduminfoextended.md), `index?`: BN | number): *[ReferendumInfoExtended](_type_referenduminfoextended_.referenduminfoextended.md)*
 
 *Overrides void*
 
-*Defined in [type/ReferendumInfoExtended.ts:21](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/type/ReferendumInfoExtended.ts#L21)*
+*Defined in [packages/api-derive/src/type/ReferendumInfoExtended.ts:21](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/type/ReferendumInfoExtended.ts#L21)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
+`registry` | Registry |
 `value` | ReferendumInfo &#124; [ReferendumInfoExtended](_type_referenduminfoextended_.referenduminfoextended.md) |
 `index?` | BN &#124; number |
 
@@ -94,25 +93,13 @@ Name | Type |
 
 ## Properties
 
-###  __@toStringTag
-
-• **__@toStringTag**: *string*
-
-*Inherited from void*
-
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:130
-
-___
-
 ###  delay
 
 • **delay**: *BlockNumber*
 
-*Inherited from void*
+*Inherited from [ReferendumInfoExtended](_type_referenduminfoextended_.referenduminfoextended.md).[delay](_type_referenduminfoextended_.referenduminfoextended.md#delay)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/interfaces/democracy/types.ts:43](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/interfaces/democracy/types.ts#L43)*
-
-BlockNumber
+*Defined in [packages/types/src/interfaces/democracy/types.ts:34](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/interfaces/democracy/types.ts#L34)*
 
 ___
 
@@ -120,23 +107,29 @@ ___
 
 • **end**: *BlockNumber*
 
-*Inherited from void*
+*Inherited from [ReferendumInfoExtended](_type_referenduminfoextended_.referenduminfoextended.md).[end](_type_referenduminfoextended_.referenduminfoextended.md#end)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/interfaces/democracy/types.ts:37](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/interfaces/democracy/types.ts#L37)*
-
-BlockNumber
+*Defined in [packages/types/src/interfaces/democracy/types.ts:31](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/interfaces/democracy/types.ts#L31)*
 
 ___
 
-###  proposal
+###  proposalHash
 
-• **proposal**: *Proposal*
+• **proposalHash**: *Hash*
 
-*Inherited from void*
+*Inherited from [ReferendumInfoExtended](_type_referenduminfoextended_.referenduminfoextended.md).[proposalHash](_type_referenduminfoextended_.referenduminfoextended.md#proposalhash)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/interfaces/democracy/types.ts:39](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/interfaces/democracy/types.ts#L39)*
+*Defined in [packages/types/src/interfaces/democracy/types.ts:32](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/interfaces/democracy/types.ts#L32)*
 
-Proposal
+___
+
+###  registry
+
+• **registry**: *Registry*
+
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[registry](_type_headerextended_.headerextended.md#registry)*
+
+*Defined in [packages/types/src/codec/Struct.ts:106](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L106)*
 
 ___
 
@@ -144,9 +137,9 @@ ___
 
 • **size**: *number*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[size](_type_headerextended_.headerextended.md#size)*
 
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.collection.d.ts:28
+Defined in node_modules/typescript/lib/lib.es2015.collection.d.ts:28
 
 ___
 
@@ -154,11 +147,9 @@ ___
 
 • **threshold**: *VoteThreshold*
 
-*Inherited from void*
+*Inherited from [ReferendumInfoExtended](_type_referenduminfoextended_.referenduminfoextended.md).[threshold](_type_referenduminfoextended_.referenduminfoextended.md#threshold)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/interfaces/democracy/types.ts:41](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/interfaces/democracy/types.ts#L41)*
-
-VoteThreshold
+*Defined in [packages/types/src/interfaces/democracy/types.ts:33](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/interfaces/democracy/types.ts#L33)*
 
 ## Accessors
 
@@ -166,9 +157,9 @@ VoteThreshold
 
 • **get Type**(): *E*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[Type](_type_headerextended_.headerextended.md#type)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:155](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L155)*
+*Defined in [packages/types/src/codec/Struct.ts:168](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L168)*
 
 **`description`** Returns the Type description to sthe structure
 
@@ -176,13 +167,27 @@ VoteThreshold
 
 ___
 
+###  defKeys
+
+• **get defKeys**(): *string[]*
+
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[defKeys](_type_headerextended_.headerextended.md#defkeys)*
+
+*Defined in [packages/types/src/codec/Struct.ts:146](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L146)*
+
+**`description`** The available keys for this enum
+
+**Returns:** *string[]*
+
+___
+
 ###  encodedLength
 
 • **get encodedLength**(): *number*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[encodedLength](_type_headerextended_.headerextended.md#encodedlength)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:168](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L168)*
+*Defined in [packages/types/src/codec/Struct.ts:181](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L181)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -192,15 +197,15 @@ ___
 
 ###  hash
 
-• **get hash**(): *IHash*
+• **get hash**(): *H256*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[hash](_type_headerextended_.headerextended.md#hash)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:179](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L179)*
+*Defined in [packages/types/src/codec/Struct.ts:192](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L192)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *IHash*
+**Returns:** *H256*
 
 ___
 
@@ -208,7 +213,7 @@ ___
 
 • **get index**(): *ReferendumIndex*
 
-*Defined in [type/ReferendumInfoExtended.ts:34](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/type/ReferendumInfoExtended.ts#L34)*
+*Defined in [packages/api-derive/src/type/ReferendumInfoExtended.ts:34](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/type/ReferendumInfoExtended.ts#L34)*
 
 **`description`** Convenience getter, returns the referendumIndex
 
@@ -220,9 +225,9 @@ ___
 
 • **get isEmpty**(): *boolean*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[isEmpty](_type_headerextended_.headerextended.md#isempty)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:140](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L140)*
+*Defined in [packages/types/src/codec/Struct.ts:153](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L153)*
 
 **`description`** Checks if the value is an empty value
 
@@ -230,27 +235,13 @@ ___
 
 ## Methods
 
-###  __@iterator
-
-▸ **__@iterator**(): *IterableIterator‹[keyof S, Codec]›*
-
-*Inherited from void*
-
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.iterable.d.ts:121
-
-Returns an iterable of entries in the map.
-
-**Returns:** *IterableIterator‹[keyof S, Codec]›*
-
-___
-
 ###  clear
 
 ▸ **clear**(): *void*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[clear](_type_headerextended_.headerextended.md#clear)*
 
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.collection.d.ts:22
+Defined in node_modules/typescript/lib/lib.es2015.collection.d.ts:22
 
 **Returns:** *void*
 
@@ -260,9 +251,9 @@ ___
 
 ▸ **delete**(`key`: keyof S): *boolean*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[delete](_type_headerextended_.headerextended.md#delete)*
 
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.collection.d.ts:23
+Defined in node_modules/typescript/lib/lib.es2015.collection.d.ts:23
 
 **Parameters:**
 
@@ -274,27 +265,13 @@ Name | Type |
 
 ___
 
-###  entries
-
-▸ **entries**(): *IterableIterator‹[keyof S, Codec]›*
-
-*Inherited from void*
-
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.iterable.d.ts:126
-
-Returns an iterable of key, value pairs for every entry in the map.
-
-**Returns:** *IterableIterator‹[keyof S, Codec]›*
-
-___
-
 ###  eq
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[eq](_type_headerextended_.headerextended.md#eq)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:186](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L186)*
+*Defined in [packages/types/src/codec/Struct.ts:199](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L199)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -312,9 +289,9 @@ ___
 
 ▸ **forEach**(`callbackfn`: function, `thisArg?`: any): *void*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[forEach](_type_headerextended_.headerextended.md#foreach)*
 
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.collection.d.ts:24
+Defined in node_modules/typescript/lib/lib.es2015.collection.d.ts:24
 
 **Parameters:**
 
@@ -340,11 +317,11 @@ ___
 
 ▸ **get**(`name`: keyof S): *Codec | undefined*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[get](_type_headerextended_.headerextended.md#get)*
 
 *Overrides void*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:194](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L194)*
+*Defined in [packages/types/src/codec/Struct.ts:207](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L207)*
 
 **`description`** Returns a specific names entry in the structure
 
@@ -362,9 +339,9 @@ ___
 
 ▸ **getAtIndex**(`index`: number): *Codec*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[getAtIndex](_type_headerextended_.headerextended.md#getatindex)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:201](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L201)*
+*Defined in [packages/types/src/codec/Struct.ts:214](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L214)*
 
 **`description`** Returns the values of a member at a specific index (Rather use get(name) for performance)
 
@@ -382,9 +359,9 @@ ___
 
 ▸ **has**(`key`: keyof S): *boolean*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[has](_type_headerextended_.headerextended.md#has)*
 
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.collection.d.ts:26
+Defined in node_modules/typescript/lib/lib.es2015.collection.d.ts:26
 
 **Parameters:**
 
@@ -396,27 +373,13 @@ Name | Type |
 
 ___
 
-###  keys
-
-▸ **keys**(): *IterableIterator‹keyof S›*
-
-*Inherited from void*
-
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.iterable.d.ts:131
-
-Returns an iterable of keys in the map
-
-**Returns:** *IterableIterator‹keyof S›*
-
-___
-
 ###  set
 
 ▸ **set**(`key`: keyof S, `value`: Codec): *this*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[set](_type_headerextended_.headerextended.md#set)*
 
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.collection.d.ts:27
+Defined in node_modules/typescript/lib/lib.es2015.collection.d.ts:27
 
 **Parameters:**
 
@@ -433,9 +396,9 @@ ___
 
 ▸ **toArray**(): *Codec[]*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[toArray](_type_headerextended_.headerextended.md#toarray)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:208](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L208)*
+*Defined in [packages/types/src/codec/Struct.ts:221](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L221)*
 
 **`description`** Converts the Object to an standard JavaScript Array
 
@@ -447,13 +410,33 @@ ___
 
 ▸ **toHex**(): *string*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[toHex](_type_headerextended_.headerextended.md#tohex)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:215](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L215)*
+*Defined in [packages/types/src/codec/Struct.ts:228](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L228)*
 
 **`description`** Returns a hex string representation of the value
 
 **Returns:** *string*
+
+___
+
+###  toHuman
+
+▸ **toHuman**(`isExtended?`: undefined | false | true): *AnyJsonObject*
+
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[toHuman](_type_headerextended_.headerextended.md#tohuman)*
+
+*Defined in [packages/types/src/codec/Struct.ts:235](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L235)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`isExtended?` | undefined &#124; false &#124; true |
+
+**Returns:** *AnyJsonObject*
 
 ___
 
@@ -463,7 +446,7 @@ ___
 
 *Overrides void*
 
-*Defined in [type/ReferendumInfoExtended.ts:41](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/type/ReferendumInfoExtended.ts#L41)*
+*Defined in [packages/api-derive/src/type/ReferendumInfoExtended.ts:41](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/type/ReferendumInfoExtended.ts#L41)*
 
 **`description`** Creates the JSON representation
 
@@ -475,9 +458,9 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[toRawType](_type_headerextended_.headerextended.md#torawtype)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:246](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L246)*
+*Defined in [packages/types/src/codec/Struct.ts:273](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L273)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -489,9 +472,9 @@ ___
 
 ▸ **toString**(): *string*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[toString](_type_headerextended_.headerextended.md#tostring)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:255](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L255)*
+*Defined in [packages/types/src/codec/Struct.ts:282](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L282)*
 
 **`description`** Returns the string representation of the value
 
@@ -501,11 +484,11 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
+▸ **toU8a**(`isBare?`: BareOpts): *Uint8Array*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[toU8a](_type_headerextended_.headerextended.md#tou8a)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:263](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L263)*
+*Defined in [packages/types/src/codec/Struct.ts:290](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L290)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -513,38 +496,25 @@ ___
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
+`isBare?` | BareOpts | true when the value has none of the type-specific prefixes (internal)  |
 
 **Returns:** *Uint8Array*
 
 ___
 
-###  values
-
-▸ **values**(): *IterableIterator‹Codec›*
-
-*Inherited from void*
-
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.iterable.d.ts:136
-
-Returns an iterable of values in the map
-
-**Returns:** *IterableIterator‹Codec›*
-
-___
-
 ### `Static` typesToMap
 
-▸ **typesToMap**(`Types`: Record‹string, Constructor›): *Record‹string, string›*
+▸ **typesToMap**(`registry`: Registry, `Types`: Record‹string, Constructor›): *Record‹string, string›*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[typesToMap](_type_headerextended_.headerextended.md#static-typestomap)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:235](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L235)*
+*Defined in [packages/types/src/codec/Struct.ts:262](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L262)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
+`registry` | Registry |
 `Types` | Record‹string, Constructor› |
 
 **Returns:** *Record‹string, string›*
@@ -555,9 +525,9 @@ ___
 
 ▸ **with**<**S**>(`Types`: S): *Constructor‹Struct‹S››*
 
-*Inherited from void*
+*Inherited from [HeaderExtended](_type_headerextended_.headerextended.md).[with](_type_headerextended_.headerextended.md#static-with)*
 
-*Defined in [/home/runner/work/api/api/packages/types/src/codec/Struct.ts:117](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L117)*
+*Defined in [packages/types/src/codec/Struct.ts:123](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L123)*
 
 **Type parameters:**
 

@@ -14,7 +14,7 @@
 
 ▸ **fees**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [contracts/fees.ts:106](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/contracts/fees.ts#L106)*
+*Defined in [packages/api-derive/src/contracts/fees.ts:48](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/contracts/fees.ts#L48)*
 
 **`name`** fees
 
@@ -38,4 +38,4 @@ Name | Type |
 An object containing the combined results of the queries for
 all relevant contract fees as declared in the substrate chain spec.
 
-▸ (): *Observable‹[DerivedContractFees](../interfaces/_types_.derivedcontractfees.md)›*
+▸ (): *Observable‹DerivedContractFees›*

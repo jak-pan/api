@@ -22,7 +22,8 @@ a number and making the compact representation thereof
 
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [Codec](../interfaces/_types_codec_.codec.md)
+* [ICompact](../interfaces/_types_interfaces_.icompact.md)‹T›
 
 ## Index
 
@@ -32,6 +33,7 @@ a number and making the compact representation thereof
 
 ### Properties
 
+* [registry](_codec_compact_.compact.md#registry)
 * [addLengthPrefix](_codec_compact_.compact.md#static-addlengthprefix)
 * [decodeU8a](_codec_compact_.compact.md#static-decodeu8a)
 * [encodeU8a](_codec_compact_.compact.md#static-encodeu8a)
@@ -48,13 +50,13 @@ a number and making the compact representation thereof
 * [eq](_codec_compact_.compact.md#eq)
 * [toBn](_codec_compact_.compact.md#tobn)
 * [toHex](_codec_compact_.compact.md#tohex)
+* [toHuman](_codec_compact_.compact.md#tohuman)
 * [toJSON](_codec_compact_.compact.md#tojson)
 * [toNumber](_codec_compact_.compact.md#tonumber)
 * [toRawType](_codec_compact_.compact.md#torawtype)
 * [toString](_codec_compact_.compact.md#tostring)
 * [toU8a](_codec_compact_.compact.md#tou8a)
 * [unwrap](_codec_compact_.compact.md#unwrap)
-* [decodeCompact](_codec_compact_.compact.md#static-decodecompact)
 * [stripLengthPrefix](_codec_compact_.compact.md#static-striplengthprefix)
 * [with](_codec_compact_.compact.md#static-with)
 
@@ -62,28 +64,39 @@ a number and making the compact representation thereof
 
 ###  constructor
 
-\+ **new Compact**(`Type`: [Constructor](../interfaces/_types_.constructor.md)‹T› | [InterfaceTypes](../modules/_types_.md#interfacetypes), `value`: [Compact](_codec_compact_.compact.md)‹T› | [AnyNumber](../modules/_types_.md#anynumber)): *[Compact](_codec_compact_.compact.md)*
+\+ **new Compact**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `Type`: [Constructor](../interfaces/_types_codec_.constructor.md)‹T› | [InterfaceTypes](../modules/_types_helpers_.md#interfacetypes), `value`: [Compact](_codec_compact_.compact.md)‹T› | [AnyNumber](../modules/_types_helpers_.md#anynumber)): *[Compact](_codec_compact_.compact.md)*
 
-*Overrides [Base](_codec_base_.base.md).[constructor](_codec_base_.base.md#constructor)*
-
-*Defined in [codec/Compact.ts:29](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L29)*
+*Defined in [packages/types/src/codec/Compact.ts:29](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L29)*
 
 **Parameters:**
 
 Name | Type | Default |
 ------ | ------ | ------ |
-`Type` | [Constructor](../interfaces/_types_.constructor.md)‹T› &#124; [InterfaceTypes](../modules/_types_.md#interfacetypes) | - |
-`value` | [Compact](_codec_compact_.compact.md)‹T› &#124; [AnyNumber](../modules/_types_.md#anynumber) | 0 |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) | - |
+`Type` | [Constructor](../interfaces/_types_codec_.constructor.md)‹T› &#124; [InterfaceTypes](../modules/_types_helpers_.md#interfacetypes) | - |
+`value` | [Compact](_codec_compact_.compact.md)‹T› &#124; [AnyNumber](../modules/_types_helpers_.md#anynumber) | 0 |
 
 **Returns:** *[Compact](_codec_compact_.compact.md)*
 
 ## Properties
 
+###  registry
+
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+*Implementation of [ICompact](../interfaces/_types_interfaces_.icompact.md).[registry](../interfaces/_types_interfaces_.icompact.md#registry)*
+
+*Inherited from [Base](_codec_base_.base.md).[registry](_codec_base_.base.md#registry)*
+
+*Defined in [packages/types/src/codec/Base.ts:17](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L17)*
+
+___
+
 ### `Static` addLengthPrefix
 
-▪ **addLengthPrefix**: *compactAddLength* =  compactAddLength
+▪ **addLengthPrefix**: *compactAddLength* = compactAddLength
 
-*Defined in [codec/Compact.ts:47](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L47)*
+*Defined in [packages/types/src/codec/Compact.ts:47](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L47)*
 
 Prepend a Uint8Array with its compact length.
 
@@ -93,17 +106,17 @@ ___
 
 ### `Static` decodeU8a
 
-▪ **decodeU8a**: *compactFromU8a* =  compactFromU8a
+▪ **decodeU8a**: *compactFromU8a* = compactFromU8a
 
-*Defined in [codec/Compact.ts:49](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L49)*
+*Defined in [packages/types/src/codec/Compact.ts:49](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L49)*
 
 ___
 
 ### `Static` encodeU8a
 
-▪ **encodeU8a**: *compactToU8a* =  compactToU8a
+▪ **encodeU8a**: *compactToU8a* = compactToU8a
 
-*Defined in [codec/Compact.ts:51](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L51)*
+*Defined in [packages/types/src/codec/Compact.ts:51](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L51)*
 
 ## Accessors
 
@@ -113,7 +126,7 @@ ___
 
 *Inherited from [Base](_codec_base_.base.md).[encodedLength](_codec_base_.base.md#encodedlength)*
 
-*Defined in [codec/Base.ts:25](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L25)*
+*Defined in [packages/types/src/codec/Base.ts:29](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L29)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -123,15 +136,15 @@ ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
 *Inherited from [Base](_codec_base_.base.md).[hash](_codec_base_.base.md#hash)*
 
-*Defined in [codec/Base.ts:32](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L32)*
+*Defined in [packages/types/src/codec/Base.ts:36](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L36)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
 
 ___
 
@@ -141,7 +154,7 @@ ___
 
 *Inherited from [Base](_codec_base_.base.md).[isEmpty](_codec_base_.base.md#isempty)*
 
-*Defined in [codec/Base.ts:39](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L39)*
+*Defined in [packages/types/src/codec/Base.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L43)*
 
 **`description`** Checks if the value is an empty value
 
@@ -153,7 +166,7 @@ ___
 
 ▸ **bitLength**(): *[UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength)*
 
-*Defined in [codec/Compact.ts:74](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L74)*
+*Defined in [packages/types/src/codec/Compact.ts:75](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L75)*
 
 **`description`** Returns the number of bits in the value
 
@@ -165,11 +178,11 @@ ___
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [ICompact](../interfaces/_types_interfaces_.icompact.md)*
 
 *Overrides [Base](_codec_base_.base.md).[eq](_codec_base_.base.md#eq)*
 
-*Defined in [codec/Compact.ts:81](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L81)*
+*Defined in [packages/types/src/codec/Compact.ts:82](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L82)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -187,7 +200,9 @@ ___
 
 ▸ **toBn**(): *BN*
 
-*Defined in [codec/Compact.ts:92](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L92)*
+*Implementation of [ICompact](../interfaces/_types_interfaces_.icompact.md)*
+
+*Defined in [packages/types/src/codec/Compact.ts:93](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L93)*
 
 **`description`** Returns the BN representation of the number
 
@@ -199,11 +214,11 @@ ___
 
 ▸ **toHex**(`isLe?`: undefined | false | true): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [ICompact](../interfaces/_types_interfaces_.icompact.md)*
 
 *Inherited from [Base](_codec_base_.base.md).[toHex](_codec_base_.base.md#tohex)*
 
-*Defined in [codec/Base.ts:53](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L53)*
+*Defined in [packages/types/src/codec/Base.ts:57](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L57)*
 
 **`description`** Returns a hex string representation of the value. isLe returns a LE (number-only) representation
 
@@ -217,19 +232,41 @@ Name | Type |
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(`isExtended?`: undefined | false | true): *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+*Implementation of [ICompact](../interfaces/_types_interfaces_.icompact.md)*
+
+*Inherited from [Base](_codec_base_.base.md).[toHuman](_codec_base_.base.md#tohuman)*
+
+*Defined in [packages/types/src/codec/Base.ts:64](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L64)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`isExtended?` | undefined &#124; false &#124; true |
+
+**Returns:** *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+___
+
 ###  toJSON
 
-▸ **toJSON**(): *[AnyJson](../modules/_types_.md#anyjson)*
+▸ **toJSON**(): *[AnyJson](../modules/_types_helpers_.md#anyjson)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [ICompact](../interfaces/_types_interfaces_.icompact.md)*
 
 *Inherited from [Base](_codec_base_.base.md).[toJSON](_codec_base_.base.md#tojson)*
 
-*Defined in [codec/Base.ts:60](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L60)*
+*Defined in [packages/types/src/codec/Base.ts:71](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L71)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
-**Returns:** *[AnyJson](../modules/_types_.md#anyjson)*
+**Returns:** *[AnyJson](../modules/_types_helpers_.md#anyjson)*
 
 ___
 
@@ -237,7 +274,9 @@ ___
 
 ▸ **toNumber**(): *number*
 
-*Defined in [codec/Compact.ts:99](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L99)*
+*Implementation of [ICompact](../interfaces/_types_interfaces_.icompact.md)*
+
+*Defined in [packages/types/src/codec/Compact.ts:100](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L100)*
 
 **`description`** Returns the number representation for the value
 
@@ -249,11 +288,11 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [ICompact](../interfaces/_types_interfaces_.icompact.md)*
 
 *Overrides [Base](_codec_base_.base.md).[toRawType](_codec_base_.base.md#torawtype)*
 
-*Defined in [codec/Compact.ts:106](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L106)*
+*Defined in [packages/types/src/codec/Compact.ts:107](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L107)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -265,11 +304,11 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [ICompact](../interfaces/_types_interfaces_.icompact.md)*
 
 *Inherited from [Base](_codec_base_.base.md).[toString](_codec_base_.base.md#tostring)*
 
-*Defined in [codec/Base.ts:67](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L67)*
+*Defined in [packages/types/src/codec/Base.ts:78](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L78)*
 
 **`description`** Returns the string representation of the value
 
@@ -279,13 +318,11 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
-
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+▸ **toU8a**(`isBare?`: undefined | false | true): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 *Overrides [Base](_codec_base_.base.md).[toU8a](_codec_base_.base.md#tou8a)*
 
-*Defined in [codec/Compact.ts:115](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L115)*
+*Defined in [packages/types/src/codec/Compact.ts:116](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L116)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -295,7 +332,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 ___
 
@@ -303,57 +340,38 @@ ___
 
 ▸ **unwrap**(): *T*
 
-*Defined in [codec/Compact.ts:122](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L122)*
+*Implementation of [ICompact](../interfaces/_types_interfaces_.icompact.md)*
 
-**`description`** Returns the embedded [UInt](_codec_uint_.uint.md) or [Moment](../interfaces/_interfaces_runtime_types_.moment.md) value
+*Defined in [packages/types/src/codec/Compact.ts:123](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L123)*
+
+**`description`** Returns the embedded [UInt](_codec_uint_.uint.md) or [Moment](../interfaces/_interfaceregistry_.interfaceregistry.md#moment) value
 
 **Returns:** *T*
 
 ___
 
-### `Static` decodeCompact
-
-▸ **decodeCompact**<**T**>(`Type`: [Constructor](../interfaces/_types_.constructor.md)‹T›, `value`: [Compact](_codec_compact_.compact.md)‹T› | [AnyNumber](../modules/_types_.md#anynumber)): *[CompactEncodable](../interfaces/_codec_compact_.compactencodable.md)*
-
-*Defined in [codec/Compact.ts:59](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L59)*
-
-**Type parameters:**
-
-▪ **T**: *[CompactEncodable](../interfaces/_codec_compact_.compactencodable.md)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`Type` | [Constructor](../interfaces/_types_.constructor.md)‹T› |
-`value` | [Compact](_codec_compact_.compact.md)‹T› &#124; [AnyNumber](../modules/_types_.md#anynumber) |
-
-**Returns:** *[CompactEncodable](../interfaces/_codec_compact_.compactencodable.md)*
-
-___
-
 ### `Static` stripLengthPrefix
 
-▸ **stripLengthPrefix**(`u8a`: Uint8Array, `bitLength`: [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength)): *Uint8Array*
+▸ **stripLengthPrefix**(`u8a`: [Uint8Array](_codec_raw_.raw.md#static-uint8array), `bitLength`: [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength)): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Defined in [codec/Compact.ts:53](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L53)*
+*Defined in [packages/types/src/codec/Compact.ts:53](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L53)*
 
 **Parameters:**
 
 Name | Type | Default |
 ------ | ------ | ------ |
-`u8a` | Uint8Array | - |
-`bitLength` | [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength) |  DEFAULT_BITLENGTH |
+`u8a` | [Uint8Array](_codec_raw_.raw.md#static-uint8array) | - |
+`bitLength` | [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength) | DEFAULT_BITLENGTH |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 ___
 
 ### `Static` with
 
-▸ **with**<**T**>(`Type`: [Constructor](../interfaces/_types_.constructor.md)‹T› | [InterfaceTypes](../modules/_types_.md#interfacetypes)): *[Constructor](../interfaces/_types_.constructor.md)‹[Compact](_codec_compact_.compact.md)‹T››*
+▸ **with**<**T**>(`Type`: [Constructor](../interfaces/_types_codec_.constructor.md)‹T› | [InterfaceTypes](../modules/_types_helpers_.md#interfacetypes)): *[Constructor](../interfaces/_types_codec_.constructor.md)‹[Compact](_codec_compact_.compact.md)‹T››*
 
-*Defined in [codec/Compact.ts:34](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Compact.ts#L34)*
+*Defined in [packages/types/src/codec/Compact.ts:34](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Compact.ts#L34)*
 
 **Type parameters:**
 
@@ -363,6 +381,6 @@ ___
 
 Name | Type |
 ------ | ------ |
-`Type` | [Constructor](../interfaces/_types_.constructor.md)‹T› &#124; [InterfaceTypes](../modules/_types_.md#interfacetypes) |
+`Type` | [Constructor](../interfaces/_types_codec_.constructor.md)‹T› &#124; [InterfaceTypes](../modules/_types_helpers_.md#interfacetypes) |
 
-**Returns:** *[Constructor](../interfaces/_types_.constructor.md)‹[Compact](_codec_compact_.compact.md)‹T››*
+**Returns:** *[Constructor](../interfaces/_types_codec_.constructor.md)‹[Compact](_codec_compact_.compact.md)‹T››*

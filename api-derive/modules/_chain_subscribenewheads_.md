@@ -4,21 +4,9 @@
 
 ## Index
 
-### Type aliases
-
-* [HeaderAndValidators](_chain_subscribenewheads_.md#headerandvalidators)
-
 ### Functions
 
 * [subscribeNewHeads](_chain_subscribenewheads_.md#subscribenewheads)
-
-## Type aliases
-
-###  HeaderAndValidators
-
-Ƭ **HeaderAndValidators**: *[Header, AccountId[]]*
-
-*Defined in [chain/subscribeNewHeads.ts:14](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/chain/subscribeNewHeads.ts#L14)*
 
 ## Functions
 
@@ -26,7 +14,7 @@
 
 ▸ **subscribeNewHeads**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [chain/subscribeNewHeads.ts:29](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/chain/subscribeNewHeads.ts#L29)*
+*Defined in [packages/api-derive/src/chain/subscribeNewHeads.ts:26](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/chain/subscribeNewHeads.ts#L26)*
 
 **`name`** subscribeNewHeads
 

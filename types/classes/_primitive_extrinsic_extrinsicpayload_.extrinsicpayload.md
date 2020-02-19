@@ -2,10 +2,10 @@
 
 # Class: ExtrinsicPayload
 
-**`name`** ExtrinsicPayload
+**`name`** GenericExtrinsicPayload
 
 **`description`** 
-A signing payload for an [Extrinsic](../interfaces/_interfaces_runtime_types_.extrinsic.md). For the final encoding, it is variable length based
+A signing payload for an [Extrinsic](_primitive_extrinsic_extrinsic_.extrinsic.md). For the final encoding, it is variable length based
 on the contents included
 
 ## Hierarchy
@@ -14,17 +14,19 @@ on the contents included
 
   ↳ **ExtrinsicPayload**
 
-  ↳ [ExtrinsicPayload](../interfaces/_interfaces_runtime_types_.extrinsicpayload.md)
-
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [Codec](../interfaces/_types_codec_.codec.md)
 
 ## Index
 
 ### Constructors
 
 * [constructor](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#constructor)
+
+### Properties
+
+* [registry](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#registry)
 
 ### Accessors
 
@@ -44,42 +46,57 @@ on the contents included
 * [eq](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#eq)
 * [sign](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#sign)
 * [toHex](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#tohex)
+* [toHuman](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#tohuman)
 * [toJSON](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#tojson)
 * [toRawType](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#torawtype)
 * [toString](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#tostring)
 * [toU8a](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#tou8a)
-* [decodeExtrinsicPayload](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md#static-decodeextrinsicpayload)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new ExtrinsicPayload**(`value`: Partial‹[ExtrinsicPayloadValue](../interfaces/_types_.extrinsicpayloadvalue.md)› | Uint8Array | string | undefined, `__namedParameters`: object): *[ExtrinsicPayload](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md)*
+\+ **new ExtrinsicPayload**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `value`: Partial‹[ExtrinsicPayloadValue](../interfaces/_types_extrinsic_.extrinsicpayloadvalue.md)› | [Uint8Array](_codec_raw_.raw.md#static-uint8array) | string | undefined, `__namedParameters`: object): *[ExtrinsicPayload](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md)*
 
-*Overrides [Base](_codec_base_.base.md).[constructor](_codec_base_.base.md#constructor)*
-
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:39](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L39)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:39](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L39)*
 
 **Parameters:**
 
-Name | Type | Default |
------- | ------ | ------ |
-`value` | Partial‹[ExtrinsicPayloadValue](../interfaces/_types_.extrinsicpayloadvalue.md)› &#124; Uint8Array &#124; string &#124; undefined | - |
-`__namedParameters` | object |  {} |
+▪ **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+▪ **value**: *Partial‹[ExtrinsicPayloadValue](../interfaces/_types_extrinsic_.extrinsicpayloadvalue.md)› | [Uint8Array](_codec_raw_.raw.md#static-uint8array) | string | undefined*
+
+▪`Default value`  **__namedParameters**: *object*= {}
+
+Name | Type |
+------ | ------ |
+`version` | undefined &#124; number |
 
 **Returns:** *[ExtrinsicPayload](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md)*
+
+## Properties
+
+###  registry
+
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md).[registry](../interfaces/_types_codec_.codec.md#registry)*
+
+*Inherited from [Base](_codec_base_.base.md).[registry](_codec_base_.base.md#registry)*
+
+*Defined in [packages/types/src/codec/Base.ts:17](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L17)*
 
 ## Accessors
 
 ###  blockHash
 
-• **get blockHash**(): *[Hash](../interfaces/_interfaces_runtime_types_.hash.md)*
+• **get blockHash**(): *Hash*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:57](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L57)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:56](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L56)*
 
-**`description`** The block [Hash](../interfaces/_interfaces_runtime_types_.hash.md) the signature applies to (mortal/immortal)
+**`description`** The block [Hash](../interfaces/_interfaceregistry_.interfaceregistry.md#hash) the signature applies to (mortal/immortal)
 
-**Returns:** *[Hash](../interfaces/_interfaces_runtime_types_.hash.md)*
+**Returns:** *Hash*
 
 ___
 
@@ -89,7 +106,7 @@ ___
 
 *Inherited from [Base](_codec_base_.base.md).[encodedLength](_codec_base_.base.md#encodedlength)*
 
-*Defined in [codec/Base.ts:25](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L25)*
+*Defined in [packages/types/src/codec/Base.ts:29](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L29)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -101,9 +118,9 @@ ___
 
 • **get era**(): *[ExtrinsicEra](_primitive_extrinsic_extrinsicera_.extrinsicera.md)*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:64](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L64)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:63](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L63)*
 
-**`description`** The [ExtrinsicEra](../interfaces/_interfaces_runtime_types_.extrinsicera.md)
+**`description`** The [ExtrinsicEra](_primitive_extrinsic_extrinsicera_.extrinsicera.md)
 
 **Returns:** *[ExtrinsicEra](_primitive_extrinsic_extrinsicera_.extrinsicera.md)*
 
@@ -111,27 +128,27 @@ ___
 
 ###  genesisHash
 
-• **get genesisHash**(): *[Hash](../interfaces/_interfaces_runtime_types_.hash.md)*
+• **get genesisHash**(): *Hash*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:71](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L71)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:70](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L70)*
 
-**`description`** The genesis block [Hash](../interfaces/_interfaces_runtime_types_.hash.md) the signature applies to
+**`description`** The genesis block [Hash](../interfaces/_interfaceregistry_.interfaceregistry.md#hash) the signature applies to
 
-**Returns:** *[Hash](../interfaces/_interfaces_runtime_types_.hash.md)*
+**Returns:** *Hash*
 
 ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
 *Inherited from [Base](_codec_base_.base.md).[hash](_codec_base_.base.md#hash)*
 
-*Defined in [codec/Base.ts:32](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L32)*
+*Defined in [packages/types/src/codec/Base.ts:36](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L36)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
 
 ___
 
@@ -141,7 +158,7 @@ ___
 
 *Inherited from [Base](_codec_base_.base.md).[isEmpty](_codec_base_.base.md#isempty)*
 
-*Defined in [codec/Base.ts:39](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L39)*
+*Defined in [packages/types/src/codec/Base.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L43)*
 
 **`description`** Checks if the value is an empty value
 
@@ -151,25 +168,25 @@ ___
 
 ###  method
 
-• **get method**(): *[U8a](_codec_u8a_.u8a.md)*
+• **get method**(): *[Raw](_codec_raw_.raw.md)*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:79](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L79)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:78](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L78)*
 
-**`description`** The [U8a](_codec_u8a_.u8a.md) contained in the payload
+**`description`** The [Raw](_codec_raw_.raw.md) contained in the payload
 
-**Returns:** *[U8a](_codec_u8a_.u8a.md)*
+**Returns:** *[Raw](_codec_raw_.raw.md)*
 
 ___
 
 ###  nonce
 
-• **get nonce**(): *[Compact](_codec_compact_.compact.md)‹[Index](../interfaces/_interfaces_runtime_types_.index.md)›*
+• **get nonce**(): *[Compact](_codec_compact_.compact.md)‹Index›*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:86](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L86)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:85](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L85)*
 
-**`description`** The [Index](../interfaces/_interfaces_runtime_types_.index.md)
+**`description`** The [Index](../interfaces/_interfaceregistry_.interfaceregistry.md#index)
 
-**Returns:** *[Compact](_codec_compact_.compact.md)‹[Index](../interfaces/_interfaces_runtime_types_.index.md)›*
+**Returns:** *[Compact](_codec_compact_.compact.md)‹Index›*
 
 ___
 
@@ -177,7 +194,7 @@ ___
 
 • **get specVersion**(): *[u32](../interfaces/_interfaceregistry_.interfaceregistry.md#u32)*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:93](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L93)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:92](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L92)*
 
 **`description`** The specVersion as a [u32](../interfaces/_interfaceregistry_.interfaceregistry.md#u32) for this payload
 
@@ -187,13 +204,13 @@ ___
 
 ###  tip
 
-• **get tip**(): *[Compact](_codec_compact_.compact.md)‹[Balance](../interfaces/_interfaces_runtime_types_.balance.md)›*
+• **get tip**(): *[Compact](_codec_compact_.compact.md)‹Balance›*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:101](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L101)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:100](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L100)*
 
-**`description`** The [Balance](../interfaces/_interfaces_runtime_types_.balance.md)
+**`description`** The [Balance](../interfaces/_interfaceregistry_.interfaceregistry.md#balance)
 
-**Returns:** *[Compact](_codec_compact_.compact.md)‹[Balance](../interfaces/_interfaces_runtime_types_.balance.md)›*
+**Returns:** *[Compact](_codec_compact_.compact.md)‹Balance›*
 
 ## Methods
 
@@ -201,11 +218,11 @@ ___
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Overrides [Base](_codec_base_.base.md).[eq](_codec_base_.base.md#eq)*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:109](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L109)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:108](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L108)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -221,9 +238,9 @@ ___
 
 ###  sign
 
-▸ **sign**(`signerPair`: [IKeyringPair](../interfaces/_types_.ikeyringpair.md)): *object*
+▸ **sign**(`signerPair`: [IKeyringPair](../interfaces/_types_interfaces_.ikeyringpair.md)): *object*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:116](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L116)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:115](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L115)*
 
 **`description`** Sign the payload with the keypair
 
@@ -231,9 +248,11 @@ ___
 
 Name | Type |
 ------ | ------ |
-`signerPair` | [IKeyringPair](../interfaces/_types_.ikeyringpair.md) |
+`signerPair` | [IKeyringPair](../interfaces/_types_interfaces_.ikeyringpair.md) |
 
 **Returns:** *object*
+
+* **signature**: *string*
 
 ___
 
@@ -241,11 +260,11 @@ ___
 
 ▸ **toHex**(`isLe?`: undefined | false | true): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Inherited from [Base](_codec_base_.base.md).[toHex](_codec_base_.base.md#tohex)*
 
-*Defined in [codec/Base.ts:53](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L53)*
+*Defined in [packages/types/src/codec/Base.ts:57](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L57)*
 
 **`description`** Returns a hex string representation of the value. isLe returns a LE (number-only) representation
 
@@ -259,15 +278,37 @@ Name | Type |
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(`isExtended?`: undefined | false | true): *[AnyJsonObject](../interfaces/_types_helpers_.anyjsonobject.md)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
+
+*Overrides [Base](_codec_base_.base.md).[toHuman](_codec_base_.base.md#tohuman)*
+
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:130](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L130)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`isExtended?` | undefined &#124; false &#124; true |
+
+**Returns:** *[AnyJsonObject](../interfaces/_types_helpers_.anyjsonobject.md)*
+
+___
+
 ###  toJSON
 
 ▸ **toJSON**(): *any*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Overrides [Base](_codec_base_.base.md).[toJSON](_codec_base_.base.md#tojson)*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:131](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L131)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:137](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L137)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
@@ -279,11 +320,11 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Inherited from [Base](_codec_base_.base.md).[toRawType](_codec_base_.base.md#torawtype)*
 
-*Defined in [codec/Base.ts:82](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L82)*
+*Defined in [packages/types/src/codec/Base.ts:93](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Base.ts#L93)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -295,11 +336,11 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Overrides [Base](_codec_base_.base.md).[toString](_codec_base_.base.md#tostring)*
 
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:138](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L138)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:144](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L144)*
 
 **`description`** Returns the string representation of the value
 
@@ -309,37 +350,20 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
+▸ **toU8a**(`isBare?`: [BareOpts](../modules/_types_helpers_.md#bareopts)): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Inherited from [Base](_codec_base_.base.md).[toU8a](_codec_base_.base.md#tou8a)*
+*Overrides [Base](_codec_base_.base.md).[toU8a](_codec_base_.base.md#tou8a)*
 
-*Defined in [codec/Base.ts:75](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Base.ts#L75)*
+*Defined in [packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts:151](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L151)*
 
-**`description`** Encodes the value as a Uint8Array as per the SCALE specifications
-
-**Parameters:**
-
-Name | Type | Description |
------- | ------ | ------ |
-`isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
-
-**Returns:** *Uint8Array*
-
-___
-
-### `Static` decodeExtrinsicPayload
-
-▸ **decodeExtrinsicPayload**(`value`: [ExtrinsicPayload](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md) | [ExtrinsicPayloadValue](../interfaces/_types_.extrinsicpayloadvalue.md) | Uint8Array | string | undefined, `version`: number): *ExtrinsicPayloadVx*
-
-*Defined in [primitive/Extrinsic/ExtrinsicPayload.ts:46](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Extrinsic/ExtrinsicPayload.ts#L46)*
+**`description`** Returns a serialized u8a form
 
 **Parameters:**
 
-Name | Type | Default |
------- | ------ | ------ |
-`value` | [ExtrinsicPayload](_primitive_extrinsic_extrinsicpayload_.extrinsicpayload.md) &#124; [ExtrinsicPayloadValue](../interfaces/_types_.extrinsicpayloadvalue.md) &#124; Uint8Array &#124; string &#124; undefined | - |
-`version` | number |  DEFAULT_VERSION |
+Name | Type |
+------ | ------ |
+`isBare?` | [BareOpts](../modules/_types_helpers_.md#bareopts) |
 
-**Returns:** *ExtrinsicPayloadVx*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*

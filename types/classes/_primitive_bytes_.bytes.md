@@ -11,7 +11,7 @@ as what is found in [Text](_primitive_text_.text.md) and [Vec](_codec_vec_.vec.m
 
 ## Hierarchy
 
-  ↳ [U8a](_codec_u8a_.u8a.md)
+  ↳ [Raw](_codec_raw_.raw.md)
 
   ↳ **Bytes**
 
@@ -19,25 +19,9 @@ as what is found in [Text](_primitive_text_.text.md) and [Vec](_codec_vec_.vec.m
 
   ↳ [StorageKey](_primitive_storagekey_.storagekey.md)
 
-  ↳ [Justification](../interfaces/_interfaces_runtime_types_.justification.md)
-
-  ↳ [TrieId](../interfaces/_interfaces_contracts_types_.trieid.md)
-
-  ↳ [OpaqueKey](../interfaces/_interfaces_deprecated_types_.opaquekey.md)
-
-  ↳ [OpaqueMultiaddr](../interfaces/_interfaces_imonline_types_.opaquemultiaddr.md)
-
-  ↳ [OpaquePeerId](../interfaces/_interfaces_imonline_types_.opaquepeerid.md)
-
-  ↳ [OpaqueTimeSlot](../interfaces/_interfaces_offences_types_.opaquetimeslot.md)
-
-  ↳ [Key](../interfaces/_interfaces_system_types_.key.md)
-
-  ↳ [HeadData](../interfaces/_interfaces_parachains_types_.headdata.md)
-
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [IU8a](../interfaces/_types_interfaces_.iu8a.md)
 
 ## Indexable
 
@@ -48,6 +32,10 @@ as what is found in [Text](_primitive_text_.text.md) and [Vec](_codec_vec_.vec.m
 ### Constructors
 
 * [constructor](_primitive_bytes_.bytes.md#constructor)
+
+### Properties
+
+* [registry](_primitive_bytes_.bytes.md#registry)
 
 ### Accessors
 
@@ -62,6 +50,7 @@ as what is found in [Text](_primitive_text_.text.md) and [Vec](_codec_vec_.vec.m
 * [eq](_primitive_bytes_.bytes.md#eq)
 * [subarray](_primitive_bytes_.bytes.md#subarray)
 * [toHex](_primitive_bytes_.bytes.md#tohex)
+* [toHuman](_primitive_bytes_.bytes.md#tohuman)
 * [toJSON](_primitive_bytes_.bytes.md#tojson)
 * [toRawType](_primitive_bytes_.bytes.md#torawtype)
 * [toString](_primitive_bytes_.bytes.md#tostring)
@@ -71,19 +60,32 @@ as what is found in [Text](_primitive_text_.text.md) and [Vec](_codec_vec_.vec.m
 
 ###  constructor
 
-\+ **new Bytes**(`value?`: [AnyU8a](../modules/_types_.md#anyu8a)): *[Bytes](_primitive_bytes_.bytes.md)*
+\+ **new Bytes**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `value?`: [AnyU8a](../modules/_types_helpers_.md#anyu8a)): *[Bytes](_primitive_bytes_.bytes.md)*
 
-*Overrides [U8a](_codec_u8a_.u8a.md).[constructor](_codec_u8a_.u8a.md#constructor)*
+*Overrides [Raw](_codec_raw_.raw.md).[constructor](_codec_raw_.raw.md#constructor)*
 
-*Defined in [primitive/Bytes.ts:19](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bytes.ts#L19)*
+*Defined in [packages/types/src/primitive/Bytes.ts:47](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bytes.ts#L47)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`value?` | [AnyU8a](../modules/_types_.md#anyu8a) |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) |
+`value?` | [AnyU8a](../modules/_types_helpers_.md#anyu8a) |
 
 **Returns:** *[Bytes](_primitive_bytes_.bytes.md)*
+
+## Properties
+
+###  registry
+
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md).[registry](../interfaces/_types_interfaces_.iu8a.md#registry)*
+
+*Inherited from [Raw](_codec_raw_.raw.md).[registry](_codec_raw_.raw.md#registry)*
+
+*Defined in [packages/types/src/codec/Raw.ts:30](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L30)*
 
 ## Accessors
 
@@ -91,9 +93,9 @@ Name | Type |
 
 • **get encodedLength**(): *number*
 
-*Overrides [U8a](_codec_u8a_.u8a.md).[encodedLength](_codec_u8a_.u8a.md#encodedlength)*
+*Overrides [Raw](_codec_raw_.raw.md).[encodedLength](_codec_raw_.raw.md#encodedlength)*
 
-*Defined in [primitive/Bytes.ts:53](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bytes.ts#L53)*
+*Defined in [packages/types/src/primitive/Bytes.ts:55](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bytes.ts#L55)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -103,15 +105,15 @@ ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[hash](_codec_u8a_.u8a.md#hash)*
+*Inherited from [Raw](_codec_raw_.raw.md).[hash](_codec_raw_.raw.md#hash)*
 
-*Defined in [codec/U8a.ts:44](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L44)*
+*Defined in [packages/types/src/codec/Raw.ts:48](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L48)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
 
 ___
 
@@ -119,9 +121,9 @@ ___
 
 • **get isEmpty**(): *boolean*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[isEmpty](_codec_u8a_.u8a.md#isempty)*
+*Inherited from [Raw](_codec_raw_.raw.md).[isEmpty](_codec_raw_.raw.md#isempty)*
 
-*Defined in [codec/U8a.ts:51](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L51)*
+*Defined in [packages/types/src/codec/Raw.ts:55](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L55)*
 
 **`description`** Returns true if the type wraps an empty/default all-0 value
 
@@ -133,11 +135,11 @@ ___
 
 • **get length**(): *number*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[length](_codec_u8a_.u8a.md#length)*
+*Inherited from [Raw](_codec_raw_.raw.md).[length](_codec_raw_.raw.md#length)*
 
-*Overrides void*
+*Overrides [IU8a](../interfaces/_types_interfaces_.iu8a.md).[length](../interfaces/_types_interfaces_.iu8a.md#length)*
 
-*Defined in [codec/U8a.ts:58](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L58)*
+*Defined in [packages/types/src/codec/Raw.ts:62](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L62)*
 
 **`description`** The length of the value
 
@@ -149,9 +151,11 @@ ___
 
 ▸ **bitLength**(): *number*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[bitLength](_codec_u8a_.u8a.md#bitlength)*
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md)*
 
-*Defined in [codec/U8a.ts:66](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L66)*
+*Inherited from [Raw](_codec_raw_.raw.md).[bitLength](_codec_raw_.raw.md#bitlength)*
+
+*Defined in [packages/types/src/codec/Raw.ts:70](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L70)*
 
 **`description`** Returns the number of bits in the value
 
@@ -163,11 +167,11 @@ ___
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[eq](_codec_u8a_.u8a.md#eq)*
+*Inherited from [Raw](_codec_raw_.raw.md).[eq](_codec_raw_.raw.md#eq)*
 
-*Defined in [codec/U8a.ts:73](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L73)*
+*Defined in [packages/types/src/codec/Raw.ts:77](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L77)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -183,13 +187,13 @@ ___
 
 ###  subarray
 
-▸ **subarray**(`begin`: number, `end?`: undefined | number): *Uint8Array*
+▸ **subarray**(`begin`: number, `end?`: undefined | number): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[subarray](_codec_u8a_.u8a.md#subarray)*
+*Inherited from [Raw](_codec_raw_.raw.md).[subarray](_codec_raw_.raw.md#subarray)*
 
-*Overrides void*
+*Overrides [IU8a](../interfaces/_types_interfaces_.iu8a.md).[subarray](../interfaces/_types_interfaces_.iu8a.md#subarray)*
 
-*Defined in [codec/U8a.ts:87](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L87)*
+*Defined in [packages/types/src/codec/Raw.ts:91](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L91)*
 
 **`description`** Create a new subarray from the actual buffer. This is needed for compat reasons since a new Uint8Array gets returned here
 
@@ -200,7 +204,7 @@ Name | Type | Description |
 `begin` | number | The position to start at |
 `end?` | undefined &#124; number | The position to end at  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 ___
 
@@ -208,9 +212,9 @@ ___
 
 ▸ **toHex**(): *string*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toHex](_codec_u8a_.u8a.md#tohex)*
+*Inherited from [Raw](_codec_raw_.raw.md).[toHex](_codec_raw_.raw.md#tohex)*
 
-*Defined in [codec/U8a.ts:94](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L94)*
+*Defined in [packages/types/src/codec/Raw.ts:98](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L98)*
 
 **`description`** Returns a hex string representation of the value
 
@@ -218,15 +222,29 @@ ___
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(): *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+*Inherited from [Raw](_codec_raw_.raw.md).[toHuman](_codec_raw_.raw.md#tohuman)*
+
+*Defined in [packages/types/src/codec/Raw.ts:105](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L105)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Returns:** *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+___
+
 ###  toJSON
 
 ▸ **toJSON**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toJSON](_codec_u8a_.u8a.md#tojson)*
+*Inherited from [Raw](_codec_raw_.raw.md).[toJSON](_codec_raw_.raw.md#tojson)*
 
-*Defined in [codec/U8a.ts:101](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L101)*
+*Defined in [packages/types/src/codec/Raw.ts:112](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L112)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
@@ -238,11 +256,11 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md)*
 
-*Overrides [U8a](_codec_u8a_.u8a.md).[toRawType](_codec_u8a_.u8a.md#torawtype)*
+*Overrides [Raw](_codec_raw_.raw.md).[toRawType](_codec_raw_.raw.md#torawtype)*
 
-*Defined in [primitive/Bytes.ts:60](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bytes.ts#L60)*
+*Defined in [packages/types/src/primitive/Bytes.ts:62](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bytes.ts#L62)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -254,13 +272,13 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toString](_codec_u8a_.u8a.md#tostring)*
+*Inherited from [Raw](_codec_raw_.raw.md).[toString](_codec_raw_.raw.md#tostring)*
 
-*Overrides void*
+*Overrides [IU8a](../interfaces/_types_interfaces_.iu8a.md).[toString](../interfaces/_types_interfaces_.iu8a.md#tostring)*
 
-*Defined in [codec/U8a.ts:115](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L115)*
+*Defined in [packages/types/src/codec/Raw.ts:126](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L126)*
 
 **`description`** Returns the string representation of the value
 
@@ -270,13 +288,11 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
+▸ **toU8a**(`isBare?`: undefined | false | true): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Overrides [Raw](_codec_raw_.raw.md).[toU8a](_codec_raw_.raw.md#tou8a)*
 
-*Overrides [U8a](_codec_u8a_.u8a.md).[toU8a](_codec_u8a_.u8a.md#tou8a)*
-
-*Defined in [primitive/Bytes.ts:68](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bytes.ts#L68)*
+*Defined in [packages/types/src/primitive/Bytes.ts:70](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bytes.ts#L70)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -286,4 +302,4 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*

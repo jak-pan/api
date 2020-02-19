@@ -1,0 +1,45 @@
+[Polkadot JS API](../README.md) › [Globals](../globals.md) › ["types/extrinsic"](../modules/_types_extrinsic_.md) › [Signer](_types_extrinsic_.signer.md)
+
+# Interface: Signer
+
+## Hierarchy
+
+* **Signer**
+
+## Index
+
+### Properties
+
+* [signPayload](_types_extrinsic_.signer.md#optional-signpayload)
+* [signRaw](_types_extrinsic_.signer.md#optional-signraw)
+* [update](_types_extrinsic_.signer.md#optional-update)
+
+## Properties
+
+### `Optional` signPayload
+
+• **signPayload**? : *undefined | function*
+
+*Defined in [packages/types/src/types/extrinsic.ts:42](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/types/extrinsic.ts#L42)*
+
+**`description`** signs an extrinsic payload from a serialized form
+
+___
+
+### `Optional` signRaw
+
+• **signRaw**? : *undefined | function*
+
+*Defined in [packages/types/src/types/extrinsic.ts:47](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/types/extrinsic.ts#L47)*
+
+**`description`** signs a raw payload, only the bytes data as supplied
+
+___
+
+### `Optional` update
+
+• **update**? : *undefined | function*
+
+*Defined in [packages/types/src/types/extrinsic.ts:52](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/types/extrinsic.ts#L52)*
+
+**`description`** Receives an update for the extrinsic signed by a `signer.sign`

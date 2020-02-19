@@ -9,13 +9,13 @@ Representation for a boolean value in the system. It extends the base JS `Boolea
 
 ## Hierarchy
 
-* Boolean
+* [Boolean](_primitive_bool_.bool.md#static-boolean)
 
   ↳ **Bool**
 
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [Codec](../interfaces/_types_codec_.codec.md)
 
 ## Index
 
@@ -25,6 +25,7 @@ Representation for a boolean value in the system. It extends the base JS `Boolea
 
 ### Properties
 
+* [registry](_primitive_bool_.bool.md#registry)
 * [Boolean](_primitive_bool_.bool.md#static-boolean)
 
 ### Accessors
@@ -39,6 +40,7 @@ Representation for a boolean value in the system. It extends the base JS `Boolea
 
 * [eq](_primitive_bool_.bool.md#eq)
 * [toHex](_primitive_bool_.bool.md#tohex)
+* [toHuman](_primitive_bool_.bool.md#tohuman)
 * [toJSON](_primitive_bool_.bool.md#tojson)
 * [toRawType](_primitive_bool_.bool.md#torawtype)
 * [toString](_primitive_bool_.bool.md#tostring)
@@ -48,25 +50,36 @@ Representation for a boolean value in the system. It extends the base JS `Boolea
 
 ###  constructor
 
-\+ **new Bool**(`value`: [Bool](_primitive_bool_.bool.md) | Boolean | Uint8Array | boolean | number): *[Bool](_primitive_bool_.bool.md)*
+\+ **new Bool**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `value`: [Bool](_primitive_bool_.bool.md) | [Boolean](_primitive_bool_.bool.md#static-boolean) | [Uint8Array](_codec_raw_.raw.md#static-uint8array) | boolean | number): *[Bool](_primitive_bool_.bool.md)*
 
-*Defined in [primitive/Bool.ts:18](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L18)*
+*Defined in [packages/types/src/primitive/Bool.ts:31](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L31)*
 
 **Parameters:**
 
 Name | Type | Default |
 ------ | ------ | ------ |
-`value` | [Bool](_primitive_bool_.bool.md) &#124; Boolean &#124; Uint8Array &#124; boolean &#124; number | false |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) | - |
+`value` | [Bool](_primitive_bool_.bool.md) &#124; [Boolean](_primitive_bool_.bool.md#static-boolean) &#124; [Uint8Array](_codec_raw_.raw.md#static-uint8array) &#124; boolean &#124; number | false |
 
 **Returns:** *[Bool](_primitive_bool_.bool.md)*
 
 ## Properties
 
+###  registry
+
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md).[registry](../interfaces/_types_codec_.codec.md#registry)*
+
+*Defined in [packages/types/src/primitive/Bool.ts:31](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L31)*
+
+___
+
 ### `Static` Boolean
 
 ▪ **Boolean**: *BooleanConstructor*
 
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es5.d.ts:540
+Defined in node_modules/typescript/lib/lib.es5.d.ts:540
 
 ## Accessors
 
@@ -74,7 +87,7 @@ Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es5.d.ts:54
 
 • **get encodedLength**(): *number*
 
-*Defined in [primitive/Bool.ts:39](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L39)*
+*Defined in [packages/types/src/primitive/Bool.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L43)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -84,13 +97,13 @@ ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
-*Defined in [primitive/Bool.ts:46](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L46)*
+*Defined in [packages/types/src/primitive/Bool.ts:50](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L50)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
 
 ___
 
@@ -98,7 +111,7 @@ ___
 
 • **get isEmpty**(): *boolean*
 
-*Defined in [primitive/Bool.ts:53](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L53)*
+*Defined in [packages/types/src/primitive/Bool.ts:57](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L57)*
 
 **`description`** Checks if the value is an empty value (always false)
 
@@ -110,7 +123,7 @@ ___
 
 • **get isFalse**(): *boolean*
 
-*Defined in [primitive/Bool.ts:60](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L60)*
+*Defined in [packages/types/src/primitive/Bool.ts:64](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L64)*
 
 **`description`** Checks if the value is an empty value (always false)
 
@@ -122,7 +135,7 @@ ___
 
 • **get isTrue**(): *boolean*
 
-*Defined in [primitive/Bool.ts:67](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L67)*
+*Defined in [packages/types/src/primitive/Bool.ts:71](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L71)*
 
 **`description`** Checks if the value is an empty value (always false)
 
@@ -134,9 +147,9 @@ ___
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [primitive/Bool.ts:74](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L74)*
+*Defined in [packages/types/src/primitive/Bool.ts:78](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L78)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -154,7 +167,7 @@ ___
 
 ▸ **toHex**(): *string*
 
-*Defined in [primitive/Bool.ts:85](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L85)*
+*Defined in [packages/types/src/primitive/Bool.ts:89](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L89)*
 
 **`description`** Returns a hex string representation of the value
 
@@ -162,13 +175,25 @@ ___
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(): *boolean*
+
+*Defined in [packages/types/src/primitive/Bool.ts:96](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L96)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Returns:** *boolean*
+
+___
+
 ###  toJSON
 
 ▸ **toJSON**(): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [primitive/Bool.ts:92](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L92)*
+*Defined in [packages/types/src/primitive/Bool.ts:103](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L103)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
@@ -180,9 +205,9 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [primitive/Bool.ts:99](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L99)*
+*Defined in [packages/types/src/primitive/Bool.ts:110](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L110)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -194,9 +219,9 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [primitive/Bool.ts:106](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L106)*
+*Defined in [packages/types/src/primitive/Bool.ts:117](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L117)*
 
 **`description`** Returns the string representation of the value
 
@@ -206,11 +231,9 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
+▸ **toU8a**(`isBare?`: undefined | false | true): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
-
-*Defined in [primitive/Bool.ts:115](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bool.ts#L115)*
+*Defined in [packages/types/src/primitive/Bool.ts:126](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bool.ts#L126)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -220,4 +243,4 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*

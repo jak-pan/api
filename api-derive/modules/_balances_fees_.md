@@ -14,7 +14,7 @@
 
 ▸ **fees**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [balances/fees.ts:54](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/balances/fees.ts#L54)*
+*Defined in [packages/api-derive/src/balances/fees.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/balances/fees.ts#L43)*
 
 **`name`** fees
 
@@ -38,4 +38,4 @@ Name | Type |
 An object containing the combined results of the storage queries for
 all relevant fees as declared in the substrate chain spec.
 
-▸ (): *Observable‹[DerivedFees](../interfaces/_types_.derivedfees.md)›*
+▸ (): *Observable‹DerivedFees›*

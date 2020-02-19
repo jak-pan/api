@@ -16,7 +16,7 @@ constructed by passing in a raw key or a StorageEntry with (optional) arguments.
 
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [IU8a](../interfaces/_types_interfaces_.iu8a.md)
 
 ## Indexable
 
@@ -27,6 +27,10 @@ constructed by passing in a raw key or a StorageEntry with (optional) arguments.
 ### Constructors
 
 * [constructor](_primitive_storagekey_.storagekey.md#constructor)
+
+### Properties
+
+* [registry](_primitive_storagekey_.storagekey.md#registry)
 
 ### Accessors
 
@@ -43,13 +47,15 @@ constructed by passing in a raw key or a StorageEntry with (optional) arguments.
 
 * [bitLength](_primitive_storagekey_.storagekey.md#bitlength)
 * [eq](_primitive_storagekey_.storagekey.md#eq)
+* [setMeta](_primitive_storagekey_.storagekey.md#setmeta)
+* [setOutputType](_primitive_storagekey_.storagekey.md#setoutputtype)
 * [subarray](_primitive_storagekey_.storagekey.md#subarray)
 * [toHex](_primitive_storagekey_.storagekey.md#tohex)
+* [toHuman](_primitive_storagekey_.storagekey.md#tohuman)
 * [toJSON](_primitive_storagekey_.storagekey.md#tojson)
 * [toRawType](_primitive_storagekey_.storagekey.md#torawtype)
 * [toString](_primitive_storagekey_.storagekey.md#tostring)
 * [toU8a](_primitive_storagekey_.storagekey.md#tou8a)
-* [decodeStorageKey](_primitive_storagekey_.storagekey.md#static-decodestoragekey)
 * [getMeta](_primitive_storagekey_.storagekey.md#static-getmeta)
 * [getType](_primitive_storagekey_.storagekey.md#static-gettype)
 
@@ -57,20 +63,33 @@ constructed by passing in a raw key or a StorageEntry with (optional) arguments.
 
 ###  constructor
 
-\+ **new StorageKey**(`value?`: [AnyU8a](../modules/_types_.md#anyu8a) | [StorageKey](_primitive_storagekey_.storagekey.md) | [StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md) | [[StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md), any], `override`: Partial‹StorageKeyExtra›): *[StorageKey](_primitive_storagekey_.storagekey.md)*
+\+ **new StorageKey**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `value?`: [AnyU8a](../modules/_types_helpers_.md#anyu8a) | [StorageKey](_primitive_storagekey_.storagekey.md) | [StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md) | [[StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md), any], `override`: Partial‹StorageKeyExtra›): *[StorageKey](_primitive_storagekey_.storagekey.md)*
 
 *Overrides [Bytes](_primitive_bytes_.bytes.md).[constructor](_primitive_bytes_.bytes.md#constructor)*
 
-*Defined in [primitive/StorageKey.ts:45](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/StorageKey.ts#L45)*
+*Defined in [packages/types/src/primitive/StorageKey.ts:65](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/StorageKey.ts#L65)*
 
 **Parameters:**
 
 Name | Type | Default |
 ------ | ------ | ------ |
-`value?` | [AnyU8a](../modules/_types_.md#anyu8a) &#124; [StorageKey](_primitive_storagekey_.storagekey.md) &#124; [StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md) &#124; [[StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md), any] | - |
-`override` | Partial‹StorageKeyExtra› |  {} |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) | - |
+`value?` | [AnyU8a](../modules/_types_helpers_.md#anyu8a) &#124; [StorageKey](_primitive_storagekey_.storagekey.md) &#124; [StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md) &#124; [[StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md), any] | - |
+`override` | Partial‹StorageKeyExtra› | {} |
 
 **Returns:** *[StorageKey](_primitive_storagekey_.storagekey.md)*
+
+## Properties
+
+###  registry
+
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md).[registry](../interfaces/_types_interfaces_.iu8a.md#registry)*
+
+*Inherited from [Raw](_codec_raw_.raw.md).[registry](_codec_raw_.raw.md#registry)*
+
+*Defined in [packages/types/src/codec/Raw.ts:30](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L30)*
 
 ## Accessors
 
@@ -80,9 +99,9 @@ Name | Type | Default |
 
 *Inherited from [Bytes](_primitive_bytes_.bytes.md).[encodedLength](_primitive_bytes_.bytes.md#encodedlength)*
 
-*Overrides [U8a](_codec_u8a_.u8a.md).[encodedLength](_codec_u8a_.u8a.md#encodedlength)*
+*Overrides [Raw](_codec_raw_.raw.md).[encodedLength](_codec_raw_.raw.md#encodedlength)*
 
-*Defined in [primitive/Bytes.ts:53](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bytes.ts#L53)*
+*Defined in [packages/types/src/primitive/Bytes.ts:55](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bytes.ts#L55)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -92,15 +111,15 @@ ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[hash](_codec_u8a_.u8a.md#hash)*
+*Inherited from [Raw](_codec_raw_.raw.md).[hash](_codec_raw_.raw.md#hash)*
 
-*Defined in [codec/U8a.ts:44](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L44)*
+*Defined in [packages/types/src/codec/Raw.ts:48](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L48)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
 
 ___
 
@@ -108,9 +127,9 @@ ___
 
 • **get isEmpty**(): *boolean*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[isEmpty](_codec_u8a_.u8a.md#isempty)*
+*Inherited from [Raw](_codec_raw_.raw.md).[isEmpty](_codec_raw_.raw.md#isempty)*
 
-*Defined in [codec/U8a.ts:51](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L51)*
+*Defined in [packages/types/src/codec/Raw.ts:55](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L55)*
 
 **`description`** Returns true if the type wraps an empty/default all-0 value
 
@@ -122,11 +141,11 @@ ___
 
 • **get length**(): *number*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[length](_codec_u8a_.u8a.md#length)*
+*Inherited from [Raw](_codec_raw_.raw.md).[length](_codec_raw_.raw.md#length)*
 
-*Overrides void*
+*Overrides [IU8a](../interfaces/_types_interfaces_.iu8a.md).[length](../interfaces/_types_interfaces_.iu8a.md#length)*
 
-*Defined in [codec/U8a.ts:58](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L58)*
+*Defined in [packages/types/src/codec/Raw.ts:62](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L62)*
 
 **`description`** The length of the value
 
@@ -136,13 +155,13 @@ ___
 
 ###  meta
 
-• **get meta**(): *MetaV8 | undefined*
+• **get meta**(): *StorageEntryMetadataLatest | undefined*
 
-*Defined in [primitive/StorageKey.ts:120](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/StorageKey.ts#L120)*
+*Defined in [packages/types/src/primitive/StorageKey.ts:143](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/StorageKey.ts#L143)*
 
 **`description`** The metadata or `undefined` when not available
 
-**Returns:** *MetaV8 | undefined*
+**Returns:** *StorageEntryMetadataLatest | undefined*
 
 ___
 
@@ -150,7 +169,7 @@ ___
 
 • **get method**(): *string | undefined*
 
-*Defined in [primitive/StorageKey.ts:127](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/StorageKey.ts#L127)*
+*Defined in [packages/types/src/primitive/StorageKey.ts:150](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/StorageKey.ts#L150)*
 
 **`description`** The key method or `undefined` when not specified
 
@@ -162,7 +181,7 @@ ___
 
 • **get outputType**(): *string | undefined*
 
-*Defined in [primitive/StorageKey.ts:134](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/StorageKey.ts#L134)*
+*Defined in [packages/types/src/primitive/StorageKey.ts:157](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/StorageKey.ts#L157)*
 
 **`description`** The output type, `null` when not available
 
@@ -174,7 +193,7 @@ ___
 
 • **get section**(): *string | undefined*
 
-*Defined in [primitive/StorageKey.ts:141](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/StorageKey.ts#L141)*
+*Defined in [packages/types/src/primitive/StorageKey.ts:164](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/StorageKey.ts#L164)*
 
 **`description`** The key section or `undefined` when not specified
 
@@ -186,9 +205,11 @@ ___
 
 ▸ **bitLength**(): *number*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[bitLength](_codec_u8a_.u8a.md#bitlength)*
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md)*
 
-*Defined in [codec/U8a.ts:66](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L66)*
+*Inherited from [Raw](_codec_raw_.raw.md).[bitLength](_codec_raw_.raw.md#bitlength)*
+
+*Defined in [packages/types/src/codec/Raw.ts:70](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L70)*
 
 **`description`** Returns the number of bits in the value
 
@@ -200,11 +221,11 @@ ___
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[eq](_codec_u8a_.u8a.md#eq)*
+*Inherited from [Raw](_codec_raw_.raw.md).[eq](_codec_raw_.raw.md#eq)*
 
-*Defined in [codec/U8a.ts:73](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L73)*
+*Defined in [packages/types/src/codec/Raw.ts:77](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L77)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -218,15 +239,51 @@ Name | Type |
 
 ___
 
+###  setMeta
+
+▸ **setMeta**(`meta?`: [StorageEntryMetadataLatest](../interfaces/_interfaceregistry_.interfaceregistry.md#storageentrymetadatalatest)): *this*
+
+*Defined in [packages/types/src/primitive/StorageKey.ts:171](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/StorageKey.ts#L171)*
+
+**`description`** Sets the meta for this key
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`meta?` | [StorageEntryMetadataLatest](../interfaces/_interfaceregistry_.interfaceregistry.md#storageentrymetadatalatest) |
+
+**Returns:** *this*
+
+___
+
+###  setOutputType
+
+▸ **setOutputType**(`outputType?`: undefined | string): *this*
+
+*Defined in [packages/types/src/primitive/StorageKey.ts:180](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/StorageKey.ts#L180)*
+
+**`description`** Sets the output type for this storage key
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`outputType?` | undefined &#124; string |
+
+**Returns:** *this*
+
+___
+
 ###  subarray
 
-▸ **subarray**(`begin`: number, `end?`: undefined | number): *Uint8Array*
+▸ **subarray**(`begin`: number, `end?`: undefined | number): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[subarray](_codec_u8a_.u8a.md#subarray)*
+*Inherited from [Raw](_codec_raw_.raw.md).[subarray](_codec_raw_.raw.md#subarray)*
 
-*Overrides void*
+*Overrides [IU8a](../interfaces/_types_interfaces_.iu8a.md).[subarray](../interfaces/_types_interfaces_.iu8a.md#subarray)*
 
-*Defined in [codec/U8a.ts:87](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L87)*
+*Defined in [packages/types/src/codec/Raw.ts:91](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L91)*
 
 **`description`** Create a new subarray from the actual buffer. This is needed for compat reasons since a new Uint8Array gets returned here
 
@@ -237,7 +294,7 @@ Name | Type | Description |
 `begin` | number | The position to start at |
 `end?` | undefined &#124; number | The position to end at  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 ___
 
@@ -245,9 +302,9 @@ ___
 
 ▸ **toHex**(): *string*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toHex](_codec_u8a_.u8a.md#tohex)*
+*Inherited from [Raw](_codec_raw_.raw.md).[toHex](_codec_raw_.raw.md#tohex)*
 
-*Defined in [codec/U8a.ts:94](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L94)*
+*Defined in [packages/types/src/codec/Raw.ts:98](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L98)*
 
 **`description`** Returns a hex string representation of the value
 
@@ -255,15 +312,29 @@ ___
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(): *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+*Inherited from [Raw](_codec_raw_.raw.md).[toHuman](_codec_raw_.raw.md#tohuman)*
+
+*Defined in [packages/types/src/codec/Raw.ts:105](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L105)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Returns:** *[AnyJson](../modules/_types_helpers_.md#anyjson)*
+
+___
+
 ###  toJSON
 
 ▸ **toJSON**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toJSON](_codec_u8a_.u8a.md#tojson)*
+*Inherited from [Raw](_codec_raw_.raw.md).[toJSON](_codec_raw_.raw.md#tojson)*
 
-*Defined in [codec/U8a.ts:101](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L101)*
+*Defined in [packages/types/src/codec/Raw.ts:112](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L112)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
@@ -275,13 +346,13 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md)*
 
 *Inherited from [Bytes](_primitive_bytes_.bytes.md).[toRawType](_primitive_bytes_.bytes.md#torawtype)*
 
-*Overrides [U8a](_codec_u8a_.u8a.md).[toRawType](_codec_u8a_.u8a.md#torawtype)*
+*Overrides [Raw](_codec_raw_.raw.md).[toRawType](_codec_raw_.raw.md#torawtype)*
 
-*Defined in [primitive/Bytes.ts:60](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bytes.ts#L60)*
+*Defined in [packages/types/src/primitive/Bytes.ts:62](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bytes.ts#L62)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -293,13 +364,13 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [IU8a](../interfaces/_types_interfaces_.iu8a.md)*
 
-*Inherited from [U8a](_codec_u8a_.u8a.md).[toString](_codec_u8a_.u8a.md#tostring)*
+*Inherited from [Raw](_codec_raw_.raw.md).[toString](_codec_raw_.raw.md#tostring)*
 
-*Overrides void*
+*Overrides [IU8a](../interfaces/_types_interfaces_.iu8a.md).[toString](../interfaces/_types_interfaces_.iu8a.md#tostring)*
 
-*Defined in [codec/U8a.ts:115](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/U8a.ts#L115)*
+*Defined in [packages/types/src/codec/Raw.ts:126](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Raw.ts#L126)*
 
 **`description`** Returns the string representation of the value
 
@@ -309,15 +380,13 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
-
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+▸ **toU8a**(`isBare?`: undefined | false | true): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 *Inherited from [Bytes](_primitive_bytes_.bytes.md).[toU8a](_primitive_bytes_.bytes.md#tou8a)*
 
-*Overrides [U8a](_codec_u8a_.u8a.md).[toU8a](_codec_u8a_.u8a.md#tou8a)*
+*Overrides [Raw](_codec_raw_.raw.md).[toU8a](_codec_raw_.raw.md#tou8a)*
 
-*Defined in [primitive/Bytes.ts:68](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Bytes.ts#L68)*
+*Defined in [packages/types/src/primitive/Bytes.ts:70](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Bytes.ts#L70)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -327,31 +396,15 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
-
-___
-
-### `Static` decodeStorageKey
-
-▸ **decodeStorageKey**(`value?`: [AnyU8a](../modules/_types_.md#anyu8a) | [StorageKey](_primitive_storagekey_.storagekey.md) | [StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md) | [[StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md), any]): *Decoded*
-
-*Defined in [primitive/StorageKey.ts:58](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/StorageKey.ts#L58)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`value?` | [AnyU8a](../modules/_types_.md#anyu8a) &#124; [StorageKey](_primitive_storagekey_.storagekey.md) &#124; [StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md) &#124; [[StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md), any] |
-
-**Returns:** *Decoded*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 ___
 
 ### `Static` getMeta
 
-▸ **getMeta**(`value`: [StorageKey](_primitive_storagekey_.storagekey.md) | [StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md) | [[StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md), any]): *MetaV8 | undefined*
+▸ **getMeta**(`value`: [StorageKey](_primitive_storagekey_.storagekey.md) | [StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md) | [[StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md), any]): *StorageEntryMetadataLatest | undefined*
 
-*Defined in [primitive/StorageKey.ts:89](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/StorageKey.ts#L89)*
+*Defined in [packages/types/src/primitive/StorageKey.ts:110](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/StorageKey.ts#L110)*
 
 **Parameters:**
 
@@ -359,7 +412,7 @@ Name | Type |
 ------ | ------ |
 `value` | [StorageKey](_primitive_storagekey_.storagekey.md) &#124; [StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md) &#124; [[StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md), any] |
 
-**Returns:** *MetaV8 | undefined*
+**Returns:** *StorageEntryMetadataLatest | undefined*
 
 ___
 
@@ -367,7 +420,7 @@ ___
 
 ▸ **getType**(`value`: [StorageKey](_primitive_storagekey_.storagekey.md) | [StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md) | [[StorageEntry](../interfaces/_primitive_storagekey_.storageentry.md), any]): *string | undefined*
 
-*Defined in [primitive/StorageKey.ts:103](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/StorageKey.ts#L103)*
+*Defined in [packages/types/src/primitive/StorageKey.ts:124](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/StorageKey.ts#L124)*
 
 **Parameters:**
 

@@ -12,6 +12,6 @@
 
 ###  CodecTypes
 
-Ƭ **CodecTypes**: *keyof "/home/runner/work/api/api/packages/types/src/index.types"*
+Ƭ **CodecTypes**: *keyof typeof Classes*
 
-*Defined in [classes.ts:7](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/classes.ts#L7)*
+*Defined in [packages/types/src/classes.ts:7](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/classes.ts#L7)*

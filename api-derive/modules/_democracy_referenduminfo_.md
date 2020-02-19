@@ -6,33 +6,16 @@
 
 ### Functions
 
-* [constructInfo](_democracy_referenduminfo_.md#constructinfo)
 * [referendumInfo](_democracy_referenduminfo_.md#referenduminfo)
+* [retrieveInfo](_democracy_referenduminfo_.md#retrieveinfo)
 
 ## Functions
-
-###  constructInfo
-
-▸ **constructInfo**(`index`: BN | number, `optionInfo?`: Option‹ReferendumInfo›): *Option‹[ReferendumInfoExtended](../classes/_type_referenduminfoextended_.referenduminfoextended.md)›*
-
-*Defined in [democracy/referendumInfo.ts:17](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/democracy/referendumInfo.ts#L17)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`index` | BN &#124; number |
-`optionInfo?` | Option‹ReferendumInfo› |
-
-**Returns:** *Option‹[ReferendumInfoExtended](../classes/_type_referenduminfoextended_.referenduminfoextended.md)›*
-
-___
 
 ###  referendumInfo
 
 ▸ **referendumInfo**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [democracy/referendumInfo.ts:30](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-derive/src/democracy/referendumInfo.ts#L30)*
+*Defined in [packages/api-derive/src/democracy/referendumInfo.ts:56](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/democracy/referendumInfo.ts#L56)*
 
 **Parameters:**
 
@@ -42,10 +25,28 @@ Name | Type |
 
 **Returns:** *function*
 
-▸ (`index`: BN | number): *Observable‹Option‹[ReferendumInfoExtended](../classes/_type_referenduminfoextended_.referenduminfoextended.md)››*
+▸ (`index`: BN | number): *Observable‹DerivedReferendum | null›*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
 `index` | BN &#124; number |
+
+___
+
+###  retrieveInfo
+
+▸ **retrieveInfo**(`api`: ApiInterfaceRx, `index`: BN | number, `info`: Option‹ReferendumInfo›): *Observable‹DerivedReferendum | null›*
+
+*Defined in [packages/api-derive/src/democracy/referendumInfo.ts:44](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/democracy/referendumInfo.ts#L44)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`api` | ApiInterfaceRx |
+`index` | BN &#124; number |
+`info` | Option‹ReferendumInfo› |
+
+**Returns:** *Observable‹DerivedReferendum | null›*

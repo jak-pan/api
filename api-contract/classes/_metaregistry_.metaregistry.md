@@ -18,6 +18,7 @@
 
 ### Properties
 
+* [registry](_metaregistry_.metaregistry.md#registry)
 * [typeDefs](_metaregistry_.metaregistry.md#typedefs)
 
 ### Methods
@@ -38,29 +39,40 @@
 
 ###  constructor
 
-\+ **new MetaRegistry**(`json`: MetaRegistryJson): *[MetaRegistry](_metaregistry_.metaregistry.md)*
+\+ **new MetaRegistry**(`registry`: Registry, `json`: MetaRegistryJson): *[MetaRegistry](_metaregistry_.metaregistry.md)*
 
 *Overrides void*
 
-*Defined in [MetaRegistry.ts:104](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L104)*
+*Defined in [MetaRegistry.ts:107](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L107)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
+`registry` | Registry |
 `json` | MetaRegistryJson |
 
 **Returns:** *[MetaRegistry](_metaregistry_.metaregistry.md)*
 
 ## Properties
 
+###  registry
+
+• **registry**: *Registry*
+
+*Inherited from [MetaRegistry](_metaregistry_.metaregistry.md).[registry](_metaregistry_.metaregistry.md#registry)*
+
+*Defined in [MetaRegistry.ts:37](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L37)*
+
+___
+
 ###  typeDefs
 
-• **typeDefs**: *TypeDef[]* =  []
+• **typeDefs**: *TypeDef[]* = []
 
-*Inherited from void*
+*Inherited from [MetaRegistry](_metaregistry_.metaregistry.md).[typeDefs](_metaregistry_.metaregistry.md#typedefs)*
 
-*Defined in [MetaRegistry.ts:41](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L41)*
+*Defined in [MetaRegistry.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L43)*
 
 ## Methods
 
@@ -68,9 +80,9 @@ Name | Type |
 
 ▸ **hasTypeDefAt**(`index`: TypeIndex): *boolean*
 
-*Inherited from void*
+*Inherited from [MetaRegistry](_metaregistry_.metaregistry.md).[hasTypeDefAt](_metaregistry_.metaregistry.md#hastypedefat)*
 
-*Defined in [MetaRegistry.ts:92](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L92)*
+*Defined in [MetaRegistry.ts:95](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L95)*
 
 **Parameters:**
 
@@ -86,7 +98,7 @@ ___
 
 ▸ **setTypeDefAtIndex**(`typeIndex`: TypeIndex): *void*
 
-*Defined in [MetaRegistry.ts:112](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L112)*
+*Defined in [MetaRegistry.ts:115](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L115)*
 
 **Parameters:**
 
@@ -102,9 +114,9 @@ ___
 
 ▸ **stringsAt**(`indices`: StringIndex[]): *string[]*
 
-*Inherited from void*
+*Inherited from [MetaRegistry](_metaregistry_.metaregistry.md).[stringsAt](_metaregistry_.metaregistry.md#stringsat)*
 
-*Defined in [MetaRegistry.ts:80](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L80)*
+*Defined in [MetaRegistry.ts:83](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L83)*
 
 **Parameters:**
 
@@ -120,9 +132,9 @@ ___
 
 ▸ **typeAt**(`index`: TypeIndex): *MetaType*
 
-*Inherited from void*
+*Inherited from [MetaRegistry](_metaregistry_.metaregistry.md).[typeAt](_metaregistry_.metaregistry.md#typeat)*
 
-*Defined in [MetaRegistry.ts:84](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L84)*
+*Defined in [MetaRegistry.ts:87](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L87)*
 
 **Parameters:**
 
@@ -138,16 +150,16 @@ ___
 
 ▸ **typeDefAt**(`index`: TypeIndex, `extra`: Pick‹TypeDef, never›): *TypeDef*
 
-*Inherited from void*
+*Inherited from [MetaRegistry](_metaregistry_.metaregistry.md).[typeDefAt](_metaregistry_.metaregistry.md#typedefat)*
 
-*Defined in [MetaRegistry.ts:96](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L96)*
+*Defined in [MetaRegistry.ts:99](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L99)*
 
 **Parameters:**
 
 Name | Type | Default |
 ------ | ------ | ------ |
 `index` | TypeIndex | - |
-`extra` | Pick‹TypeDef, never› |  {} |
+`extra` | Pick‹TypeDef, never› | {} |
 
 **Returns:** *TypeDef*
 
@@ -157,7 +169,7 @@ ___
 
 ▸ **typeDefForOption**(`id`: MetaTypeIdCustom, `typeIndex?`: TypeIndex): *Pick‹TypeDef, any›*
 
-*Defined in [MetaRegistry.ts:297](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L297)*
+*Defined in [MetaRegistry.ts:300](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L300)*
 
 **Parameters:**
 
@@ -174,7 +186,7 @@ ___
 
 ▸ **typeDefForResult**(`id`: MetaTypeIdCustom, `typeIndex?`: TypeIndex): *Pick‹TypeDef, any›*
 
-*Defined in [MetaRegistry.ts:306](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L306)*
+*Defined in [MetaRegistry.ts:309](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L309)*
 
 **Parameters:**
 
@@ -191,7 +203,7 @@ ___
 
 ▸ **typeDefForStruct**(`def`: MetaTypeDefStruct | MetaTypeDefEnumVariantStruct): *Pick‹TypeDef, any›*
 
-*Defined in [MetaRegistry.ts:315](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L315)*
+*Defined in [MetaRegistry.ts:318](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L318)*
 
 **Parameters:**
 
@@ -207,7 +219,7 @@ ___
 
 ▸ **typeDefFromMetaType**(`metaType`: MetaType, `typeIndex?`: TypeIndex): *TypeDef*
 
-*Defined in [MetaRegistry.ts:172](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L172)*
+*Defined in [MetaRegistry.ts:175](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L175)*
 
 **Parameters:**
 
@@ -224,7 +236,7 @@ ___
 
 ▸ **typeDefFromMetaTypeAt**(`typeIndex`: TypeIndex): *TypeDef*
 
-*Defined in [MetaRegistry.ts:181](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L181)*
+*Defined in [MetaRegistry.ts:184](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L184)*
 
 **Parameters:**
 
@@ -240,9 +252,9 @@ ___
 
 ▸ **typesAt**(`indices`: TypeIndex[]): *MetaType[]*
 
-*Inherited from void*
+*Inherited from [MetaRegistry](_metaregistry_.metaregistry.md).[typesAt](_metaregistry_.metaregistry.md#typesat)*
 
-*Defined in [MetaRegistry.ts:88](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api-contract/src/MetaRegistry.ts#L88)*
+*Defined in [MetaRegistry.ts:91](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/MetaRegistry.ts#L91)*
 
 **Parameters:**
 

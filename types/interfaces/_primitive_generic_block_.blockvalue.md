@@ -17,9 +17,9 @@
 
 ### `Optional` extrinsics
 
-• **extrinsics**? : *[AnyU8a](../modules/_types_.md#anyu8a)[]*
+• **extrinsics**? : *[AnyU8a](../modules/_types_helpers_.md#anyu8a)[]*
 
-*Defined in [primitive/Generic/Block.ts:24](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Block.ts#L24)*
+*Defined in [packages/types/src/primitive/Generic/Block.ts:24](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Block.ts#L24)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **header**? : *[HeaderValue](_primitive_generic_block_.headervalue.md)*
 
-*Defined in [primitive/Generic/Block.ts:25](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/Block.ts#L25)*
+*Defined in [packages/types/src/primitive/Generic/Block.ts:25](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/Block.ts#L25)*

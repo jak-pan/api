@@ -4,7 +4,7 @@
 
 ## Type parameters
 
-▪ **ApiType**
+▪ **ApiType**: *[ApiTypes](../modules/_types_base_.md#apitypes)*
 
 ## Hierarchy
 
@@ -20,23 +20,30 @@
 
 * [constructor](_base_decorate_.decorate.md#constructor)
 
+### Properties
+
+* [registry](_base_decorate_.decorate.md#registry)
+
 ### Accessors
 
 * [hasSubscriptions](_base_decorate_.decorate.md#hassubscriptions)
 
 ### Methods
 
+* [createType](_base_decorate_.decorate.md#abstract-createtype)
+* [injectMetadata](_base_decorate_.decorate.md#injectmetadata)
 * [off](_base_decorate_.decorate.md#off)
 * [on](_base_decorate_.decorate.md#on)
 * [once](_base_decorate_.decorate.md#once)
+* [registerTypes](_base_decorate_.decorate.md#abstract-registertypes)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new Decorate**(`options`: [ApiOptions](../interfaces/_types_.apioptions.md), `type`: [ApiTypes](../modules/_types_.md#apitypes), `decorateMethod`: [DecorateMethod](../modules/_types_.md#decoratemethod)‹ApiType›): *[Decorate](_base_decorate_.decorate.md)*
+\+ **new Decorate**(`options`: ApiOptions, `type`: [ApiTypes](../modules/_types_base_.md#apitypes), `decorateMethod`: [DecorateMethod](../modules/_types_base_.md#decoratemethod)‹ApiType›): *[Decorate](_base_decorate_.decorate.md)*
 
-*Defined in [base/Decorate.ts:94](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Decorate.ts#L94)*
+*Defined in [api/src/base/Decorate.ts:100](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L100)*
 
 **`description`** Create an instance of the class
 
@@ -57,11 +64,19 @@ api.rpc.subscribeNewHeads((header) => {
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`options` | [ApiOptions](../interfaces/_types_.apioptions.md) | Options object to create API instance or a Provider instance  |
-`type` | [ApiTypes](../modules/_types_.md#apitypes) | - |
-`decorateMethod` | [DecorateMethod](../modules/_types_.md#decoratemethod)‹ApiType› | - |
+`options` | ApiOptions | Options object to create API instance or a Provider instance  |
+`type` | [ApiTypes](../modules/_types_base_.md#apitypes) | - |
+`decorateMethod` | [DecorateMethod](../modules/_types_base_.md#decoratemethod)‹ApiType› | - |
 
 **Returns:** *[Decorate](_base_decorate_.decorate.md)*
+
+## Properties
+
+###  registry
+
+• **registry**: *Registry*
+
+*Defined in [api/src/base/Decorate.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L43)*
 
 ## Accessors
 
@@ -69,7 +84,7 @@ Name | Type | Description |
 
 • **get hasSubscriptions**(): *boolean*
 
-*Defined in [base/Decorate.ts:132](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Decorate.ts#L132)*
+*Defined in [api/src/base/Decorate.ts:145](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L145)*
 
 **Returns:** *boolean*
 
@@ -77,13 +92,50 @@ Name | Type | Description |
 
 ## Methods
 
+### `Abstract` createType
+
+▸ **createType**<**K**>(`type`: K, ...`params`: any[]): *InterfaceRegistry[K]*
+
+*Defined in [api/src/base/Decorate.ts:138](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L138)*
+
+**Type parameters:**
+
+▪ **K**: *InterfaceTypes*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`type` | K |
+`...params` | any[] |
+
+**Returns:** *InterfaceRegistry[K]*
+
+___
+
+###  injectMetadata
+
+▸ **injectMetadata**(`metadata`: Metadata): *void*
+
+*Defined in [api/src/base/Decorate.ts:149](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L149)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`metadata` | Metadata |
+
+**Returns:** *void*
+
+___
+
 ###  off
 
-▸ **off**(`type`: [ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents), `handler`: function): *this*
+▸ **off**(`type`: ApiInterfaceEvents, `handler`: function): *this*
 
-*Inherited from [Events](_base_events_.events.md).[off](_base_events_.events.md#off)*
+*Inherited from [Init](_base_init_.init.md).[off](_base_init_.init.md#off)*
 
-*Defined in [base/Events.ts:62](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Events.ts#L62)*
+*Defined in [api/src/base/Events.ts:62](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Events.ts#L62)*
 
 **`description`** Remove the given eventemitter handler
 
@@ -104,7 +156,7 @@ api.off('connected', handler);
 
 **Parameters:**
 
-▪ **type**: *[ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents)*
+▪ **type**: *ApiInterfaceEvents*
 
 The type of event the callback was attached to. Available events are `connected`, `disconnected`, `ready` and `error`
 
@@ -126,11 +178,11 @@ ___
 
 ###  on
 
-▸ **on**(`type`: [ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents), `handler`: function): *this*
+▸ **on**(`type`: ApiInterfaceEvents, `handler`: function): *this*
 
-*Inherited from [Events](_base_events_.events.md).[on](_base_events_.events.md#on)*
+*Inherited from [Init](_base_init_.init.md).[on](_base_init_.init.md#on)*
 
-*Defined in [base/Events.ts:35](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Events.ts#L35)*
+*Defined in [api/src/base/Events.ts:35](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Events.ts#L35)*
 
 **`description`** Attach an eventemitter handler to listen to a specific event
 
@@ -149,7 +201,7 @@ api.on('disconnected', (): void => {
 
 **Parameters:**
 
-▪ **type**: *[ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents)*
+▪ **type**: *ApiInterfaceEvents*
 
 The type of event to listen to. Available events are `connected`, `disconnected`, `ready` and `error`
 
@@ -171,11 +223,11 @@ ___
 
 ###  once
 
-▸ **once**(`type`: [ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents), `handler`: function): *this*
+▸ **once**(`type`: ApiInterfaceEvents, `handler`: function): *this*
 
-*Inherited from [Events](_base_events_.events.md).[once](_base_events_.events.md#once)*
+*Inherited from [Init](_base_init_.init.md).[once](_base_init_.init.md#once)*
 
-*Defined in [base/Events.ts:87](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/api/src/base/Events.ts#L87)*
+*Defined in [api/src/base/Events.ts:87](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Events.ts#L87)*
 
 **`description`** Attach an one-time eventemitter handler to listen to a specific event
 
@@ -194,7 +246,7 @@ api.once('disconnected', (): void => {
 
 **Parameters:**
 
-▪ **type**: *[ApiInterfaceEvents](../modules/_types_.md#apiinterfaceevents)*
+▪ **type**: *ApiInterfaceEvents*
 
 The type of event to listen to. Available events are `connected`, `disconnected`, `ready` and `error`
 
@@ -211,3 +263,19 @@ Name | Type |
 `...args` | any[] |
 
 **Returns:** *this*
+
+___
+
+### `Abstract` registerTypes
+
+▸ **registerTypes**(`types?`: RegistryTypes): *void*
+
+*Defined in [api/src/base/Decorate.ts:140](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/base/Decorate.ts#L140)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`types?` | RegistryTypes |
+
+**Returns:** *void*

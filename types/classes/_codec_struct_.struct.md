@@ -23,191 +23,23 @@ it needs to decoded in the specific defined order.
 
 ## Hierarchy
 
-* Map‹keyof S, [Codec](../interfaces/_types_.codec.md)›
+* [Map](_codec_struct_.struct.md#static-map)‹keyof S, [Codec](../interfaces/_types_codec_.codec.md)›
 
   ↳ **Struct**
 
-  ↳ [Linkage](_codec_linkage_.linkage.md)
-
-  ↳ [StorageFunctionMetadata](_metadata_v5_storage_.storagefunctionmetadata.md)
-
-  ↳ [StorageMetadata](_metadata_v7_storage_.storagemetadata.md)
-
-  ↳ [Header](../interfaces/_interfaces_runtime_types_.header.md)
-
-  ↳ [SignedBlock](../interfaces/_interfaces_runtime_types_.signedblock.md)
-
-  ↳ [ExtrinsicPayloadV1](_primitive_extrinsic_v1_extrinsicpayload_.extrinsicpayloadv1.md)
-
-  ↳ [ExtrinsicSignatureV1](_primitive_extrinsic_v1_extrinsicsignature_.extrinsicsignaturev1.md)
+  ↳ [Event](_primitive_generic_event_.event.md)
 
   ↳ [ExtrinsicV1](_primitive_extrinsic_v1_extrinsic_.extrinsicv1.md)
 
-  ↳ [ExtrinsicPayloadV2](_primitive_extrinsic_v2_extrinsicpayload_.extrinsicpayloadv2.md)
-
-  ↳ [ExtrinsicSignatureV2](_primitive_extrinsic_v2_extrinsicsignature_.extrinsicsignaturev2.md)
-
   ↳ [ExtrinsicV2](_primitive_extrinsic_v2_extrinsic_.extrinsicv2.md)
 
-  ↳ [ExtrinsicPayloadV3](_primitive_extrinsic_v3_extrinsicpayload_.extrinsicpayloadv3.md)
-
   ↳ [ExtrinsicV3](_primitive_extrinsic_v3_extrinsic_.extrinsicv3.md)
-
-  ↳ [ExtrinsicPayloadV4](_primitive_extrinsic_v4_extrinsicpayload_.extrinsicpayloadv4.md)
-
-  ↳ [ExtrinsicSignatureV4](_primitive_extrinsic_v4_extrinsicsignature_.extrinsicsignaturev4.md)
 
   ↳ [ExtrinsicV4](_primitive_extrinsic_v4_extrinsic_.extrinsicv4.md)
 
   ↳ [Block](_primitive_generic_block_.block.md)
 
-  ↳ [ModuleMetadataV8](_metadata_v8_metadata_.modulemetadatav8.md)
-
-  ↳ [MetadataV8](_metadata_v8_metadata_.metadatav8.md)
-
-  ↳ [StorageFunctionMetadata](_metadata_v2_storage_.storagefunctionmetadata.md)
-
-  ↳ [ModuleMetadataV2](_metadata_v2_metadata_.modulemetadatav2.md)
-
-  ↳ [MetadataV2](_metadata_v2_metadata_.metadatav2.md)
-
-  ↳ [StorageFunctionMetadata](_metadata_v3_storage_.storagefunctionmetadata.md)
-
-  ↳ [ModuleMetadataV3](_metadata_v3_metadata_.modulemetadatav3.md)
-
-  ↳ [MetadataV3](_metadata_v3_metadata_.metadatav3.md)
-
-  ↳ [StorageFunctionMetadata](_metadata_v4_storage_.storagefunctionmetadata.md)
-
-  ↳ [ModuleMetadataV4](_metadata_v4_metadata_.modulemetadatav4.md)
-
-  ↳ [MetadataV4](_metadata_v4_metadata_.metadatav4.md)
-
-  ↳ [ModuleMetadataV5](_metadata_v5_metadata_.modulemetadatav5.md)
-
-  ↳ [MetadataV5](_metadata_v5_metadata_.metadatav5.md)
-
-  ↳ [ModuleMetadataV6](_metadata_v6_metadata_.modulemetadatav6.md)
-
-  ↳ [MetadataV6](_metadata_v6_metadata_.metadatav6.md)
-
-  ↳ [ModuleMetadataV7](_metadata_v7_metadata_.modulemetadatav7.md)
-
-  ↳ [MetadataV7](_metadata_v7_metadata_.metadatav7.md)
-
-  ↳ [MetadataVersioned](_metadata_metadataversioned_.metadataversioned.md)
-
-  ↳ [RawAuraPreDigest](../interfaces/_interfaces_aura_types_.rawaurapredigest.md)
-
-  ↳ [RawBabePreDigestPrimary](../interfaces/_interfaces_babe_types_.rawbabepredigestprimary.md)
-
-  ↳ [RawBabePreDigestPrimary0to159](../interfaces/_interfaces_babe_types_.rawbabepredigestprimary0to159.md)
-
-  ↳ [RawBabePreDigestSecondary](../interfaces/_interfaces_babe_types_.rawbabepredigestsecondary.md)
-
-  ↳ [RawBabePreDigestSecondary0to159](../interfaces/_interfaces_babe_types_.rawbabepredigestsecondary0to159.md)
-
-  ↳ [BalanceLock](../interfaces/_interfaces_balances_types_.balancelock.md)
-
-  ↳ [VestingSchedule](../interfaces/_interfaces_balances_types_.vestingschedule.md)
-
-  ↳ [Votes](../interfaces/_interfaces_collective_types_.votes.md)
-
-  ↳ [AliveContractInfo](../interfaces/_interfaces_contracts_types_.alivecontractinfo.md)
-
-  ↳ [ContractCallRequest](../interfaces/_interfaces_contracts_types_.contractcallrequest.md)
-
-  ↳ [ContractExecResultSuccess](../interfaces/_interfaces_contracts_types_.contractexecresultsuccess.md)
-
-  ↳ [PrefabWasmModule](../interfaces/_interfaces_contracts_types_.prefabwasmmodule.md)
-
-  ↳ [Schedule](../interfaces/_interfaces_contracts_types_.schedule.md)
-
-  ↳ [VoterInfo](../interfaces/_interfaces_elections_types_.voterinfo.md)
-
-  ↳ [ReferendumInfo](../interfaces/_interfaces_democracy_types_.referenduminfo.md)
-
-  ↳ [AccountInfo](../interfaces/_interfaces_deprecated_types_.accountinfo.md)
-
-  ↳ [AssetOptions](../interfaces/_interfaces_genericasset_types_.assetoptions.md)
-
-  ↳ [PermissionsV1](../interfaces/_interfaces_genericasset_types_.permissionsv1.md)
-
-  ↳ [PendingPause](../interfaces/_interfaces_grandpa_types_.pendingpause.md)
-
-  ↳ [PendingResume](../interfaces/_interfaces_grandpa_types_.pendingresume.md)
-
-  ↳ [StoredPendingChange](../interfaces/_interfaces_grandpa_types_.storedpendingchange.md)
-
-  ↳ [EraPoints](../interfaces/_interfaces_staking_types_.erapoints.md)
-
-  ↳ [EraRewards](../interfaces/_interfaces_staking_types_.erarewards.md)
-
-  ↳ [Exposure](../interfaces/_interfaces_staking_types_.exposure.md)
-
-  ↳ [IndividualExposure](../interfaces/_interfaces_staking_types_.individualexposure.md)
-
-  ↳ [SlashJournalEntry](../interfaces/_interfaces_staking_types_.slashjournalentry.md)
-
-  ↳ [StakingLedger](../interfaces/_interfaces_staking_types_.stakingledger.md)
-
-  ↳ [UnlockChunk](../interfaces/_interfaces_staking_types_.unlockchunk.md)
-
-  ↳ [ValidatorPrefs](../interfaces/_interfaces_staking_types_.validatorprefs.md)
-
-  ↳ [ValidatorPrefs0to145](../interfaces/_interfaces_staking_types_.validatorprefs0to145.md)
-
-  ↳ [Heartbeat](../interfaces/_interfaces_imonline_types_.heartbeat.md)
-
-  ↳ [OpaqueNetworkState](../interfaces/_interfaces_imonline_types_.opaquenetworkstate.md)
-
-  ↳ [OffenceDetails](../interfaces/_interfaces_offences_types_.offencedetails.md)
-
-  ↳ [DispatchError](../interfaces/_interfaces_system_types_.dispatcherror.md)
-
-  ↳ [EventRecord](../interfaces/_interfaces_system_types_.eventrecord.md)
-
-  ↳ [EventRecord0to76](../interfaces/_interfaces_system_types_.eventrecord0to76.md)
-
-  ↳ [TreasuryProposal](../interfaces/_interfaces_treasury_types_.treasuryproposal.md)
-
-  ↳ [AttestedCandidate](../interfaces/_interfaces_parachains_types_.attestedcandidate.md)
-
-  ↳ [CandidateReceipt](../interfaces/_interfaces_parachains_types_.candidatereceipt.md)
-
-  ↳ [IncomingParachainDeploy](../interfaces/_interfaces_parachains_types_.incomingparachaindeploy.md)
-
-  ↳ [IncomingParachainFixed](../interfaces/_interfaces_parachains_types_.incomingparachainfixed.md)
-
-  ↳ [NewBidder](../interfaces/_interfaces_parachains_types_.newbidder.md)
-
-  ↳ [ParaInfo](../interfaces/_interfaces_parachains_types_.parainfo.md)
-
-  ↳ [UpwardMessage](../interfaces/_interfaces_parachains_types_.upwardmessage.md)
-
-  ↳ [BlockAttestations](../interfaces/_interfaces_attestations_types_.blockattestations.md)
-
-  ↳ [IncludedBlocks](../interfaces/_interfaces_attestations_types_.includedblocks.md)
-
-  ↳ [MoreAttestations](../interfaces/_interfaces_attestations_types_.moreattestations.md)
-
-  ↳ [ChainProperties](../interfaces/_interfaces_rpc_types_.chainproperties.md)
-
-  ↳ [Health](../interfaces/_interfaces_rpc_types_.health.md)
-
-  ↳ [NetworkState](../interfaces/_interfaces_rpc_types_.networkstate.md)
-
-  ↳ [PeerInfo](../interfaces/_interfaces_rpc_types_.peerinfo.md)
-
-  ↳ [RpcMethods](../interfaces/_interfaces_rpc_types_.rpcmethods.md)
-
-  ↳ [RuntimeVersion](../interfaces/_interfaces_rpc_types_.runtimeversion.md)
-
-  ↳ [StorageChangeSet](../interfaces/_interfaces_rpc_types_.storagechangeset.md)
-
   ↳ [Call](_primitive_generic_call_.call.md)
-
-  ↳ [Event](_primitive_generic_event_.event.md)
 
   ↳ [Digest](_primitive_generic_digest_.digest.md)
 
@@ -215,55 +47,25 @@ it needs to decoded in the specific defined order.
 
   ↳ [ExtrinsicUnknown](_primitive_extrinsic_extrinsicunknown_.extrinsicunknown.md)
 
-  ↳ [CallMetadataV0](../interfaces/_interfaces_metadata_types_.callmetadatav0.md)
+  ↳ [ExtrinsicPayloadV1](_primitive_extrinsic_v1_extrinsicpayload_.extrinsicpayloadv1.md)
 
-  ↳ [DoubleMapTypeV3](../interfaces/_interfaces_metadata_types_.doublemaptypev3.md)
+  ↳ [ExtrinsicSignatureV1](_primitive_extrinsic_v1_extrinsicsignature_.extrinsicsignaturev1.md)
 
-  ↳ [DoubleMapTypeV4](../interfaces/_interfaces_metadata_types_.doublemaptypev4.md)
+  ↳ [ExtrinsicPayloadV2](_primitive_extrinsic_v2_extrinsicpayload_.extrinsicpayloadv2.md)
 
-  ↳ [DoubleMapTypeV5](../interfaces/_interfaces_metadata_types_.doublemaptypev5.md)
+  ↳ [ExtrinsicSignatureV2](_primitive_extrinsic_v2_extrinsicsignature_.extrinsicsignaturev2.md)
 
-  ↳ [ErrorMetadataV8](../interfaces/_interfaces_metadata_types_.errormetadatav8.md)
+  ↳ [ExtrinsicPayloadV3](_primitive_extrinsic_v3_extrinsicpayload_.extrinsicpayloadv3.md)
 
-  ↳ [EventMetadataV0](../interfaces/_interfaces_metadata_types_.eventmetadatav0.md)
+  ↳ [ExtrinsicPayloadV4](_primitive_extrinsic_v4_extrinsicpayload_.extrinsicpayloadv4.md)
 
-  ↳ [FunctionArgumentMetadataV0](../interfaces/_interfaces_metadata_types_.functionargumentmetadatav0.md)
+  ↳ [ExtrinsicSignatureV4](_primitive_extrinsic_v4_extrinsicsignature_.extrinsicsignaturev4.md)
 
-  ↳ [FunctionMetadataV0](../interfaces/_interfaces_metadata_types_.functionmetadatav0.md)
-
-  ↳ [FunctionMetadataV1](../interfaces/_interfaces_metadata_types_.functionmetadatav1.md)
-
-  ↳ [MapTypeV0](../interfaces/_interfaces_metadata_types_.maptypev0.md)
-
-  ↳ [MapTypeV2](../interfaces/_interfaces_metadata_types_.maptypev2.md)
-
-  ↳ [MapTypeV4](../interfaces/_interfaces_metadata_types_.maptypev4.md)
-
-  ↳ [MetadataV0](../interfaces/_interfaces_metadata_types_.metadatav0.md)
-
-  ↳ [MetadataV1](../interfaces/_interfaces_metadata_types_.metadatav1.md)
-
-  ↳ [ModuleConstantMetadataV6](../interfaces/_interfaces_metadata_types_.moduleconstantmetadatav6.md)
-
-  ↳ [ModuleMetadataV0](../interfaces/_interfaces_metadata_types_.modulemetadatav0.md)
-
-  ↳ [ModuleMetadataV1](../interfaces/_interfaces_metadata_types_.modulemetadatav1.md)
-
-  ↳ [OuterDispatchCallV0](../interfaces/_interfaces_metadata_types_.outerdispatchcallv0.md)
-
-  ↳ [OuterDispatchMetadataV0](../interfaces/_interfaces_metadata_types_.outerdispatchmetadatav0.md)
-
-  ↳ [OuterEventMetadataV0](../interfaces/_interfaces_metadata_types_.outereventmetadatav0.md)
-
-  ↳ [RuntimeModuleMetadataV0](../interfaces/_interfaces_metadata_types_.runtimemodulemetadatav0.md)
-
-  ↳ [StorageFunctionMetadataV0](../interfaces/_interfaces_metadata_types_.storagefunctionmetadatav0.md)
-
-  ↳ [StorageMetadataV0](../interfaces/_interfaces_metadata_types_.storagemetadatav0.md)
+  ↳ [Linkage](_codec_linkage_.linkage.md)
 
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [Codec](../interfaces/_types_codec_.codec.md)
 
 ## Index
 
@@ -273,11 +75,13 @@ it needs to decoded in the specific defined order.
 
 ### Properties
 
+* [registry](_codec_struct_.struct.md#registry)
 * [Map](_codec_struct_.struct.md#static-map)
 
 ### Accessors
 
 * [Type](_codec_struct_.struct.md#type)
+* [defKeys](_codec_struct_.struct.md#defkeys)
 * [encodedLength](_codec_struct_.struct.md#encodedlength)
 * [hash](_codec_struct_.struct.md#hash)
 * [isEmpty](_codec_struct_.struct.md#isempty)
@@ -289,6 +93,7 @@ it needs to decoded in the specific defined order.
 * [getAtIndex](_codec_struct_.struct.md#getatindex)
 * [toArray](_codec_struct_.struct.md#toarray)
 * [toHex](_codec_struct_.struct.md#tohex)
+* [toHuman](_codec_struct_.struct.md#tohuman)
 * [toJSON](_codec_struct_.struct.md#tojson)
 * [toRawType](_codec_struct_.struct.md#torawtype)
 * [toString](_codec_struct_.struct.md#tostring)
@@ -300,27 +105,38 @@ it needs to decoded in the specific defined order.
 
 ###  constructor
 
-\+ **new Struct**(`Types`: S, `value`: V | Map‹any, any› | any[] | string, `jsonMap`: Map‹keyof S, string›): *[Struct](_codec_struct_.struct.md)*
+\+ **new Struct**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `Types`: S, `value`: V | [Map](_codec_struct_.struct.md#static-map)‹any, any› | any[] | string, `jsonMap`: [Map](_codec_struct_.struct.md#static-map)‹keyof S, string›): *[Struct](_codec_struct_.struct.md)*
 
-*Defined in [codec/Struct.ts:36](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L36)*
+*Defined in [packages/types/src/codec/Struct.ts:110](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L110)*
 
 **Parameters:**
 
 Name | Type | Default |
 ------ | ------ | ------ |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) | - |
 `Types` | S | - |
-`value` | V &#124; Map‹any, any› &#124; any[] &#124; string |  {} as unknown as V |
-`jsonMap` | Map‹keyof S, string› |  new Map() |
+`value` | V &#124; [Map](_codec_struct_.struct.md#static-map)‹any, any› &#124; any[] &#124; string | {} as V |
+`jsonMap` | [Map](_codec_struct_.struct.md#static-map)‹keyof S, string› | new Map() |
 
 **Returns:** *[Struct](_codec_struct_.struct.md)*
 
 ## Properties
 
+###  registry
+
+• **registry**: *[Registry](../interfaces/_types_registry_.registry.md)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md).[registry](../interfaces/_types_codec_.codec.md#registry)*
+
+*Defined in [packages/types/src/codec/Struct.ts:106](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L106)*
+
+___
+
 ### `Static` Map
 
 ▪ **Map**: *MapConstructor*
 
-Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.collection.d.ts:36
+Defined in node_modules/typescript/lib/lib.es2015.collection.d.ts:36
 
 ## Accessors
 
@@ -328,7 +144,7 @@ Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.coll
 
 • **get Type**(): *E*
 
-*Defined in [codec/Struct.ts:155](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L155)*
+*Defined in [packages/types/src/codec/Struct.ts:168](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L168)*
 
 **`description`** Returns the Type description to sthe structure
 
@@ -336,11 +152,23 @@ Defined in /home/runner/work/api/api/node_modules/typescript/lib/lib.es2015.coll
 
 ___
 
+###  defKeys
+
+• **get defKeys**(): *string[]*
+
+*Defined in [packages/types/src/codec/Struct.ts:146](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L146)*
+
+**`description`** The available keys for this enum
+
+**Returns:** *string[]*
+
+___
+
 ###  encodedLength
 
 • **get encodedLength**(): *number*
 
-*Defined in [codec/Struct.ts:168](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L168)*
+*Defined in [packages/types/src/codec/Struct.ts:181](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L181)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
@@ -350,13 +178,13 @@ ___
 
 ###  hash
 
-• **get hash**(): *[IHash](../interfaces/_types_.ihash.md)*
+• **get hash**(): *H256*
 
-*Defined in [codec/Struct.ts:179](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L179)*
+*Defined in [packages/types/src/codec/Struct.ts:192](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L192)*
 
 **`description`** returns a hash of the contents
 
-**Returns:** *[IHash](../interfaces/_types_.ihash.md)*
+**Returns:** *H256*
 
 ___
 
@@ -364,7 +192,7 @@ ___
 
 • **get isEmpty**(): *boolean*
 
-*Defined in [codec/Struct.ts:140](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L140)*
+*Defined in [packages/types/src/codec/Struct.ts:153](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L153)*
 
 **`description`** Checks if the value is an empty value
 
@@ -376,9 +204,9 @@ ___
 
 ▸ **eq**(`other?`: any): *boolean*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Struct.ts:186](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L186)*
+*Defined in [packages/types/src/codec/Struct.ts:199](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L199)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -394,11 +222,11 @@ ___
 
 ###  get
 
-▸ **get**(`name`: keyof S): *[Codec](../interfaces/_types_.codec.md) | undefined*
+▸ **get**(`name`: keyof S): *[Codec](../interfaces/_types_codec_.codec.md) | undefined*
 
-*Overrides void*
+*Overrides [BTreeMap](_codec_btreemap_.btreemap.md).[get](_codec_btreemap_.btreemap.md#get)*
 
-*Defined in [codec/Struct.ts:194](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L194)*
+*Defined in [packages/types/src/codec/Struct.ts:207](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L207)*
 
 **`description`** Returns a specific names entry in the structure
 
@@ -408,15 +236,15 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `name` | keyof S | The name of the entry to retrieve  |
 
-**Returns:** *[Codec](../interfaces/_types_.codec.md) | undefined*
+**Returns:** *[Codec](../interfaces/_types_codec_.codec.md) | undefined*
 
 ___
 
 ###  getAtIndex
 
-▸ **getAtIndex**(`index`: number): *[Codec](../interfaces/_types_.codec.md)*
+▸ **getAtIndex**(`index`: number): *[Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Struct.ts:201](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L201)*
+*Defined in [packages/types/src/codec/Struct.ts:214](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L214)*
 
 **`description`** Returns the values of a member at a specific index (Rather use get(name) for performance)
 
@@ -426,19 +254,19 @@ Name | Type |
 ------ | ------ |
 `index` | number |
 
-**Returns:** *[Codec](../interfaces/_types_.codec.md)*
+**Returns:** *[Codec](../interfaces/_types_codec_.codec.md)*
 
 ___
 
 ###  toArray
 
-▸ **toArray**(): *[Codec](../interfaces/_types_.codec.md)[]*
+▸ **toArray**(): *[Codec](../interfaces/_types_codec_.codec.md)[]*
 
-*Defined in [codec/Struct.ts:208](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L208)*
+*Defined in [packages/types/src/codec/Struct.ts:221](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L221)*
 
 **`description`** Converts the Object to an standard JavaScript Array
 
-**Returns:** *[Codec](../interfaces/_types_.codec.md)[]*
+**Returns:** *[Codec](../interfaces/_types_codec_.codec.md)[]*
 
 ___
 
@@ -446,7 +274,7 @@ ___
 
 ▸ **toHex**(): *string*
 
-*Defined in [codec/Struct.ts:215](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L215)*
+*Defined in [packages/types/src/codec/Struct.ts:228](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L228)*
 
 **`description`** Returns a hex string representation of the value
 
@@ -454,17 +282,37 @@ ___
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(`isExtended?`: undefined | false | true): *[AnyJsonObject](../interfaces/_types_helpers_.anyjsonobject.md)*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
+
+*Defined in [packages/types/src/codec/Struct.ts:235](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L235)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`isExtended?` | undefined &#124; false &#124; true |
+
+**Returns:** *[AnyJsonObject](../interfaces/_types_helpers_.anyjsonobject.md)*
+
+___
+
 ###  toJSON
 
-▸ **toJSON**(): *[AnyJsonObject](../interfaces/_types_.anyjsonobject.md) | string*
+▸ **toJSON**(): *[AnyJsonObject](../interfaces/_types_helpers_.anyjsonobject.md)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Struct.ts:222](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L222)*
+*Defined in [packages/types/src/codec/Struct.ts:249](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L249)*
 
 **`description`** Converts the Object to JSON, typically used for RPC transfers
 
-**Returns:** *[AnyJsonObject](../interfaces/_types_.anyjsonobject.md) | string*
+**Returns:** *[AnyJsonObject](../interfaces/_types_helpers_.anyjsonobject.md)*
 
 ___
 
@@ -472,9 +320,9 @@ ___
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Struct.ts:246](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L246)*
+*Defined in [packages/types/src/codec/Struct.ts:273](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L273)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -486,9 +334,9 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Struct.ts:255](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L255)*
+*Defined in [packages/types/src/codec/Struct.ts:282](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L282)*
 
 **`description`** Returns the string representation of the value
 
@@ -498,11 +346,11 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
+▸ **toU8a**(`isBare?`: [BareOpts](../modules/_types_helpers_.md#bareopts)): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
-*Defined in [codec/Struct.ts:263](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L263)*
+*Defined in [packages/types/src/codec/Struct.ts:290](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L290)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -510,23 +358,24 @@ ___
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
+`isBare?` | [BareOpts](../modules/_types_helpers_.md#bareopts) | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 ___
 
 ### `Static` typesToMap
 
-▸ **typesToMap**(`Types`: Record‹string, [Constructor](../interfaces/_types_.constructor.md)›): *Record‹string, string›*
+▸ **typesToMap**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `Types`: Record‹string, [Constructor](../interfaces/_types_codec_.constructor.md)›): *Record‹string, string›*
 
-*Defined in [codec/Struct.ts:235](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L235)*
+*Defined in [packages/types/src/codec/Struct.ts:262](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L262)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`Types` | Record‹string, [Constructor](../interfaces/_types_.constructor.md)› |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) |
+`Types` | Record‹string, [Constructor](../interfaces/_types_codec_.constructor.md)› |
 
 **Returns:** *Record‹string, string›*
 
@@ -534,9 +383,9 @@ ___
 
 ### `Static` with
 
-▸ **with**<**S**>(`Types`: S): *[Constructor](../interfaces/_types_.constructor.md)‹[Struct](_codec_struct_.struct.md)‹S››*
+▸ **with**<**S**>(`Types`: S): *[Constructor](../interfaces/_types_codec_.constructor.md)‹[Struct](_codec_struct_.struct.md)‹S››*
 
-*Defined in [codec/Struct.ts:117](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/Struct.ts#L117)*
+*Defined in [packages/types/src/codec/Struct.ts:123](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/Struct.ts#L123)*
 
 **Type parameters:**
 
@@ -548,4 +397,4 @@ Name | Type |
 ------ | ------ |
 `Types` | S |
 
-**Returns:** *[Constructor](../interfaces/_types_.constructor.md)‹[Struct](_codec_struct_.struct.md)‹S››*
+**Returns:** *[Constructor](../interfaces/_types_codec_.constructor.md)‹[Struct](_codec_struct_.struct.md)‹S››*

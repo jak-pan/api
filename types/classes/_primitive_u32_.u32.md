@@ -17,65 +17,23 @@ A 32-bit unsigned integer
 
   ↳ [AccountIndex](_primitive_generic_accountindex_.accountindex.md)
 
-  ↳ [AssetId](../interfaces/_interfaces_runtime_types_.assetid.md)
-
-  ↳ [BlockNumber](../interfaces/_interfaces_runtime_types_.blocknumber.md)
-
-  ↳ [Index](../interfaces/_interfaces_runtime_types_.index.md)
-
-  ↳ [KeyTypeId](../interfaces/_interfaces_runtime_types_.keytypeid.md)
-
-  ↳ [Perbill](../interfaces/_interfaces_runtime_types_.perbill.md)
-
-  ↳ [Permill](../interfaces/_interfaces_runtime_types_.permill.md)
-
-  ↳ [Weight](../interfaces/_interfaces_runtime_types_.weight.md)
-
-  ↳ [BabeBlockWeight](../interfaces/_interfaces_babe_types_.babeblockweight.md)
-
-  ↳ [MemberCount](../interfaces/_interfaces_collective_types_.membercount.md)
-
-  ↳ [ProposalIndex](../interfaces/_interfaces_collective_types_.proposalindex.md)
-
-  ↳ [ApprovalFlag](../interfaces/_interfaces_elections_types_.approvalflag.md)
-
-  ↳ [SetIndex](../interfaces/_interfaces_elections_types_.setindex.md)
-
-  ↳ [VoteIndex](../interfaces/_interfaces_elections_types_.voteindex.md)
-
-  ↳ [PropIndex](../interfaces/_interfaces_democracy_types_.propindex.md)
-
-  ↳ [ReferendumIndex](../interfaces/_interfaces_democracy_types_.referendumindex.md)
-
-  ↳ [AssetOf](../interfaces/_interfaces_deprecated_types_.assetof.md)
-
-  ↳ [EraIndex](../interfaces/_interfaces_staking_types_.eraindex.md)
-
-  ↳ [Points](../interfaces/_interfaces_staking_types_.points.md)
-
-  ↳ [SessionIndex](../interfaces/_interfaces_session_types_.sessionindex.md)
-
-  ↳ [AuthIndex](../interfaces/_interfaces_imonline_types_.authindex.md)
-
-  ↳ [EventIndex](../interfaces/_interfaces_system_types_.eventindex.md)
-
-  ↳ [AuctionIndex](../interfaces/_interfaces_parachains_types_.auctionindex.md)
-
-  ↳ [ParaId](../interfaces/_interfaces_parachains_types_.paraid.md)
-
-  ↳ [SubId](../interfaces/_interfaces_parachains_types_.subid.md)
-
-  ↳ [ValidatorIndex](../interfaces/_interfaces_parachains_types_.validatorindex.md)
-
   ↳ [ConsensusEngineId](_primitive_generic_consensusengineid_.consensusengineid.md)
-
-  ↳ [MagicNumber](_metadata_magicnumber_.magicnumber.md)
 
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [Codec](../interfaces/_types_codec_.codec.md)
 
 ## Index
+
+### Interfaces
+
+* [MPrime](../interfaces/_primitive_u32_.u32.mprime.md)
+* [ReductionContext](../interfaces/_primitive_u32_.u32.reductioncontext.md)
+
+### Type aliases
+
+* [Endianness](_primitive_u32_.u32.md#static-endianness)
+* [IPrimeName](_primitive_u32_.u32.md#static-iprimename)
 
 ### Constructors
 
@@ -84,24 +42,45 @@ A 32-bit unsigned integer
 ### Methods
 
 * [toHex](_primitive_u32_.u32.md#tohex)
+* [toHuman](_primitive_u32_.u32.md#tohuman)
 * [toRawType](_primitive_u32_.u32.md#torawtype)
 * [toU8a](_primitive_u32_.u32.md#tou8a)
+* [with](_primitive_u32_.u32.md#static-with)
+
+## Type aliases
+
+### `Static` Endianness
+
+Ƭ **Endianness**: *"le" | "be"*
+
+Defined in node_modules/@types/bn.js/index.d.ts:11
+
+___
+
+### `Static` IPrimeName
+
+Ƭ **IPrimeName**: *"k256" | "p224" | "p192" | "p25519"*
+
+Defined in node_modules/@types/bn.js/index.d.ts:12
 
 ## Constructors
 
 ###  constructor
 
-\+ **new U32**(`value?`: [AnyNumber](../modules/_types_.md#anynumber)): *[U32](_primitive_u32_.u32.md)*
+\+ **new U32**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `value`: [AnyNumber](../modules/_types_helpers_.md#anynumber), `bitLength`: [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength), `isHexJson`: boolean): *[U32](_primitive_u32_.u32.md)*
 
-*Overrides [UInt](_codec_uint_.uint.md).[constructor](_codec_uint_.uint.md#constructor)*
+*Inherited from [UInt](_codec_uint_.uint.md).[constructor](_codec_uint_.uint.md#constructor)*
 
-*Defined in [primitive/U32.ts:14](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/U32.ts#L14)*
+*Defined in [packages/types/src/codec/UInt.ts:22](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L22)*
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`value?` | [AnyNumber](../modules/_types_.md#anynumber) |
+Name | Type | Default |
+------ | ------ | ------ |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) | - |
+`value` | [AnyNumber](../modules/_types_helpers_.md#anynumber) | 0 |
+`bitLength` | [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength) | DEFAULT_UINT_BITS |
+`isHexJson` | boolean | false |
 
 **Returns:** *[U32](_primitive_u32_.u32.md)*
 
@@ -115,7 +94,7 @@ Name | Type |
 
 *Overrides void*
 
-*Defined in [codec/UInt.ts:37](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/UInt.ts#L37)*
+*Defined in [packages/types/src/codec/UInt.ts:42](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L42)*
 
 **`description`** Returns a hex string representation of the value
 
@@ -129,17 +108,41 @@ Name | Type | Default |
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(`isExpanded?`: undefined | false | true): *any*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
+
+*Inherited from [UInt](_codec_uint_.uint.md).[toHuman](_codec_uint_.uint.md#tohuman)*
+
+*Overrides void*
+
+*Defined in [packages/types/src/codec/UInt.ts:54](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L54)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`isExpanded?` | undefined &#124; false &#124; true |
+
+**Returns:** *any*
+
+___
+
 ###  toRawType
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Inherited from [UInt](_codec_uint_.uint.md).[toRawType](_codec_uint_.uint.md#torawtype)*
 
 *Overrides void*
 
-*Defined in [codec/UInt.ts:49](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/UInt.ts#L49)*
+*Defined in [packages/types/src/codec/UInt.ts:64](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L64)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -149,15 +152,13 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
-
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+▸ **toU8a**(`isBare?`: undefined | false | true): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 *Inherited from [UInt](_codec_uint_.uint.md).[toU8a](_codec_uint_.uint.md#tou8a)*
 
 *Overrides void*
 
-*Defined in [codec/UInt.ts:63](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/UInt.ts#L63)*
+*Defined in [packages/types/src/codec/UInt.ts:78](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L78)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -167,4 +168,23 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
+
+___
+
+### `Static` with
+
+▸ **with**(`bitLength`: [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength), `typeName?`: undefined | string): *[Constructor](../interfaces/_types_codec_.constructor.md)‹[UInt](_codec_uint_.uint.md)›*
+
+*Inherited from [UInt](_codec_uint_.uint.md).[with](_codec_uint_.uint.md#static-with)*
+
+*Defined in [packages/types/src/codec/UInt.ts:27](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L27)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`bitLength` | [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength) |
+`typeName?` | undefined &#124; string |
+
+**Returns:** *[Constructor](../interfaces/_types_codec_.constructor.md)‹[UInt](_codec_uint_.uint.md)›*

@@ -13,13 +13,21 @@ A 4-byte identifier (actually a [u8; 4]) identifying the engine, e.g. for Aura i
 
   ↳ **ConsensusEngineId**
 
-  ↳ [ConsensusEngineId](../interfaces/_interfaces_runtime_types_.consensusengineid.md)
-
 ## Implements
 
-* [Codec](../interfaces/_types_.codec.md)
+* [Codec](../interfaces/_types_codec_.codec.md)
 
 ## Index
+
+### Interfaces
+
+* [MPrime](../interfaces/_primitive_generic_consensusengineid_.consensusengineid.mprime.md)
+* [ReductionContext](../interfaces/_primitive_generic_consensusengineid_.consensusengineid.reductioncontext.md)
+
+### Type aliases
+
+* [Endianness](_primitive_generic_consensusengineid_.consensusengineid.md#static-endianness)
+* [IPrimeName](_primitive_generic_consensusengineid_.consensusengineid.md#static-iprimename)
 
 ### Constructors
 
@@ -35,29 +43,48 @@ A 4-byte identifier (actually a [u8; 4]) identifying the engine, e.g. for Aura i
 
 * [extractAuthor](_primitive_generic_consensusengineid_.consensusengineid.md#extractauthor)
 * [toHex](_primitive_generic_consensusengineid_.consensusengineid.md#tohex)
+* [toHuman](_primitive_generic_consensusengineid_.consensusengineid.md#tohuman)
 * [toRawType](_primitive_generic_consensusengineid_.consensusengineid.md#torawtype)
 * [toString](_primitive_generic_consensusengineid_.consensusengineid.md#tostring)
 * [toU8a](_primitive_generic_consensusengineid_.consensusengineid.md#tou8a)
 * [idToString](_primitive_generic_consensusengineid_.consensusengineid.md#static-idtostring)
 * [stringToId](_primitive_generic_consensusengineid_.consensusengineid.md#static-stringtoid)
+* [with](_primitive_generic_consensusengineid_.consensusengineid.md#static-with)
+
+## Type aliases
+
+### `Static` Endianness
+
+Ƭ **Endianness**: *"le" | "be"*
+
+Defined in node_modules/@types/bn.js/index.d.ts:11
+
+___
+
+### `Static` IPrimeName
+
+Ƭ **IPrimeName**: *"k256" | "p224" | "p192" | "p25519"*
+
+Defined in node_modules/@types/bn.js/index.d.ts:12
 
 ## Constructors
 
 ###  constructor
 
-\+ **new ConsensusEngineId**(`value?`: [AnyNumber](../modules/_types_.md#anynumber)): *[ConsensusEngineId](_primitive_generic_consensusengineid_.consensusengineid.md)*
+\+ **new ConsensusEngineId**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `value`: [AnyNumber](../modules/_types_helpers_.md#anynumber), `bitLength`: [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength), `isHexJson`: boolean): *[ConsensusEngineId](_primitive_generic_consensusengineid_.consensusengineid.md)*
 
-*Inherited from [U32](_primitive_u32_.u32.md).[constructor](_primitive_u32_.u32.md#constructor)*
+*Inherited from [UInt](_codec_uint_.uint.md).[constructor](_codec_uint_.uint.md#constructor)*
 
-*Overrides [UInt](_codec_uint_.uint.md).[constructor](_codec_uint_.uint.md#constructor)*
-
-*Defined in [primitive/U32.ts:14](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/U32.ts#L14)*
+*Defined in [packages/types/src/codec/UInt.ts:22](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L22)*
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`value?` | [AnyNumber](../modules/_types_.md#anynumber) |
+Name | Type | Default |
+------ | ------ | ------ |
+`registry` | [Registry](../interfaces/_types_registry_.registry.md) | - |
+`value` | [AnyNumber](../modules/_types_helpers_.md#anynumber) | 0 |
+`bitLength` | [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength) | DEFAULT_UINT_BITS |
+`isHexJson` | boolean | false |
 
 **Returns:** *[ConsensusEngineId](_primitive_generic_consensusengineid_.consensusengineid.md)*
 
@@ -67,7 +94,7 @@ Name | Type |
 
 • **get isAura**(): *boolean*
 
-*Defined in [primitive/Generic/ConsensusEngineId.ts:43](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L43)*
+*Defined in [packages/types/src/primitive/Generic/ConsensusEngineId.ts:43](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L43)*
 
 **`description`** `true` if the engine matches aura
 
@@ -79,7 +106,7 @@ ___
 
 • **get isBabe**(): *boolean*
 
-*Defined in [primitive/Generic/ConsensusEngineId.ts:50](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L50)*
+*Defined in [packages/types/src/primitive/Generic/ConsensusEngineId.ts:50](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L50)*
 
 **`description`** `true` is the engine matches babe
 
@@ -91,7 +118,7 @@ ___
 
 • **get isGrandpa**(): *boolean*
 
-*Defined in [primitive/Generic/ConsensusEngineId.ts:57](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L57)*
+*Defined in [packages/types/src/primitive/Generic/ConsensusEngineId.ts:57](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L57)*
 
 **`description`** `true` is the engine matches grandpa
 
@@ -101,9 +128,9 @@ ___
 
 ###  extractAuthor
 
-▸ **extractAuthor**(`bytes`: [Bytes](_primitive_bytes_.bytes.md), `sessionValidators`: [AccountId](../interfaces/_interfaces_runtime_types_.accountid.md)[]): *[AccountId](../interfaces/_interfaces_runtime_types_.accountid.md) | undefined*
+▸ **extractAuthor**(`bytes`: [Bytes](_primitive_bytes_.bytes.md), `sessionValidators`: AccountId[]): *AccountId | undefined*
 
-*Defined in [primitive/Generic/ConsensusEngineId.ts:80](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L80)*
+*Defined in [packages/types/src/primitive/Generic/ConsensusEngineId.ts:81](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L81)*
 
 **`description`** From the input bytes, decode into an author
 
@@ -112,9 +139,9 @@ ___
 Name | Type |
 ------ | ------ |
 `bytes` | [Bytes](_primitive_bytes_.bytes.md) |
-`sessionValidators` | [AccountId](../interfaces/_interfaces_runtime_types_.accountid.md)[] |
+`sessionValidators` | AccountId[] |
 
-**Returns:** *[AccountId](../interfaces/_interfaces_runtime_types_.accountid.md) | undefined*
+**Returns:** *AccountId | undefined*
 
 ___
 
@@ -126,7 +153,7 @@ ___
 
 *Overrides void*
 
-*Defined in [codec/UInt.ts:37](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/UInt.ts#L37)*
+*Defined in [packages/types/src/codec/UInt.ts:42](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L42)*
 
 **`description`** Returns a hex string representation of the value
 
@@ -140,17 +167,41 @@ Name | Type | Default |
 
 ___
 
+###  toHuman
+
+▸ **toHuman**(`isExpanded?`: undefined | false | true): *any*
+
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
+
+*Inherited from [UInt](_codec_uint_.uint.md).[toHuman](_codec_uint_.uint.md#tohuman)*
+
+*Overrides void*
+
+*Defined in [packages/types/src/codec/UInt.ts:54](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L54)*
+
+**`description`** Converts the Object to to a human-friendly JSON, with additional fields, expansion and formatting of information
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`isExpanded?` | undefined &#124; false &#124; true |
+
+**Returns:** *any*
+
+___
+
 ###  toRawType
 
 ▸ **toRawType**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Inherited from [UInt](_codec_uint_.uint.md).[toRawType](_codec_uint_.uint.md#torawtype)*
 
 *Overrides void*
 
-*Defined in [codec/UInt.ts:49](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/UInt.ts#L49)*
+*Defined in [packages/types/src/codec/UInt.ts:64](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L64)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -162,11 +213,11 @@ ___
 
 ▸ **toString**(): *string*
 
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+*Implementation of [Codec](../interfaces/_types_codec_.codec.md)*
 
 *Overrides void*
 
-*Defined in [primitive/Generic/ConsensusEngineId.ts:93](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L93)*
+*Defined in [packages/types/src/primitive/Generic/ConsensusEngineId.ts:96](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L96)*
 
 **`description`** Override the default toString to return a 4-byte string
 
@@ -176,15 +227,13 @@ ___
 
 ###  toU8a
 
-▸ **toU8a**(`isBare?`: undefined | false | true): *Uint8Array*
-
-*Implementation of [Codec](../interfaces/_types_.codec.md)*
+▸ **toU8a**(`isBare?`: undefined | false | true): *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 *Inherited from [UInt](_codec_uint_.uint.md).[toU8a](_codec_uint_.uint.md#tou8a)*
 
 *Overrides void*
 
-*Defined in [codec/UInt.ts:63](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/codec/UInt.ts#L63)*
+*Defined in [packages/types/src/codec/UInt.ts:78](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L78)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
@@ -194,7 +243,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `isBare?` | undefined &#124; false &#124; true | true when the value has none of the type-specific prefixes (internal)  |
 
-**Returns:** *Uint8Array*
+**Returns:** *[Uint8Array](_codec_raw_.raw.md#static-uint8array)*
 
 ___
 
@@ -202,7 +251,7 @@ ___
 
 ▸ **idToString**(`input`: number | BN): *string*
 
-*Defined in [primitive/Generic/ConsensusEngineId.ts:26](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L26)*
+*Defined in [packages/types/src/primitive/Generic/ConsensusEngineId.ts:26](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L26)*
 
 **Parameters:**
 
@@ -218,7 +267,7 @@ ___
 
 ▸ **stringToId**(`input`: string): *number*
 
-*Defined in [primitive/Generic/ConsensusEngineId.ts:33](https://github.com/polkadot-js/api/blob/a8bfa90b87/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L33)*
+*Defined in [packages/types/src/primitive/Generic/ConsensusEngineId.ts:33](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Generic/ConsensusEngineId.ts#L33)*
 
 **Parameters:**
 
@@ -227,3 +276,22 @@ Name | Type |
 `input` | string |
 
 **Returns:** *number*
+
+___
+
+### `Static` with
+
+▸ **with**(`bitLength`: [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength), `typeName?`: undefined | string): *[Constructor](../interfaces/_types_codec_.constructor.md)‹[UInt](_codec_uint_.uint.md)›*
+
+*Inherited from [UInt](_codec_uint_.uint.md).[with](_codec_uint_.uint.md#static-with)*
+
+*Defined in [packages/types/src/codec/UInt.ts:27](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/UInt.ts#L27)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`bitLength` | [UIntBitLength](../modules/_codec_abstractint_.md#uintbitlength) |
+`typeName?` | undefined &#124; string |
+
+**Returns:** *[Constructor](../interfaces/_types_codec_.constructor.md)‹[UInt](_codec_uint_.uint.md)›*
