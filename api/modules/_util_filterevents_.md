@@ -14,7 +14,7 @@
 
 ▸ **filterEvents**(`extHash`: H256, `__namedParameters`: object, `allEvents`: EventRecord[]): *EventRecord[] | undefined*
 
-*Defined in [api/src/util/filterEvents.ts:9](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/util/filterEvents.ts#L9)*
+*Defined in [api/src/util/filterEvents.ts:9](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/util/filterEvents.ts#L9)*
 
 **Parameters:**
 

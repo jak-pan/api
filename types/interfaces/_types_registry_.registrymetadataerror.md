@@ -19,7 +19,7 @@
 
 • **documentation**: *[String](../classes/_primitive_text_.text.md#static-string)[]*
 
-*Defined in [packages/types/src/types/registry.ts:47](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/types/registry.ts#L47)*
+*Defined in [packages/types/src/types/registry.ts:47](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/types/registry.ts#L47)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **name**: *[String](../classes/_primitive_text_.text.md#static-string)*
 
-*Defined in [packages/types/src/types/registry.ts:45](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/types/registry.ts#L45)*
+*Defined in [packages/types/src/types/registry.ts:45](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/types/registry.ts#L45)*

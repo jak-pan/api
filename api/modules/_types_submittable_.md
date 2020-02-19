@@ -21,4 +21,4 @@
 
 Ƭ **AugmentedSubmittable**: *T & CallBase*
 
-*Defined in [api/src/types/submittable.ts:13](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/types/submittable.ts#L13)*
+*Defined in [api/src/types/submittable.ts:13](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/types/submittable.ts#L13)*

@@ -22,7 +22,7 @@
 
 ▸ **signAndSend**(`account`: IKeyringPair | string | AccountId | Address): *BlueprintCreateResultSubscription‹ApiType›*
 
-*Defined in [base/Blueprint.ts:24](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/base/Blueprint.ts#L24)*
+*Defined in [base/Blueprint.ts:24](https://github.com/jak-pan/api/blob/bc94e95733/packages/api-contract/src/base/Blueprint.ts#L24)*
 
 **Parameters:**
 

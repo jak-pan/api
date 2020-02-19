@@ -18,4 +18,4 @@
 
 • **methodName**? : *undefined | string*
 
-*Defined in [api/src/types/base.ts:67](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/types/base.ts#L67)*
+*Defined in [api/src/types/base.ts:67](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/types/base.ts#L67)*

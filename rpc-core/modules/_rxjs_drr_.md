@@ -14,7 +14,7 @@
 
 Ƭ **DrrResult**: *function*
 
-*Defined in [rxjs/drr.ts:11](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/rpc-core/src/rxjs/drr.ts#L11)*
+*Defined in [rxjs/drr.ts:11](https://github.com/jak-pan/api/blob/bc94e95733/packages/rpc-core/src/rxjs/drr.ts#L11)*
 
 #### Type declaration:
 

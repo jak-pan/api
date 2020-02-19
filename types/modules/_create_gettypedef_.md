@@ -14,7 +14,7 @@
 
 ▸ **getTypeDef**(`_type`: string, `__namedParameters`: object): *TypeDef*
 
-*Defined in [packages/types/src/create/getTypeDef.ts:144](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/create/getTypeDef.ts#L144)*
+*Defined in [packages/types/src/create/getTypeDef.ts:144](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/create/getTypeDef.ts#L144)*
 
 **Parameters:**
 

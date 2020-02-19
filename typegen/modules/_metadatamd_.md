@@ -14,6 +14,6 @@
 
 ▸ **main**(): *void*
 
-*Defined in [metadataMd.ts:292](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/typegen/src/metadataMd.ts#L292)*
+*Defined in [metadataMd.ts:292](https://github.com/jak-pan/api/blob/bc94e95733/packages/typegen/src/metadataMd.ts#L292)*
 
 **Returns:** *void*

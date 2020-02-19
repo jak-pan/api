@@ -18,7 +18,7 @@
 
 ▸ **decorateMethod**<**Method**>(`method`: Method, `options?`: [DecorateMethodOptions](../interfaces/_types_base_.decoratemethodoptions.md)): *[StorageEntryPromiseOverloads](../interfaces/_types_storage_.storageentrypromiseoverloads.md)*
 
-*Defined in [api/src/promise/Api.ts:63](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/promise/Api.ts#L63)*
+*Defined in [api/src/promise/Api.ts:63](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/promise/Api.ts#L63)*
 
 **`description`** Decorate method for ApiPromise, where the results are converted to the Promise equivalent
 

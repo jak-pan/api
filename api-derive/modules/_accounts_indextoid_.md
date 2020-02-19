@@ -14,7 +14,7 @@
 
 ▸ **indexToId**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/accounts/indexToId.ts:51](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/accounts/indexToId.ts#L51)*
+*Defined in [packages/api-derive/src/accounts/indexToId.ts:51](https://github.com/jak-pan/api/blob/bc94e95733/packages/api-derive/src/accounts/indexToId.ts#L51)*
 
 **`name`** indexToId
 

@@ -15,7 +15,7 @@
 
 Ƭ **DecoratedRpc**: *object*
 
-*Defined in [api/src/types/rpc.ts:15](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/types/rpc.ts#L15)*
+*Defined in [api/src/types/rpc.ts:15](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/types/rpc.ts#L15)*
 
 #### Type declaration:
 
@@ -25,6 +25,6 @@ ___
 
 Ƭ **DecoratedRpcSection**: *object*
 
-*Defined in [api/src/types/rpc.ts:9](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/types/rpc.ts#L9)*
+*Defined in [api/src/types/rpc.ts:9](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/types/rpc.ts#L9)*
 
 #### Type declaration:

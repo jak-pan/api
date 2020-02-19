@@ -24,7 +24,7 @@
 
 ▸ **send**(`account`: IKeyringPair | string | AccountId | Address): *ContractCallResultSubscription‹ApiType, CallType›*
 
-*Defined in [base/Contract.ts:27](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/base/Contract.ts#L27)*
+*Defined in [base/Contract.ts:27](https://github.com/jak-pan/api/blob/bc94e95733/packages/api-contract/src/base/Contract.ts#L27)*
 
 **Parameters:**
 

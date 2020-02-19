@@ -18,4 +18,4 @@
 
 • **MAGIC_NUMBER**: *1635018093* = 1635018093
 
-*Defined in [packages/metadata/src/Metadata/MagicNumber.ts:11](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/metadata/src/Metadata/MagicNumber.ts#L11)*
+*Defined in [packages/metadata/src/Metadata/MagicNumber.ts:11](https://github.com/jak-pan/api/blob/bc94e95733/packages/metadata/src/Metadata/MagicNumber.ts#L11)*

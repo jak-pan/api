@@ -14,4 +14,4 @@
 
 Ƭ **CodecTypes**: *keyof typeof Classes*
 
-*Defined in [packages/types/src/classes.ts:7](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/classes.ts#L7)*
+*Defined in [packages/types/src/classes.ts:7](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/classes.ts#L7)*

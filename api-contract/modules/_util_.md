@@ -14,7 +14,7 @@
 
 ▸ **formatData**(`registry`: Registry, `data`: Raw, `__namedParameters`: object): *Codec*
 
-*Defined in [util.ts:9](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-contract/src/util.ts#L9)*
+*Defined in [util.ts:9](https://github.com/jak-pan/api/blob/bc94e95733/packages/api-contract/src/util.ts#L9)*
 
 **Parameters:**
 

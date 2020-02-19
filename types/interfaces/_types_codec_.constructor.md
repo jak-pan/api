@@ -22,7 +22,7 @@
 
 \+ **new Constructor**(`registry`: [Registry](_types_registry_.registry.md), ...`value`: any[]): *T*
 
-*Defined in [packages/types/src/types/codec.ts:25](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/types/codec.ts#L25)*
+*Defined in [packages/types/src/types/codec.ts:25](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/types/codec.ts#L25)*
 
 **Parameters:**
 

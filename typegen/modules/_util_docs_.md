@@ -14,7 +14,7 @@
 
 ▸ **createDocComments**(`spaces`: number, `docs`: AnyString[], `args`: Arg[]): *string*
 
-*Defined in [util/docs.ts:12](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/typegen/src/util/docs.ts#L12)*
+*Defined in [util/docs.ts:12](https://github.com/jak-pan/api/blob/bc94e95733/packages/typegen/src/util/docs.ts#L12)*
 
 **Parameters:**
 

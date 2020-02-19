@@ -23,7 +23,7 @@
 
 ▸ **toPayload**(): *[SignerPayloadJSON](_types_extrinsic_.signerpayloadjson.md)*
 
-*Defined in [packages/types/src/types/extrinsic.ts:197](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/types/extrinsic.ts#L197)*
+*Defined in [packages/types/src/types/extrinsic.ts:197](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/types/extrinsic.ts#L197)*
 
 **Returns:** *[SignerPayloadJSON](_types_extrinsic_.signerpayloadjson.md)*
 
@@ -33,6 +33,6 @@ ___
 
 ▸ **toRaw**(): *[SignerPayloadRaw](_types_extrinsic_.signerpayloadraw.md)*
 
-*Defined in [packages/types/src/types/extrinsic.ts:198](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/types/extrinsic.ts#L198)*
+*Defined in [packages/types/src/types/extrinsic.ts:198](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/types/extrinsic.ts#L198)*
 
 **Returns:** *[SignerPayloadRaw](_types_extrinsic_.signerpayloadraw.md)*

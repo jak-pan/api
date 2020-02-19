@@ -14,7 +14,7 @@
 
 ▸ (...`args`: Parameters‹F›): *Observable‹[ObsInnerType](../modules/_types_base_.md#obsinnertype)‹ReturnType‹F›››*
 
-*Defined in [api/src/types/base.ts:48](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/types/base.ts#L48)*
+*Defined in [api/src/types/base.ts:48](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/types/base.ts#L48)*
 
 **Parameters:**
 
@@ -26,7 +26,7 @@ Name | Type |
 
 ▸ <**T**>(...`args`: Parameters‹F›): *Observable‹T›*
 
-*Defined in [api/src/types/base.ts:49](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/types/base.ts#L49)*
+*Defined in [api/src/types/base.ts:49](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/types/base.ts#L49)*
 
 **Type parameters:**
 

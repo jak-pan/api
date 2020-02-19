@@ -14,6 +14,6 @@
 
 ▸ **main**(): *void*
 
-*Defined in [extractChain.ts:28](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/typegen/src/extractChain.ts#L28)*
+*Defined in [extractChain.ts:28](https://github.com/jak-pan/api/blob/bc94e95733/packages/typegen/src/extractChain.ts#L28)*
 
 **Returns:** *void*

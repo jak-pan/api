@@ -14,7 +14,7 @@
 
 ▸ **typeSplit**(`type`: string): *string[]*
 
-*Defined in [packages/types/src/create/typeSplit.ts:12](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/create/typeSplit.ts#L12)*
+*Defined in [packages/types/src/create/typeSplit.ts:12](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/create/typeSplit.ts#L12)*
 
 **Parameters:**
 

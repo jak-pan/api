@@ -14,7 +14,7 @@
 
 ▸ **compareMap**(`a`: [Map](../classes/_codec_struct_.struct.md#static-map)‹any, any›, `b?`: any): *boolean*
 
-*Defined in [packages/types/src/codec/utils/compareMap.ts:22](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/utils/compareMap.ts#L22)*
+*Defined in [packages/types/src/codec/utils/compareMap.ts:22](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/codec/utils/compareMap.ts#L22)*
 
 **Parameters:**
 

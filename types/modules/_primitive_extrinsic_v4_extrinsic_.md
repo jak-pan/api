@@ -22,4 +22,4 @@
 
 • **TRANSACTION_VERSION**: *4* = 4
 
-*Defined in [packages/types/src/primitive/Extrinsic/v4/Extrinsic.ts:14](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/primitive/Extrinsic/v4/Extrinsic.ts#L14)*
+*Defined in [packages/types/src/primitive/Extrinsic/v4/Extrinsic.ts:14](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/primitive/Extrinsic/v4/Extrinsic.ts#L14)*

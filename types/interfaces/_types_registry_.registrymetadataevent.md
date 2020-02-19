@@ -19,7 +19,7 @@
 
 • **args**: *any[]*
 
-*Defined in [packages/types/src/types/registry.ts:53](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/types/registry.ts#L53)*
+*Defined in [packages/types/src/types/registry.ts:53](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/types/registry.ts#L53)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **name**: *[RegistryMetadataText](_types_registry_.registrymetadatatext.md)*
 
-*Defined in [packages/types/src/types/registry.ts:54](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/types/registry.ts#L54)*
+*Defined in [packages/types/src/types/registry.ts:54](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/types/registry.ts#L54)*

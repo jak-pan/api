@@ -14,7 +14,7 @@
 
 ▸ **sanitize**(`value`: string): *string*
 
-*Defined in [packages/types/src/create/sanitize.ts:187](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/create/sanitize.ts#L187)*
+*Defined in [packages/types/src/create/sanitize.ts:187](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/create/sanitize.ts#L187)*
 
 **Parameters:**
 

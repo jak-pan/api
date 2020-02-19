@@ -14,7 +14,7 @@
 
 ▸ **proposals**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/technicalCommittee/proposals.ts:12](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api-derive/src/technicalCommittee/proposals.ts#L12)*
+*Defined in [packages/api-derive/src/technicalCommittee/proposals.ts:12](https://github.com/jak-pan/api/blob/bc94e95733/packages/api-derive/src/technicalCommittee/proposals.ts#L12)*
 
 **Parameters:**
 

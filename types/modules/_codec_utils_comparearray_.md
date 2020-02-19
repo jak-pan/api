@@ -14,7 +14,7 @@
 
 ▸ **compareArray**(`a`: any[], `b?`: any): *boolean*
 
-*Defined in [packages/types/src/codec/utils/compareArray.ts:9](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/types/src/codec/utils/compareArray.ts#L9)*
+*Defined in [packages/types/src/codec/utils/compareArray.ts:9](https://github.com/jak-pan/api/blob/bc94e95733/packages/types/src/codec/utils/compareArray.ts#L9)*
 
 **Parameters:**
 

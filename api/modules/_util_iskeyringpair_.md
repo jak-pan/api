@@ -14,7 +14,7 @@
 
 ▸ **isKeyringPair**(`account`: string | IKeyringPair | AccountId | Address): *account is IKeyringPair*
 
-*Defined in [api/src/util/isKeyringPair.ts:10](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/util/isKeyringPair.ts#L10)*
+*Defined in [api/src/util/isKeyringPair.ts:10](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/util/isKeyringPair.ts#L10)*
 
 **Parameters:**
 

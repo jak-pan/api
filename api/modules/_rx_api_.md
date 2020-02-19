@@ -18,7 +18,7 @@
 
 ▸ **decorateMethod**<**Method**>(`method`: Method): *Method*
 
-*Defined in [api/src/rx/Api.ts:12](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/rx/Api.ts#L12)*
+*Defined in [api/src/rx/Api.ts:12](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/rx/Api.ts#L12)*
 
 **Type parameters:**
 

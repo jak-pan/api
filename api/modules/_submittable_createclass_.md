@@ -14,7 +14,7 @@
 
 ▸ **createClass**<**ApiType**>(`__namedParameters`: object): *Constructor‹SubmittableExtrinsic‹ApiType››*
 
-*Defined in [api/src/submittable/createClass.ts:33](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/api/src/submittable/createClass.ts#L33)*
+*Defined in [api/src/submittable/createClass.ts:33](https://github.com/jak-pan/api/blob/bc94e95733/packages/api/src/submittable/createClass.ts#L33)*
 
 **Type parameters:**
 

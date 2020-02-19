@@ -14,6 +14,6 @@
 
 ▸ **generateDefaultInterfaceRegistry**(): *void*
 
-*Defined in [generate/interfaceRegistry.ts:68](https://github.com/jak-pan/api/blob/4ae9e7b2c0/packages/typegen/src/generate/interfaceRegistry.ts#L68)*
+*Defined in [generate/interfaceRegistry.ts:68](https://github.com/jak-pan/api/blob/bc94e95733/packages/typegen/src/generate/interfaceRegistry.ts#L68)*
 
 **Returns:** *void*
